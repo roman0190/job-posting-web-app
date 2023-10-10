@@ -1,2 +1,2 @@
-# Job-Posting-WebSite
+# Job-posting-website
 Web technology
