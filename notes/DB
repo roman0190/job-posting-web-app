@@ -1,0 +1,48 @@
+CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) UNIQUE, password VARCHAR(255), email VARCHAR(100), user_type VARCHAR(20), gender VARCHAR(20), dob date );
+
+CREATE TABLE forgot_pass (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) UNIQUE, password VARCHAR(255), email VARCHAR(100), user_type VARCHAR(20), gender VARCHAR(20), dob date );
+
+CREATE TABLE forgot (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) UNIQUE, password VARCHAR(255), email VARCHAR(100), user_type VARCHAR(20), gender VARCHAR(20), dob date );
+
+
+
+landing_page -> id, description, hero_image_link
+
+users -> id, name, username, email, gender, dob, password, user_type, pfp
+
+forgot_pass_table -> id, email, code,
+
+jobs -> id, title, category, sub-category,job_position, required_skills, required_education, required_experience, job_type, job_location, job_description,job_responsibilities, tags[array], application_deadline, post_job
+
+shortlisted_jobs -> id, applicantion_id, job_id
+
+applicantions -> id, applicant_id, first_name, last_name, education, skills, experience, availability, email, phone_number, address, cv_link, job_id
+
+shortlisted_applicantions -> id, applicantion_id, recruiter_id
+
+reported_job -> id, job_id, reported_by
+
+reported_applicantions -> id, applicantion_id, reported_by 
+
+notifications -> id, notification, reciever, seen(auto false)
+
+contact_information -> id, email, number, fb, twitter,
+
+chat -> id, sender, reciever, text, 
+
+rules -> id, rule
+
+faq -> id, question, answer
+
+about -> id, about
+
+privacy_policy -> id, privacy_policy
+
+terms_of_services -> id, terms_of_services
+
+events -> id, title, description, location, date, start_time , end_time, interested
+
+interested -> id, name, user_id, email, event_id
+
+
+
