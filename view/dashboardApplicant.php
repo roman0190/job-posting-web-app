@@ -1,9 +1,9 @@
 <?php
     session_start();
     $username = $_SESSION['username'];
-    require('../model/dashboardDesign.php');
-    $values = ['<a href="../view/browse_jobs.php">Browse Jobs</a>', 
-                '<a href="../view/shortlisted_jobs.php">Shortlisted jobs</a>', 
+    require('components/dashboardDesign.php');
+    $values = ['<a href="../view/.php">Browse Jobs</a>', 
+                '<a href="../view/.php">Shortlisted jobs</a>', 
                 '<a href="../view/.php">Applied jobs</a>',
                 '<a href="../view/.php">View Profile </a>',
                 '<a href="../view/.php"> Edit Profile</a>', 
@@ -26,12 +26,13 @@
     <title>Dashboard</title>
 </head>
 <body>
-    
-    <table border=1>
-        <tr><td><?php echo dashboardHead($username);?></td></tr>
-        <tr>
-            <td><?php echo createTable($row,$col, $values);?></td>
-        </tr>
-    </table>
+    <?php include_once("components/header.php") ?>
+        <table border=1 height="100%" width="100%">
+            <tr><td><?php echo dashboardHead($username);?></td></tr>
+            <tr>
+                <td><?php echo createTable($values);?></td>
+            </tr>
+        </table>
+    <?php include_once("components/footer.php") ?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     $username = $_SESSION['username'];
-    require('../model/dashboardDesign.php');
+    require('components/dashboardDesign.php');
     $values = ['<a href="../view/.php">Reported job posts</a>',
                 '<a href="../view/.php">Reported applicants</a>',
                 '<a href="../view/.php">Post Event</a>',
@@ -13,17 +13,18 @@
                 '<a href="../view/.php">Edit Terms of Services </a>',
                 '<a href="../view/.php">Chat</a>',
             ];
-    $row=count($values);
-    $col=1;
+  
 ?>
 <html lang="en">
 <head>
     <title>Dashboard</title>
 </head>
 <body>
-    <table border=1>
-        <tr><td><?php echo dashboardHead($username);?></td></tr>
-        <tr><td><?php echo createTable($row,$col, $values);?></td></tr>
-    </table>
+    <?php include_once("components/header.php") ?>
+        <table border=1 height="100%" width="100%">
+            <tr><td><?php echo dashboardHead($username);?></td></tr>
+            <tr><td><?php echo createTable($values);?></td></tr>
+        </table>
+    <?php include_once("components/footer.php") ?>
 </body>
 </html>
