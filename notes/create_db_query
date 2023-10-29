@@ -1,0 +1,147 @@
+CREATE TABLE landing_page (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    description TEXT,
+    hero_image_link VARCHAR(255)
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
+    email VARCHAR(255) UNIQUE,
+    gender ENUM('Male', 'Female', 'Other'),
+    dob DATE,
+    password VARCHAR(255),
+    user_type VARCHAR(255),
+    pfp VARCHAR(255)
+);
+
+CREATE TABLE forgot_pass_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    code VARCHAR(255) UNIQUE
+);
+
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    category VARCHAR(255),
+    sub_category VARCHAR(255),
+    job_position VARCHAR(255),
+    required_skills TEXT,
+    required_education VARCHAR(255),
+    required_experience INT,
+    job_type VARCHAR(255),
+    job_location VARCHAR(255),
+    job_description TEXT,
+    job_responsibilities TEXT,
+    tags JSON,
+    application_deadline DATE,
+    post_job DATETIME
+);
+
+CREATE TABLE shortlisted_jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT,
+    job_id INT
+);
+
+CREATE TABLE applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    applicant_id INT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    education VARCHAR(255),
+    skills TEXT,
+    experience TEXT,
+    availability VARCHAR(255),
+    email VARCHAR(255),
+    phone_number VARCHAR(15),
+    address VARCHAR(255),
+    cv_link VARCHAR(255),
+    job_id INT
+);
+
+CREATE TABLE shortlisted_applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT,
+    recruiter_id INT
+);
+
+CREATE TABLE reported_jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_id INT,
+    reported_by INT
+);
+
+CREATE TABLE reported_applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    application_id INT,
+    reported_by INT
+);
+
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    notification TEXT,
+    receiver INT,
+    seen BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE contact_information (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    number VARCHAR(15),
+    fb VARCHAR(255),
+    twitter VARCHAR(255)
+);
+
+CREATE TABLE chat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender INT,
+    receiver INT,
+    text TEXT
+);
+
+CREATE TABLE rules (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    rule TEXT
+);
+
+CREATE TABLE faq (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT,
+    answer TEXT
+);
+
+CREATE TABLE about (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    about TEXT
+);
+
+CREATE TABLE privacy_policy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    privacy_policy TEXT
+);
+
+CREATE TABLE terms_of_services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    terms_of_services TEXT
+);
+
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    location VARCHAR(255),
+    date DATE,
+    start_time TIME,
+    end_time TIME
+);
+
+CREATE TABLE interested (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    user_id INT,
+    email VARCHAR(255),
+    event_id INT
+);
