@@ -74,7 +74,7 @@ if(isset($_REQUEST['submit'])){
         <tr>
             <th colspan="2">
                 <h2 align="left">
-                    <img align="left" src="ProjectLogo.png" alt="Company Logo" width="80" height="80">
+                    <img align="left" src="../img/logo.png" alt="Company Logo" width="80" height="80">
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">

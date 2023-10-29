@@ -18,13 +18,16 @@
         </tr>
         <tr>
             <td height="150px" align="center">
-                <form method="post" action="sendcode.php">
+                <form method="post" action="Signin.php">
                     <fieldset>
-                        <legend><h3>Forgot Password</h3></legend>
-                        <label>Email</label>
-                        <input type="email" id="email" name="email">
-                        <input type="button" value="i" title="hint: xyz@gmail.com"><br><br>
-                        <input type="button" name="Send Code" value="Send Code"><br><br>
+                        <legend><h3>New Password</h3></legend>
+                        <label>New Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="password" name="password" required><br><br>
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirm_pass" required><br><br>
+                        
+                        
+                        <input type="submit" name="submit" value="Submit">
                     </fieldset>
                 </form>
             </td>
