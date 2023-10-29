@@ -26,6 +26,7 @@
     <title>Dashboard</title>
 </head>
 <body>
+    
     <table border=1>
         <tr><td><?php echo dashboardHead($username);?></td></tr>
         <tr>
