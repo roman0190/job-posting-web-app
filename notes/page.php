@@ -9,14 +9,9 @@
 
 <body>
     <?php include_once("../view/components/header.php") ?>
-    <table border=0 width="100%">
-        <tr>
-            <td>A</td>
-        </tr>
-        <tr>
-            <td>A</td>
-        </tr>
-    </table>
+    <main>
+        contents
+    </main>
     <?php include_once("../view/components/footer.php") ?>
 </body>
 
