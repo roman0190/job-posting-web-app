@@ -4,7 +4,6 @@
     <title>Dashboard</title>
 </head>
 
-
 <?php include_once("../view/components/style.php") ?>
 
 <body>
