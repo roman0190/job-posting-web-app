@@ -21,7 +21,7 @@
     </tr>
         <tr>
             <td>
-                <h2>Terms of Service</h2>
+                <h1>TERMS of SERVICES</h1>
 
                 <p>Welcome to MARZ JOB SITE! By accessing and using our services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.</p>
 
