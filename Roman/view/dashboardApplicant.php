@@ -1,6 +1,7 @@
 <?php
     session_start();
-    $username = $_SESSION['username'];
+    require('../controls/sessionCheck_dash.php');
+    $logInfo = $_SESSION['logInfo'];
     require('components/dashboardDesign.php');
     $values = ['<a href="../view/.php">Browse Jobs</a>', 
                 '<a href="../view/.php">Shortlisted jobs</a>', 
@@ -10,7 +11,7 @@
                 '<a href="../view/.php"> Change Profile Photo</a>', 
                 '<a href="../view/.php">Change Password</a>', 
                 '<a href="../view/.php">Notifications</a>', 
-                '<a href="../view/.php">Contact Information</a>',
+                '<a href="contactinfoView.php">Contact Information</a>',
                 '<a href="../view/.php">Rules and regulation</a>',
                 '<a href="../view/.php">FAQ</a>',
                 '<a href="../view/.php">Terms of Services </a>',
@@ -27,7 +28,7 @@
 </head>
 <body>
         <table border=1 height="100%" width="100%">
-            <tr><td><?php echo dashboardHead($username);?></td></tr>
+            <tr><td><?php echo dashboardHead($logInfo['username']);?></td></tr>
             <tr>
                 <td><?php echo createTable($values);?></td>
             </tr>
