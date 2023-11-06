@@ -1,5 +1,5 @@
 <?php
-include_once("../../controller/ManageJobs/createNewJobCheck.php");
+include_once("../../controller/ManageJobs/editJobController.php");
 
 ?>
 

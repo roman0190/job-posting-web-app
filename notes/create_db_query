@@ -35,9 +35,10 @@ CREATE TABLE jobs (
     job_location VARCHAR(255),
     job_description TEXT,
     job_responsibilities TEXT,
-    tags JSON,
+    tags TEXT,
     application_deadline DATE,
-    post_job DATETIME
+    job_poster INT,
+    post_time DATETIME
 );
 
 CREATE TABLE shortlisted_jobs (
