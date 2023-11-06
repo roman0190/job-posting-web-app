@@ -1,34 +1,4 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $remember_me = isset($_POST['remember_me']);
 
-    // Validate username and password (add your validation logic here)
-    if (empty($username) || empty($password)) {
-        $error_message = "Both username and password are required.";
-    } else {
-        // Check the credentials with your database (replace with your own database logic)
-        $db_username = 'username'; // Replace with your database username
-        $db_password = 'password'; // Replace with your database password
-
-        if ($username === $db_username && $password === $db_password) {
-            // Successful sign-in
-            if ($remember_me) {
-                // If "Remember Me" is checked, set cookies
-                setcookie('username', $username, time() + 86400 * 30, '/');
-                setcookie('password', $password, time() + 86400 * 30, '/');
-            }
-
-            // Redirect to the "privacy.php" page
-            header('Location: privacy.php');
-            exit();
-        } else {
-            $error_message = "Invalid username or password.";
-        }
-    }
-}
-?>
 
 
 <html lang="en">
@@ -54,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    
                 <tr>
                     <td height=150px align="center">
-                    <form method="post" action="signIncheck.php">
+                    <form method="post" action="../controller/signIncheck.php">
             <fieldset >
             <legend><h3>Signin</h3></legend>
             <label for="username">Username:</label>

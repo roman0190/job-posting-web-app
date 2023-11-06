@@ -1,21 +1,34 @@
-<?php 
-    session_start();
-    require_once('db.php');
-    require_once('../model/model.php');
-    $username = $_REQUEST['username'];
-    $password = $_REQUEST['password'];
+<?php
 
+   include_once('../model/db.php'); 
+   include_once('../model/model.php'); 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $remember_me = isset($_POST['remember_me']);
 
-    if($username == "" || $password == ""){
-        echo "null username/password!";   
-    }else{
-        
-        $status = signIn ($username, $password);
-        if($status){
-            $_SESSION['flag'] = "true";
-            header('location: ../view/privacy.php');
-        }else{
-            echo "invaid user!";
+    // Validate username and password (add your validation logic here)
+    if (empty($username) || empty($password)) {
+        $error_message = "Both username and password are required.";
+    } else {
+        // Include the database connection and user validation from the model
+        require_once('../model/model.php');
+
+        // Check the user's credentials in the model
+        if (validateUser($username, $password)) {
+            // Successful sign-in
+            if ($remember_me) {
+                // If "Remember Me" is checked, set cookies
+                setcookie('username', $username, time() + 86400 * 30, '/');
+                setcookie('password', $password, time() + 86400 * 30, '/');
+            }
+
+            // Redirect to the "privacy.php" page
+            header('Location:../view/privacy.php');
+            exit();
+        } else {
+            $error_message = "Invalid username or password.";
         }
     }
+}
 ?>
