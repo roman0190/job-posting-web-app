@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +8,24 @@
         <tr>
             <th colspan="2">
                 <h2 align="left">
-                    <img align="left" src="Logo.png" alt="Company Logo" width="80" height="80">
+                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
                     <a href="publicHome.php">Home</a> |
-                    <a href="signIn.php">Signup</a>
+                    <a href="signIn.php">Signin</a>
                 </h5>
             </th>
         </tr>
         <tr>
             <td height="150px" align="center">
-                <form method="post" action="sendCode.php">
+                <form method="post" action="newPassword.php">
                     <fieldset>
-                        <legend><h3>Forgot Password</h3></legend>
-                        <label>Email</label>
-                        <input type="email" id="email" name="email"required>
-                        <input type="button" value="i" title="hint: xyz@gmail.com"><br><br>
-                
-                        <input type="submit" name="Send Code" value="Send Code"><br><br>
+                        <legend><h3>Verification Code</h3></legend>
+                        <label>Verification Code</label>
+                        <input type="text" id="verificationCode" name="verificationCode" required>
+                        <br><br>
+                        <input type="submit" name="submit" value="Submit">
                     </fieldset>
                 </form>
             </td>

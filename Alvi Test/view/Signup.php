@@ -7,6 +7,8 @@ if(isset($_REQUEST['submit'])){
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
     $confirm_pass = $_REQUEST['confirm_pass'];
+    $user_type = $_REQUEST['user_type'];
+
 
     if(isset($_REQUEST['gender'])){
         $gender = $_REQUEST['gender'];
@@ -41,16 +43,16 @@ if(isset($_REQUEST['submit'])){
 
     if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
 
-
         setcookie('name', $name, time() + (86400 * 30), "/");
         setcookie('email', $email, time() + (86400 * 30), "/");
         setcookie('username', $username, time() + (86400 * 30), "/");
         setcookie('password', $password, time() + (86400 * 30), "/");
         setcookie('confirm_pass', $confirm_pass, time() + (86400 * 30), "/");
+        setcookie('user_type', $user_type, time() + (86400 * 30), "/");
         setcookie('gender', $gender, time() + (86400 * 30), "/");
         setcookie('date_of_birth', $date_of_birth, time() + (86400 * 30), "/");
 
-        header('location: login.php');
+        header('location: signIn.php');
     }   
     
 }
@@ -78,14 +80,14 @@ if(isset($_REQUEST['submit'])){
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="publicHome.php">Home</a> |
-                    <a href="Signin.php">Signin</a>
+                    <a href="nonadminHome.php">Home</a> |
+                    <a href="signIn.php">Signin</a>
                 </h5>
             </th>
         </tr>
         <tr>
             <td>
-                <form action="#" method="post">
+                <form action="../controller/signUpcheck.php" method="post">
                     <fieldset>
                         <legend><h3>Signup</h3></legend>
                         <label>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -99,6 +101,12 @@ if(isset($_REQUEST['submit'])){
                         <input type="password" name="password" required><br><br>
                         <label>Confirm Password</label>
                         <input type="password" name="confirm_pass" required><br><br>
+                        <label>User Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                       
+                            <input type="radio" name="userType" value="applicant" /> Applicant
+                            <input type="radio" name="userType" value="recruiter" /> Recruiter
+                            <br><br>
+
                         <fieldset>
                             <legend>Gender</legend>
                             <input type="radio" name="gender" value="Male" /> Male

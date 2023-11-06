@@ -1,34 +1,31 @@
 <?php
-session_start();
-if (isset($_POST['submit'])) {
-    $error_message = '';
-    $login_success = false;
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $remember_me = isset($_POST['remember_me']);
 
-    if ($username == '') {
-        $error_message .= "You must fill in the User Name! <br>";
-    }
-    if ($password == '') {
-        $error_message .= "You must fill in the Password! <br>";
-    }
-
-    // Retrieve cookie values (assuming they were set during registration)
-    $cookie_username = isset($_COOKIE['username']) ? $_COOKIE['username'] : '';
-    $cookie_password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
-
-    // Check if the provided username and password match the stored cookie values
-    if ($username == $cookie_username && $password == $cookie_password) {
-        $login_success = true;
-    }
-
-    if ($login_success) {
-        $_SESSION["user_login"] = "login_success";
-        header('location: dashboard.php');
-        exit();
+    // Validate username and password (add your validation logic here)
+    if (empty($username) || empty($password)) {
+        $error_message = "Both username and password are required.";
     } else {
-        $error_message = "Invalid login details! Try Again!";
+        // Check the credentials with your database (replace with your own database logic)
+        $db_username = 'username'; // Replace with your database username
+        $db_password = 'password'; // Replace with your database password
+
+        if ($username === $db_username && $password === $db_password) {
+            // Successful sign-in
+            if ($remember_me) {
+                // If "Remember Me" is checked, set cookies
+                setcookie('username', $username, time() + 86400 * 30, '/');
+                setcookie('password', $password, time() + 86400 * 30, '/');
+            }
+
+            // Redirect to the "privacy.php" page
+            header('Location: privacy.php');
+            exit();
+        } else {
+            $error_message = "Invalid username or password.";
+        }
     }
 }
 ?>
@@ -45,19 +42,19 @@ if (isset($_POST['submit'])) {
         <tr>
             <th colspan="2">
                 <h2 align="left">
-                <img align="left" src="../img/logo.png" alt="Company Logo" width="80" height="80">
+                <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="publicHome.php">Home</a> |
-                    <a href="Signup.php">Signup</a>
+                    <a href="nonadminHome.php">Home</a> |
+                    <a href="signUp.php">Signup</a>
                 </h5>
             </th>
         </tr>
                    
                 <tr>
                     <td height=150px align="center">
-                    <form method="post" action="#">
+                    <form method="post" action="signIncheck.php">
             <fieldset >
             <legend><h3>Signin</h3></legend>
             <label for="username">Username:</label>
