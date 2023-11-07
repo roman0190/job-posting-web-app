@@ -28,34 +28,18 @@
         }
     }
 
-
-
-/*function validateUser($username, $password) {
-    $conn = getConnection();
-
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
+    function insertJobApplication($first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability) {
+        $conn = getConnection();
+        $sql = "INSERT INTO applications (first_name, last_name, email, phone_number, address, cv_link, education, skills, experience, availability)
+                VALUES ('$first_name', '$last_name', '$email', '$phone_number', '$address', '$cv_link', '$education', '$skills', '$experience', '$availability')";
+    
+        if (mysqli_query($conn, $sql)) {
+            mysqli_close($conn);
+            return true;
+        } else {
+            mysqli_close($conn);
+            die("Error: " . mysqli_error($conn));
+        }
     }
-
-    // Use prepared statements to prevent SQL injection
-    $query = "SELECT * FROM users WHERE username = ? AND password = ?";
-    $stmt = mysqli_prepare($conn, $query);
-
-    // Bind the parameters
-    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
-
-    // Execute the query
-    mysqli_stmt_execute($stmt);
-
-    // Fetch the result
-    $result = mysqli_stmt_get_result($stmt);
-
-    // Close the statement and connection
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-
-    // Check if a user with the given username and password exists
-    return mysqli_num_rows($result) > 0;
-}*/
-
+    
 ?>
