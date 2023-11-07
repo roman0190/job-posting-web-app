@@ -50,7 +50,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +61,7 @@ if (isset($_POST['submit'])) {
         <tr>
             <th colspan="2">
                 <h2 align="left">
-                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
+                    <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
@@ -75,23 +74,23 @@ if (isset($_POST['submit'])) {
                 <form action="../controller/jobApplyCheck.php" method="post">
                     <fieldset>
                         <legend><center><h3>Job Application</h3></center></legend>
-                        <label for="first_name">First Name:</label>
+                        <label for="first_name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="first_name" required><br><br>
-                        <label for="last_name">Last Name:</label>
+                        <label for="last_name">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="last_name" required><br><br>
-                        <label for="email">Email:</label>
+                        <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="email" name="email" required><br><br>
-                        <label for="phone_number">Phone Number:</label>
+                        <label for="phone_number">Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="number" name="phone_number" required><br><br>
-                        <label for="address">Address:</label>
+                        <label for="address">Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="address" required><br><br>
-                        <label for="cv_link">Link to CV/Resume:</label>
+                        <label for="cv_link">Link to CV/Resume:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="cv_link" required><br><br>
-                        <label for="education">Education:</label>
-                        <textarea name="education" rows="3" required></textarea><br><br>
-                        <label for="skills">Skills (Three spaces, separate with commas):</label>
-                        <textarea name="skills" rows="3" required></textarea><br><br>
-                        <label for="experience">Work Experience:</label>
+                        <label for="education">Education:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" name="education" required><br><br>
+                        <label for="skills">Skills <br>(3 skills, separate with commas):</label>
+                        <input type="text" name="skills" required><br><br>
+                        <label for="experience">Work Experience:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <select name="experience">
                             <option value="">Select Years of Experience</option>
                             <?php
@@ -100,7 +99,7 @@ if (isset($_POST['submit'])) {
                             }
                             ?>
                         </select><br><br>
-                        <label for="availability">Availability (Choose one):</label>
+                        <label for="availability">Availability (Choose one):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <select name="availability" required>
                             <option value="full-time">Full-Time</option>
                             <option value="part-time">Part-Time</option>
@@ -115,3 +114,4 @@ if (isset($_POST['submit'])) {
     </table>
 </body>
 </html>
+
