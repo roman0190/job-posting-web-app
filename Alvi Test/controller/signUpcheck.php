@@ -1,64 +1,59 @@
 <?php
 
-include_once('../model/db.php'); 
+include_once('../model/db.php');
 
-if (isset($_POST['submit'])) {
-    require('../model/model.php'); // Include the model.php file for database connection
+
+
+
+$name = "";
+$email = "";
+$username = "";
+$password = "";
+$confirm_pass = "";
+$user_type = "";
+$gender = "";
+$date_of_birth = "";
+
+$error_message = "";
+
+if (isset($_REQUEST['submit'])) {
 
     $error_message = '';
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_pass = $_POST['confirm_pass'];
-    $user_type = $_POST['userType'];
+    $name = $_REQUEST['name'];
+    $email = $_REQUEST['email'];
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
+    $confirm_pass = $_REQUEST['confirm_pass'];
+    $user_type = $_REQUEST['user_type'];
 
-    if (isset($_POST['gender'])) {
-        $gender = $_POST['gender'];
+
+    if (isset($_REQUEST['gender'])) {
+        $gender = $_REQUEST['gender'];
     } else {
         $gender = '';
     }
 
-    $date_of_birth = $_POST['dob'];
-
-    // Validate user input
-    if (empty($name)) {
-        $error_message .= "You must fill in your Name! <br>";
+    $date_of_birth = $_REQUEST['dob'];
+    if ($name == '') {
+        $error_message = "You must fill in your Name! <br>";
+    } else if ($email == '') {
+        $error_message = "You must fill in your Email! <br>";
+    } else if ($username == '') {
+        $error_message = "You must fill in your User Name! <br>";
+    } else if ($password == '') {
+        $error_message = "You must fill in your Password! <br>";
+    } else if ($confirm_pass == '' || $confirm_pass !== $password) {
+        $error_message = "Your password doesn't match! <br>";
+    } else if ($gender == '') {
+        $error_message = "You must fill in your Gender! <br>";
+    } else if ($date_of_birth == '') {
+        $error_message = "You must fill in your Date of Birth! <br>";
     }
 
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_message .= "You must provide a valid Email! <br>";
-    }
+    if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
 
-    if (empty($username)) {
-        $error_message .= "You must fill in your User Name! <br>";
-    }
-
-    if (empty($password)) {
-        $error_message .= "You must fill in your Password! <br>";
-    }
-
-    if ($password !== $confirm_pass) {
-        $error_message .= "Your password doesn't match! <br>";
-    }
-
-    if (empty($gender)) {
-        $error_message .= "You must select your Gender! <br>";
-    }
-
-    if (empty($date_of_birth)) {
-        $error_message .= "You must provide your Date of Birth! <br>";
-    }
-
-    if (empty($error_message)) {
-        // Database insertion
-        if (insertUser($name, $email, $username, $password, $user_type, $gender, $date_of_birth)) {
-            header('Location: ../view/signIn.php'); // Redirect to the sign-in page after successful registration
-            exit();
-        } else {
-            $error_message = "Error occurred while registering.";
-        }
+        require('../model/model.php'); // Include the model.php file for 
+        $error_message = insertUser($name, $email, $username, $password, $user_type, $gender, $date_of_birth);
     }
 }
-?>
