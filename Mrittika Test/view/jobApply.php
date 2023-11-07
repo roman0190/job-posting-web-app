@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="nonadminHome.php">Home</a>
+                    <a href="../../Alvi Test/view/nonadminHome.php">Home</a>|
                 </h5>
             </th>
         </tr>

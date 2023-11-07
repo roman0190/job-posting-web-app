@@ -41,16 +41,7 @@ if(isset($_REQUEST['submit'])){
         $error_message .= "You must fill in your Date of Birth! <br>";
     }
 
-    if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
-
-        setcookie('name', $name, time() + (86400 * 30), "/");
-        setcookie('email', $email, time() + (86400 * 30), "/");
-        setcookie('username', $username, time() + (86400 * 30), "/");
-        setcookie('password', $password, time() + (86400 * 30), "/");
-        setcookie('confirm_pass', $confirm_pass, time() + (86400 * 30), "/");
-        setcookie('user_type', $user_type, time() + (86400 * 30), "/");
-        setcookie('gender', $gender, time() + (86400 * 30), "/");
-        setcookie('date_of_birth', $date_of_birth, time() + (86400 * 30), "/");
+    if (empty($error_message)) {
 
         header('location: signIn.php');
     }   
@@ -63,33 +54,43 @@ if(isset($_REQUEST['submit'])){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up Page</title>
+    <style>
+        table {
+            width: 450px;
+        }
+
+        fieldset {
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <table border="1" align="center">
         <tr>
             <th colspan="2">
                 <h2 align="left">
-                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
+                    <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="nonadminHome.php">Home</a> |
+                    <a href="../../Alvi Test/view/nonadminHome.php">Home</a> |
                     <a href="signIn.php">Signin</a>
                 </h5>
             </th>
         </tr>
         <tr>
             <td>
-                <form action="../controller/signUpCheck.php" method="post">
-                    <fieldset >
+                <form  action="../controller/signUpCheck.php" method="post">
+                    <fieldset>
                         <legend><center><h3>Signup</h3></center></legend>
-                        <label for="name">Name:</label>
+                        <label for="name">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="name" required><br><br>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" required><br><br>
-                        <label for="username">Username:</label>
+                        <label for="email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="email" name="email" required>
+                        <input type="button" value="i" title="hint: xyz@gmail.com"><br><br>
+                        <label for="username">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="username" id="username"><br><br>
-                        <label for="password">Password:</label>
+                        <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="password" name="password" required><br><br>
                         <label for="confirm_pass">Confirm Password:</label>
                         <input type="password" name="confirm_pass" required><br><br>
