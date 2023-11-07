@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Redirect to the "privacy.php" page
-            header('Location:../view/privacy.php');
+            header('Location:../view/dashboard.php');
             exit();
         } else {
             $error_message = "Invalid username or password.";

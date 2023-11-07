@@ -19,26 +19,26 @@ if(isset($_REQUEST['submit'])){
     $date_of_birth = $_REQUEST['dob'];
 
     if($name == ''){
-        $error_message .= "You must fill in your Name! <br>";
+        $error_message= "You must fill in your Name! <br>";
     }
-    if($email == ''){
-        $error_message .= "You must fill in your Email! <br>";
+    else if($email == ''){
+        $error_message= "You must fill in your Email! <br>";
     }
-    if($username == ''){
-        $error_message .= "You must fill in your User Name! <br>";
+    else if($username == ''){
+        $error_message= "You must fill in your User Name! <br>";
     }
-    if($password == ''){
-        $error_message .= "You must fill in your Password! <br>";
+    else if($password == ''){
+        $error_message= "You must fill in your Password! <br>";
     }
 
-    if($confirm_pass == '' && $confirm_pass !== $password){
-        $error_message .= "Your password doesn't match! <br>";
+    else if($confirm_pass == '' && $confirm_pass !== $password){
+        $error_message= "Your password doesn't match! <br>";
     }
-    if($gender == ''){
-        $error_message .= "You must fill in your Gender! <br>";
+   else if($gender == ''){
+        $error_message= "You must fill in your Gender! <br>";
     }
-    if ($date_of_birth == '') {
-        $error_message .= "You must fill in your Date of Birth! <br>";
+    else if ($date_of_birth == '') {
+        $error_message= "You must fill in your Date of Birth! <br>";
     }
 
     if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
@@ -87,7 +87,7 @@ if(isset($_REQUEST['submit'])){
         </tr>
         <tr>
             <td>
-                <form action="../controller/signUpcheck.php" method="post">
+                <form action="" method="post">
                     <fieldset>
                         <legend><h3>Signup</h3></legend>
                         <label>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -103,8 +103,8 @@ if(isset($_REQUEST['submit'])){
                         <input type="password" name="confirm_pass" required><br><br>
                         <label>User Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                        
-                            <input type="radio" name="userType" value="applicant" /> Applicant
-                            <input type="radio" name="userType" value="recruiter" /> Recruiter
+                            <input type="radio" name="user_type" value="Applicant" /> Applicant
+                            <input type="radio" name="user_type" value="Recruiter" /> Recruiter
                             <br><br>
 
                         <fieldset>
