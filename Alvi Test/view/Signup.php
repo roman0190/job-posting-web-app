@@ -1,76 +1,23 @@
 <?php
-if(isset($_REQUEST['submit'])){
-    $error_message = '';
-
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST['email'];
-    $username = $_REQUEST['username'];
-    $password = $_REQUEST['password'];
-    $confirm_pass = $_REQUEST['confirm_pass'];
-    $user_type = $_REQUEST['user_type'];
-
-
-    if(isset($_REQUEST['gender'])){
-        $gender = $_REQUEST['gender'];
-    } else {
-        $gender = '';
-    }
-
-    $date_of_birth = $_REQUEST['dob'];
-
-    if($name == ''){
-        $error_message= "You must fill in your Name! <br>";
-    }
-    else if($email == ''){
-        $error_message= "You must fill in your Email! <br>";
-    }
-    else if($username == ''){
-        $error_message= "You must fill in your User Name! <br>";
-    }
-    else if($password == ''){
-        $error_message= "You must fill in your Password! <br>";
-    }
-
-    else if($confirm_pass == '' && $confirm_pass !== $password){
-        $error_message= "Your password doesn't match! <br>";
-    }
-   else if($gender == ''){
-        $error_message= "You must fill in your Gender! <br>";
-    }
-    else if ($date_of_birth == '') {
-        $error_message= "You must fill in your Date of Birth! <br>";
-    }
-
-    if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
-
-        setcookie('name', $name, time() + (86400 * 30), "/");
-        setcookie('email', $email, time() + (86400 * 30), "/");
-        setcookie('username', $username, time() + (86400 * 30), "/");
-        setcookie('password', $password, time() + (86400 * 30), "/");
-        setcookie('confirm_pass', $confirm_pass, time() + (86400 * 30), "/");
-        setcookie('user_type', $user_type, time() + (86400 * 30), "/");
-        setcookie('gender', $gender, time() + (86400 * 30), "/");
-        setcookie('date_of_birth', $date_of_birth, time() + (86400 * 30), "/");
-
-        header('location: signIn.php');
-    }   
-    
-}
+include_once("../controller/signUpcheck.php");
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Registration Page</title>
     <style>
         table {
             width: 500px;
         }
+
         fieldset {
             padding: 10px;
         }
     </style>
 </head>
+
 <body>
     <table border="1" align="center">
         <tr>
@@ -89,34 +36,47 @@ if(isset($_REQUEST['submit'])){
             <td>
                 <form action="" method="post">
                     <fieldset>
-                        <legend><h3>Signup</h3></legend>
+                        <legend>
+                            <h3>Signup</h3>
+                        </legend>
                         <label>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" name="name" required><br><br>
+                        <input type="text" name="name" value=<?= $name ?>><br><br>
                         <label>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" value=<?= $email ?>>
                         <input type="button" value="i" title="hint: xyz@gmail.com"><br><br>
                         <label>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" name="username" required><br><br>
+                        <input type="text" name="username" value=<?= $username ?>><br><br>
                         <label>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="password" name="password" required><br><br>
+                        <input type="password" name="password" value=<?= $password ?>><br><br>
                         <label>Confirm Password</label>
-                        <input type="password" name="confirm_pass" required><br><br>
+                        <input type="password" name="confirm_pass" value=<?= $confirm_pass ?>><br><br>
                         <label>User Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                       
-                            <input type="radio" name="user_type" value="Applicant" /> Applicant
-                            <input type="radio" name="user_type" value="Recruiter" /> Recruiter
-                            <br><br>
+
+                        <input type="radio" name="user_type" value="Applicant" <?=
+
+                                                                                $user_type == "Applicant" ? 'checked="checked"' : ""
+
+
+                                                                                ?> /> Applicant
+                        <input type="radio" name="user_type" value="Recruiter" <?=
+
+                                                                                $user_type == "Recruiter" ? 'checked="checked"' : ""
+
+
+                                                                                ?> /> Recruiter
+                        <br><br>
 
                         <fieldset>
                             <legend>Gender</legend>
-                            <input type="radio" name="gender" value="Male" /> Male
-                            <input type="radio" name="gender" value="Female" /> Female
-                            <input type="radio" name="gender" value="Other" /> Other<br><br>
+                            <input type="radio" name="gender" value="Male" <?= $gender == "Male" ? 'checked="checked"' : "" ?> /> Male
+                            <input type="radio" name="gender" value="Female" <?= $gender == "Female" ? 'checked="checked"' : "" ?> /> Female
+                            <input type="radio" name="gender" value="Other" <?= $gender == "Other" ? 'checked="checked"' : "" ?> /> Other<br><br>
                         </fieldset>
                         <fieldset>
                             <legend>Date of Birth</legend>
-                            <input type="date" name="dob" required><br><br>
+                            <input type="date" name="dob" required value=<?= $date_of_birth ?>><br><br>
                         </fieldset>
+                        <p style="color:red"></p><?= $error_message ?></p>
                         <input type="submit" name="submit" value="Submit">
                         <input type="reset" value="Reset">
                     </fieldset>
@@ -125,4 +85,5 @@ if(isset($_REQUEST['submit'])){
         </tr>
     </table>
 </body>
+
 </html>

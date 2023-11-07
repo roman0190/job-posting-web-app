@@ -1,5 +1,6 @@
 <?php
-function insertUser($name, $email, $username, $password, $user_type, $gender, $dob) {
+function insertUser($name, $email, $username, $password, $user_type, $gender, $dob)
+{
     // Include your database connection details from db.php
     include_once('db.php');
 
@@ -9,22 +10,44 @@ function insertUser($name, $email, $username, $password, $user_type, $gender, $d
     if (!$conn) {
         die("Database connection failed: " . mysqli_connect_error());
     }
-     
 
-    // Perform database insert
+    $sql = "SELECT * from users WHERE username='{$username}'";
+
+    $result = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($result);
+
+    if ($count != 0) {
+        return "username is already is in use";
+    }
+
+    $sql = "SELECT * from users WHERE email='{$email}'";
+
+    $result = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($result);
+
+    if ($count != 0) {
+        return "email is already is in use";
+    }
+
+
+
+
+
     $sql = "INSERT INTO users (name, email, username, password, user_type, gender, dob)
             VALUES ('$name', '$email', '$username', '$password', '$user_type', '$gender', '$dob')";
-
     if (mysqli_query($conn, $sql)) {
         mysqli_close($conn);
-        return true;
+        header("Location: ../view/signIn.php");
     } else {
+        echo  mysqli_error($conn);
         mysqli_close($conn);
-        die("Error: " . mysqli_error($conn));
+
+        return "error";
     }
 }
 
-function validateUser($username, $password) {
+function validateUser($username, $password)
+{
     $conn = getConnection();
 
     if (!$conn) {
@@ -51,5 +74,3 @@ function validateUser($username, $password) {
     // Check if a user with the given username and password exists
     return mysqli_num_rows($result) > 0;
 }
-
-?>
