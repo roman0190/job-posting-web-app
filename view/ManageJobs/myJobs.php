@@ -15,11 +15,12 @@ include_once("../../controller/ManageJobs/allJobsController.php");
         <?php
         foreach ($jobs as $job) {
             echo "
-            <a class='card'  href='myJob.php?id={$job['id']}'>
+            <div class='card' >
            <h4> {$job['title']}</h4>
            category: {$job['category']}   |   sub category:  {$job['sub_category']}<br>
            position: {$job['job_position']}   |   Application Deadline {$job['application_deadline']} 
-            </a>";
+           <a href='myJob.php?id={$job['id']}'>See details</a>
+            </div>";
         }
         ?>
 

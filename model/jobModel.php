@@ -121,6 +121,19 @@ function editJob(
 
 
 
+function fetchAllJobsForOneRecruiter($userId)
+{
+    $con = getConnection();
+    $sql = "select * from jobs where job_poster={$userId}";
+    $result = mysqli_query($con, $sql);
+    $jobs = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($jobs, $row);
+    }
+
+    return $jobs;
+}
+
 function fetchAllJobs()
 {
     $con = getConnection();
