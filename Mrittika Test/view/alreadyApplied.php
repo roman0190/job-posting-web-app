@@ -16,13 +16,16 @@
                 </h2>
                 <h5 align="right">
                     <a href="../../Alvi Test/view/nonadminHome.php">Home</a>|
+                    <a href="signUp.php">SignUp</a>
                 </h5>
             </th>
         </tr>
         <tr>
             <td>You have already applied to this job</td>
         </tr>
+        </form>
+            </td>
+        </tr>
     </table>
 </body>
-
 </html>
