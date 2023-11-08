@@ -28,12 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 return false;
             }
 
-
             if ($remember_me) {
                 setcookie('userId', $user['id'], time() + 86400 * 30, '/');
             } else {
                 session_start();
-                $_SESSION['user'] = $user;
+                $_SESSION['userId'] = $user['id'];
             }
 
             header('Location:../view/rulesAll.php');

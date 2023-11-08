@@ -1,24 +1,22 @@
 <?php
 // include_once('../model/db.php');
 require('../model/model.php');
-
+ 
+if (!isset($_REQUEST['id'])) {
+    //header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 
 $jobId = $_REQUEST['id'];
-
- if (empty($jobId)) {
-     //header('Location: ' . $_SERVER['HTTP_REFERER']);
- }
-
+ 
 $applicantId = 1;
 session_start();
 if (isset($_COOKIE['userId'])) {
-
+ 
     $applicantId = $_COOKIE['userId'];
-
-} elseif ($_SESSION['user']) {
-
-    // $applicantId = $_SESSION['user']['id'];
-
+} elseif (isset($_SESSION['userId'])) {
+ 
+    $applicantId = $_SESSION['userId'];
+ 
 }
 
 

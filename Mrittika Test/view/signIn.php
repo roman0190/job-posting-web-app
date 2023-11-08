@@ -29,7 +29,7 @@
                         <input type="checkbox" name="remember_me" id="remember_me">
                         <label for="remember_me">Remember Me</label><br><br>
                         <input type="submit" name="submit" value="Submit"><br><br>
-                        <a href="forgotPassword.php">Forgot Password</a><br>
+                        <a href="forgotPassword.php">Forgot Password?</a><br>
                     </fieldset>
                 </form>
             </td>
