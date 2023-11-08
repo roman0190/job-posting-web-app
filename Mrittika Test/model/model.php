@@ -92,28 +92,28 @@ function getUserById($username)
 //     }
 // }
 
-// function checkIfUserIsAdmin($username)
-// {
-//     $conn = getConnection();
-//     $username = mysqli_real_escape_string($conn, $username);
+function checkIfUserIsAdmin($username)
+{
+    $conn = getConnection();
+    $username = mysqli_real_escape_string($conn, $username);
 
-//     $sql = "SELECT user_type FROM users WHERE username = '$username'";
-//     $result = mysqli_query($conn, $sql);
+    $sql = "SELECT user_type FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
 
-//     if ($result) {
-//         $row = mysqli_fetch_assoc($result);
-//         $userType = $row['user_type'];
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $userType = $row['user_type'];
 
-//         // Check if the user type indicates admin (you may have a different admin role or permission mechanism)
-//         if ($userType === 'admin') {
-//             mysqli_close($conn);
-//             return true;
-//         }
-//     }
+        // Check if the user type indicates admin (you may have a different admin role or permission mechanism)
+        if ($userType === 'admin') {
+            mysqli_close($conn);
+            return true;
+        }
+    }
 
-//     mysqli_close($conn);
-//     return false;
-// }
+     mysqli_close($conn);
+     return false;
+ }
 
 // function getRules()
 // {

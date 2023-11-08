@@ -1,8 +1,7 @@
 <?php
-include_once("../controller/rulescheck.php");
-include_once("../model/rulesModel.php");
+include_once("../controller/rulesCheck.php");
+include_once("../model/model.php");
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -22,28 +21,23 @@ include_once("../model/rulesModel.php");
                     <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
                 </h2>
                 <h2 align="center">
-                    MARZ JOB SITE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+                    MARZ JOB SITE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </h2>
                 <h5 align="right">
-                <a href="termsAdmin.php">Terms of Services</a>
+                <a href="termsAll.php">Terms of Services</a> |
+                <a href="signIn.php">Sign out</a>
                 </h5>
             </th>
         </tr>
         <tr>
             <td>
-                <section>
-                    <h2 align="center">RULES and REGULATIONS <br> [ADMIN]</h2>
-                    <div style="text-align: center;">
+                <p align="center">
+                    
+                </p>
+                <h2 align="center">RULES and REGULATIONS</h2>
+                <div style="text-align: center;">
         <?php echo "<p style='font-size: 20px;'>$rule</p>"; ?>
     </div>
-        
-                    <form align="center" action="" method="post">
-                        <label for="newRule"></label>
-                        <textarea id="newRule" name="newRule" rows="5" cols="100"></textarea>
-                        <br>
-                        <input type="submit" value="Update Rule">
-                    </form>
-                </section>
             </td>
         </tr>
         <tr>
@@ -56,3 +50,5 @@ include_once("../model/rulesModel.php");
     </table>
 </body>
 </html>
+
+
