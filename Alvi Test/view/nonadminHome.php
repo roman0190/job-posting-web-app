@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// This is where you fetch the description from your database or any other source
+$description = "This is the updated description for non-admin users.";
+
+// Store the description in the session
+$_SESSION['site_description'] = $description;
+
+// Rest of your code for the admin home page
+// ...
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +23,13 @@
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
         <tr>
-            <td>
-                <header>
-                    <img src="logo.png" alt="MARZ JOB SITE Logo" style="max-width: 100px; float: left;">
-                    <h1 align="center">MARZ JOB SITE</h1>
-                   
-                </header>
-            </td>
+            <th colspan="2">
+                <h2 align="center">
+                <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
+                    MARZ JOB SITE
+                </h2>
+               
+            </th>
         </tr>
         <tr>
             <td>
@@ -26,6 +41,9 @@
                 </p>
                 
                 <h2 align="center">Welcome to MARZ JOB SITE</h2>
+                <h2>Description</h2>
+                   <p><?php echo $description; ?></p>
+               
                 <p>
                 
 
