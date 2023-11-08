@@ -1,61 +1,15 @@
 <?php
-if (isset($_POST['submit'])) {
-    $error_message = '';
-
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['phone_number'];
-    $address = $_POST['address'];
-    $cv_link = $_POST['cv_link'];
-    $education = $_POST['education'];
-    $skills = $_POST['skills'];
-    $experience = $_POST['experience'];
-    $availability = $_POST['availability'];
-
-    if ($first_name == '') {
-        $error_message .= "You must fill in your First Name! <br>";
-    }
-    if ($last_name == '') {
-        $error_message .= "You must fill in your Last Name! <br>";
-    }
-    if ($email == '') {
-        $error_message .= "You must fill in your Email! <br>";
-    }
-    if ($phone_number == '') {
-        $error_message .= "You must fill in your phone_number Number! <br>";
-    }
-    if ($address == '') {
-        $error_message .= "You must fill in your Address! <br>";
-    }
-    if ($cv_link == '') {
-        $error_message .= "You must provide a link to your CV/Resume! <br>";
-    }
-
-    if (empty($error_message)) {
-
-        setcookie('first_name', $first_name, time() + (86400 * 30), "/");
-        setcookie('last_name', $last_name, time() + (86400 * 30), "/");
-        setcookie('email', $email, time() + (86400 * 30), "/");
-        setcookie('phone_number', $phone_number, time() + (86400 * 30), "/");
-        setcookie('address', $address, time() + (86400 * 30), "/");
-        setcookie('cv_link', $cv_link, time() + (86400 * 30), "/");
-        setcookie('education', $education, time() + (86400 * 30), "/");
-        setcookie('skills', $skills, time() + (86400 * 30), "/");
-        setcookie('experience', $experience, time() + (86400 * 30), "/");
-        setcookie('availability', $availability, time() + (86400 * 30), "/");
-
-        header('location: rulesAll.php');
-    }
-}
+include_once("../controller/jobApplyCheck.php");
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Job Application</title>
 </head>
+
 <body>
     <table border="1" align="center">
         <tr>
@@ -71,9 +25,13 @@ if (isset($_POST['submit'])) {
         </tr>
         <tr>
             <td>
-                <form action="../controller/jobApplyCheck.php" method="post">
+                <form action="" method="post">
                     <fieldset>
-                        <legend><center><h3>Job Application</h3></center></legend>
+                        <legend>
+                            <center>
+                                <h3>Job Application</h3>
+                            </center>
+                        </legend>
                         <label for="first_name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="first_name" required><br><br>
                         <label for="last_name">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -105,6 +63,7 @@ if (isset($_POST['submit'])) {
                             <option value="part-time">Part-Time</option>
                             <option value="contract">Contract</option>
                         </select><br><br>
+                        <p style="color: red;"><?= $error_message ?></p>
                         <input type="submit" name="submit" value="Apply for Job">
                         <input type="reset" value="Reset">
                     </fieldset>
@@ -114,4 +73,3 @@ if (isset($_POST['submit'])) {
     </table>
 </body>
 </html>
-

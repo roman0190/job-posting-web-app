@@ -1,7 +1,33 @@
 <?php
-include_once('../model/db.php');
+// include_once('../model/db.php');
 require('../model/model.php');
 
+
+$jobId = $_REQUEST['id'];
+
+ if (empty($jobId)) {
+     //header('Location: ' . $_SERVER['HTTP_REFERER']);
+ }
+
+$applicantId = 1;
+session_start();
+if (isset($_COOKIE['userId'])) {
+
+    $applicantId = $_COOKIE['userId'];
+
+} elseif ($_SESSION['user']) {
+
+    // $applicantId = $_SESSION['user']['id'];
+
+}
+
+
+$validForApply = checkIfUserApplied($applicantId, $jobId);
+if (!$validForApply) {
+    header('Location: ../view/alreadyApplied.php');
+}
+
+$error_message = '';
 if (isset($_POST['submit'])) {
     $error_message = '';
 
@@ -16,28 +42,29 @@ if (isset($_POST['submit'])) {
     $experience = $_POST['experience'];
     $availability = $_POST['availability'];
 
-    if (empty($first_name)) {
+    if ($first_name == '') {
         $error_message .= "You must fill in your First Name! <br>";
     }
-    if (empty($last_name)) {
+    if ($last_name == '') {
         $error_message .= "You must fill in your Last Name! <br>";
     }
-    if (empty($email) || (strpos($email, '@') === false) || (strpos($email, '.') === false)) {
-        $error_message .= "You must provide a valid Email! <br>";
+    if ($email == '') {
+        $error_message .= "You must fill in your Email! <br>";
     }
-    if (empty($phone_number)) {
-        $error_message .= "You must fill in your phone Number! <br>";
+    if ($phone_number == '') {
+        $error_message .= "You must fill in your phone_number Number! <br>";
     }
-    if (empty($address)) {
+    if ($address == '') {
         $error_message .= "You must fill in your Address! <br>";
     }
-    if (empty($cv_link)) {
+    if ($cv_link == '') {
         $error_message .= "You must provide a link to your CV/Resume! <br>";
     }
 
     if (empty($error_message)) {
 
-        if (insertJobApplication($first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability)) {
+
+        if (insertJobApplication($applicantId, $first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability, $jobId)) {
             header('Location: ../view/rulesAll.php');
             exit();
         } else {
@@ -45,4 +72,3 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-?>

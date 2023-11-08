@@ -15,5 +15,3 @@ function getConnection(){
     $conn = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
     return $conn;
 }
-
-?>

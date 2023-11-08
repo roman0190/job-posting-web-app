@@ -1,9 +1,10 @@
 <?php
 
-   include_once('../model/db.php'); 
-   include_once('../model/model.php'); 
+include_once('../model/db.php');
+include_once('../model/model.php');
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $remember_me = isset($_POST['remember_me']);
@@ -14,9 +15,25 @@
         require_once('../model/model.php');
 
         if (userValidation($username, $password)) {
+            $con = getConnection();
+            $sql = "select * from users where username = '$username'";
+            $user = [];
+            $result = mysqli_query($con, $sql);
+            $count = mysqli_num_rows($result);
+            if ($count == 1) {
+                $row = mysqli_fetch_assoc($result);
+                $user = $row;
+            } else {
+                echo "Invalid User";
+                return false;
+            }
+
+
             if ($remember_me) {
-                setcookie('username', $username, time() + 86400 * 30, '/');
-                setcookie('password', $password, time() + 86400 * 30, '/');
+                setcookie('userId', $user['id'], time() + 86400 * 30, '/');
+            } else {
+                session_start();
+                $_SESSION['user'] = $user;
             }
 
             header('Location:../view/rulesAll.php');
@@ -26,4 +43,3 @@
         }
     }
 }
-?>
