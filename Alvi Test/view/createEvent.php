@@ -1,11 +1,7 @@
 <?php
-
-include_once("../controller/adminHomecheck.php");
-include_once("../model/adminHomemodel.php");
-
-
+include ('../controller/createCheck.php');
+include ('../model/db.php');
 ?>
- 
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,31 +26,22 @@ include_once("../model/adminHomemodel.php");
 
         <tr>
             <td>
-            <p align="center">
-                  
-                    <a href="terms.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="privacy.php">Privacy Policy</a>
-                </p>
-                
-                <header align="center">
-                    <h1>Welcome, Admin</h1>
-                </header>
-    
-               
-                <section>
-                    <h2>Description</h2>
-                    <?php
-                  
-                    echo "<p>$description</p>";
-                    ?>
-        
-                    <form action="" method="post">
-                        <label for="newDescription">Update Description:</label>
-                        <textarea id="newDescription" name="newDescription" rows="10" cols="150"></textarea>
-                        <br>
-                        <input type="submit" value="Save">
+                 <h1>Create New Event</h1>
+                 
+                    <form method="post" action="">
+                       
+                        <input type="text" name="title" placeholder="Title" required><br><br>
+                        <input type="text" name="location" placeholder="Location" required><br><br>
+                        <input type="date" name="date" required><br><br>
+                        <textarea name="description" placeholder="Description" required></textarea><br><br>
+                        <textarea name="contact_info" placeholder="Contact Information" required></textarea><br><br>
+                        <input type="submit" name="submit" value="Create Event"><br><br>
                     </form>
-                </section>
+
+                    <h4 align="center">
+                    <a href="adminEvent.php">Back to Admin Event Page</a><br><br>
+                
+                    </h4>
             </td>
         </tr>
        

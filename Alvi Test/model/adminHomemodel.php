@@ -1,17 +1,15 @@
 
 <?php
-require('db.php'); // Include the existing db.php to establish a database connection
+require('db.php'); 
  
 function getAdminDescription() {
-    $conn = getConnection(); // Use the getConnection function from db.php
- 
-    // Check the database connection
+    $conn = getConnection(); 
+    
     if (!$conn) {
         die("Database connection failed: " . mysqli_connect_error());
     }
  
-    // Fetch the description
-    $sql = "SELECT description FROM description_admin "; // Replace 'id' with your primary key
+    $sql = "SELECT description FROM description_admin "; 
     $result = mysqli_query($conn, $sql);
  
     if (mysqli_num_rows($result) > 0) {
@@ -25,9 +23,8 @@ function getAdminDescription() {
 }
  
 function updateAdminDescription($newDescription) {
-    $conn = getConnection(); // Use the getConnection function from db.php
- 
-    // Check the database connection
+    $conn = getConnection(); 
+    
     if (!$conn) {
         die("Database connection failed: " . mysqli_connect_error());
     }
@@ -39,7 +36,7 @@ function updateAdminDescription($newDescription) {
     $count = mysqli_num_rows($result);
  
     if ($count == 1) {
-        $sql = "UPDATE description_admin SET description = '$newDescription'"; // Replace 'id' with your primary key
+        $sql = "UPDATE description_admin SET description = '$newDescription'";
     } else {
         $sql = "insert into description_admin (description) values ('{$newDescription}')";
     }
@@ -65,7 +62,7 @@ function getSiteDescription() {
         die("Database connection failed: " . mysqli_connect_error());
     }
  
-    $sql = "SELECT description FROM description_admin WHERE id = 1"; // Replace 'id' with your primary key
+    $sql = "SELECT description FROM description_admin WHERE id = 1";
     $result = mysqli_query($conn, $sql);
  
     if (mysqli_num_rows($result) > 0) {

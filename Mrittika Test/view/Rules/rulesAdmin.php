@@ -9,7 +9,7 @@ include_once("../../model/rulesModel.php");
     <meta charset="UTF-8">
     <title>Rules and Regulations Page</title>
     <style>
-        table {width: 700px; height: 400px;}
+        table {width: 900px; height: 400px;}
         fieldset {padding: 50px;}
     </style>
 </head>
@@ -31,14 +31,15 @@ include_once("../../model/rulesModel.php");
         <tr>
             <td>
                 <section>
-                    <h2 align="center">RULES and REGULATIONS <br> [ADMIN]</h2>
-                    <div style="text-align: center;">
+                    <h3 align="center">RULES and REGULATIONS <br> [ADMIN]</h3>
+                    <fieldset>
+                    <div style="text-align: left;">
         <?php echo "<p style='font-size: 20px;'>$rule</p>"; ?>
-    </div>
+    </div></fieldset>
         
                     <form align="center" action="" method="post">
                         <label for="newRule"></label>
-                        <textarea id="newRule" name="newRule" rows="5" cols="100"></textarea>
+                        <textarea id="newRule" name="newRule" rows="5" cols="100" placeholder="Write your updated content here..."></textarea></textarea>
                         <br>
                         <input type="submit" value="Update Rule">
                     </form>

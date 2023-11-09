@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - MARZ JOB SITE</title>
+    <title>Rules and Regulations Page</title>
+    <style>
+        table {width: 900px; height: 400px;}
+        fieldset {padding: 50px;}
+    </style>
 </head>
 <body>
-    <table width="100%" border="1" cellspacing="0" cellpadding="20">
-    <tr>
-            <td>
-                <header>
-                    <img src="logo.png" alt="MARZ JOB SITE Logo" style="max-width: 100px; float: left;">
-                    <h1 align="center">MARZ JOB SITE</h1>
+    <table border="1" align="center" >
+        <tr>
+            <th colspan="2">
+                <h2 align="left">
+                    <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
+                </h2>
+                    <h1 align="center">MARZ JOB SITE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
                     <h4 align="right">
-                    <a href="nonadminHome.php">Home</a>
+                    <a href="../Rules/rulesAll.php">Rules and Regulations</a>
                     </h4>
                     
                 </header>
@@ -21,7 +25,7 @@
     </tr>
         <tr>
             <td>
-                <h1>TERMS of SERVICES</h1>
+                <h1 align="center">TERMS of SERVICES</h1>
 
                 <p>Welcome to MARZ JOB SITE! By accessing and using our services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.</p>
 
@@ -42,9 +46,6 @@
 
             <h2>6. Changes to Terms</h2>
             <p>MARZ JOB SITE may revise these terms at any time without notice. By using our website, you agree to be bound by the current version of these terms and conditions.</p>
-
-<h2>7. Contact Information</h2>
-<p>If you have any questions or concerns about these terms, please contact us at [Your Contact Information].</p>
             </td>
         </tr>
         <tr>

@@ -1,11 +1,8 @@
 <?php
-// Include necessary files and functions (adminHomemodel.php)
 
-$description = getSiteDescription(); // Fetch the description
+$description = getSiteDescription(); 
 
-// Start the session
 session_start();
 
-// Store the description in a session variable
 $_SESSION['site_description'] = $description;
 ?>
