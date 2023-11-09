@@ -35,3 +35,10 @@ body {
 .card:hover {
     background: #f0f0f0;
 }
+
+.form input {
+    margin: 10px 5px;
+}
+.form tr p {
+    margin-left: 10px;
+}
