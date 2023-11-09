@@ -9,7 +9,7 @@ include_once("../../model/rulesModel.php");
     <meta charset="UTF-8">
     <title>Rules and Regulations Page</title>
     <style>
-        table {width: 700px; height: 400px;}
+        table {width: 900px; height: 400px;}
         fieldset {padding: 50px;}
     </style>
 </head>
@@ -25,7 +25,8 @@ include_once("../../model/rulesModel.php");
                 </h2>
                 <h5 align="right">
                 <a href="../TermsOfServices/termsAll.php">Terms of Services</a> |
-                <a href="../Auth/signIn.php">Sign out</a>
+                <a href="../Auth/signIn.php">Sign out</a> |
+                <a href="../ManageProfile/viewProfile.php">Profile</a>
                 </h5>
             </th>
         </tr>
@@ -35,9 +36,10 @@ include_once("../../model/rulesModel.php");
                     
                 </p>
                 <h2 align="center">RULES and REGULATIONS</h2>
-                <div style="text-align: center;">
+                <fieldset>
+                <div style="text-align: left;">
         <?php echo "<p style='font-size: 20px;'>$rule</p>"; ?>
-    </div>
+    </div></fieldset>
             </td>
         </tr>
         <tr>

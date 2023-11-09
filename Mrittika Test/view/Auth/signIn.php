@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td height="150px" align="center">
-                <form method="post" action="../controller/signInCheck.php">
+                <form method="post" action="../../controller/signInCheck.php">
                     <fieldset>
                         <label><h2>SignIn</h2></label><hr>
                         <label for="username">Username:</label>

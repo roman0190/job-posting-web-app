@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Profile Page</title>
+    <title>Change Password</title>
     <style>
         table {
             width: 400px;
@@ -39,54 +39,39 @@
         </tr>
         <tr>
             <td colspan="2">
-                <form action="editProfile.php" method="post">
+                <form action="" method="post">
                     <table>
                         <tr>
-                            <th colspan="2"><h2 align="center">Profile Information</h2></th>
+                            <th colspan="2"><h2 align="center">Change Password</h2></th>
                         </tr>
                         <tr>
                             <td>
-                                <label for="name">Name:</label><hr>
+                                <label for="old-password">Old Password:</label>
                             </td>
                             <td>
-                                <text id="name">John Doe</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="email">Email:</label><hr>
-                            </td>
-                            <td>
-                                <text id="email">john@example.com</text><hr>
+                                <input type="password" id="old-password" name="old-password" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="gender">Gender:</label><hr>
+                                <label for="new-password">New Password:</label>
                             </td>
                             <td>
-                                <text id="gender">Male</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="dob">Date of Birth:</label><hr>
-                            </td>
-                            <td>
-                                <text id="dob">01/01/1990</text><hr>
+                                <input type="password" id="new-password" name="new-password" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="profile-picture">Profile Picture:</label><hr>
+                                <label for="confirm-new-password">Confirm New Password:</label>
                             </td>
                             <td>
-                                <img src="propic.jpg" alt="Profile Picture" width="100" height="100">
+                                <input type="password" id="confirm-new-password" name="confirm-new-password" required>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button type="submit">Edit Profile</button>
+                                <button type="submit">Update</button>
+                                <a href="viewProfile.php"><button type="button">Back to Profile</button></a>
                             </td>
                         </tr>
                     </table>
