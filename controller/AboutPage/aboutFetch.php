@@ -1,8 +1,8 @@
 <?php
-if (!isset($_COOKIE['user'])) {
+if (!isset($_COOKIE['auth'])) {
     header('location: ../../view/login');
 }
-if (isset($_COOKIE['user']) && $_COOKIE['user'] == "admin") {
+if (isset($_COOKIE['userType']) && $_COOKIE['userType'] == "admin") {
     header('location: ../../view/AboutPage/aboutAdmin.php');
 }
 
