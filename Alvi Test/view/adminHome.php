@@ -2,8 +2,6 @@
 // Include necessary files and functions
 include_once("../controller/adminHomecheck.php");
 include_once("../model/adminHomemodel.php");
-$description = getAdminDescription(); // Fetch the description
- // Fetch the description
 
 
 ?>

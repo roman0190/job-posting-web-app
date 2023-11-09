@@ -1,16 +1,10 @@
 <?php
-session_start();
+// Include necessary files and functions
+include_once("../controller/adminHomecheck.php");
+include_once("../model/adminHomemodel.php");
 
-// This is where you fetch the description from your database or any other source
-$description = "This is the updated description for non-admin users.";
 
-// Store the description in the session
-$_SESSION['site_description'] = $description;
-
-// Rest of your code for the admin home page
-// ...
 ?>
-
 
 
 <!DOCTYPE html>
@@ -44,23 +38,7 @@ $_SESSION['site_description'] = $description;
                 <h2>Description</h2>
                    <p><?php echo $description; ?></p>
                
-                <p>
-                
-
-"MARZ JOB SITE: Your Path to Professional Success
-
-Welcome to MARZ JOB SITE, where we're dedicated to guiding you towards a brighter future. In a world filled with diverse career choices, we bring you a curated selection of opportunities, tailored to your skills and aspirations.
-
-Our mission is straightforward yet powerful: to bridge the gap between talent and opportunity. Whether you're an experienced professional seeking new challenges or a fresh graduate entering the corporate world, we've got your back.
-
-At MARZ JOB SITE, we offer a unique experience. Our advanced algorithms seamlessly connect candidates with their ideal job postings. We understand that job hunting can be daunting, so we've designed an intuitive platform to make your journey smooth.
-
-For employers, MARZ JOB SITE streamlines the recruitment process. Post job openings and watch a pool of talented candidates eager to showcase their skills. Our platform includes candidate screening, communication tools, and profile verification, ensuring you find the perfect fit.
-
-MARZ JOB SITE is more than just a job board; it's a thriving community where careers are built, aspirations achieved, and success stories created.
-
-Your path to professional excellence starts here at MARZ JOB SITE. Explore, dream, connect, and achieve your career goals with unwavering support. Welcome to MARZ JOB SITE – where dreams take flight, and your future is just a click away."
-                </p>
+             
             </td>
         </tr>
         

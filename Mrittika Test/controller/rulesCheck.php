@@ -1,28 +1,16 @@
 <?php
-require_once('../model/db.php');
-require_once('../model/model.php'); // Include the model functions
+require_once('../../model/rulesModel.php');
 
-// Check if the user is an admin (you'll need to implement your own logic)
-$isAdmin = checkIfUserIsAdmin();
+if (isset($_POST['newRule'])) {
+    $newRule = $_POST['newRule'];
 
-if ($isAdmin) {
-    // Admin is logged in, display edit and save buttons
-    if (isset($_POST['edit_rule'])) {
-        // Edit button clicked, display the edit form
-        displayEditForm();
-    } elseif (isset($_POST['save_changes'])) {
-        // Save changes button clicked, update the rule in the database
-        $ruleId = $_POST['rule_id'];
-        $newRuleText = $_POST['new_rule_text'];
-        updateRule($ruleId, $newRuleText);
-        // Redirect or display a success message
-    } else {
-        // Display the rules with the edit button
-        displayRules(true);
+    if (updateRule($newRule)) {
+        header('Location: rulesAdmin.php');
+        exit();
     }
-} else {
-    // Regular user is logged in, display rules without edit button
-    displayRules(false);
 }
 
+$rule = "This is the admin rule page. You can update this Rule to provide important information to your users.";
+
+$rule = getRule();
 ?>

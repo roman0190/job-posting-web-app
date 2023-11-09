@@ -1,6 +1,6 @@
 <?php
 // include_once('../model/db.php');
-require('../model/model.php');
+require('../../model/jobApplyModel.php');
  
 if (!isset($_REQUEST['id'])) {
     //header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 
 
         if (insertJobApplication($applicantId, $first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability, $jobId)) {
-            header('Location: ../view/rulesAll.php');
+            header('Location: viewAppliedJobs.php');
             exit();
         } else {
             $error_message = "Error occurred while submitting the job application.";

@@ -1,5 +1,5 @@
 <?php
-include_once("../controller/jobApplyCheck.php");
+include_once("../../controller/jobApplyCheck.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@ include_once("../controller/jobApplyCheck.php");
                 </h2>
                 <h5 align="right">
                     <a href="../../Alvi Test/view/nonadminHome.php">Home</a>|
+                    <a href="signIn.php">Sign out</a>
                 </h5>
             </th>
         </tr>
@@ -27,11 +28,11 @@ include_once("../controller/jobApplyCheck.php");
             <td>
                 <form action="" method="post">
                     <fieldset>
-                        <legend>
+                        <label>
                             <center>
                                 <h3>Job Application</h3>
                             </center>
-                        </legend>
+                        </label>
                         <label for="first_name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="first_name" required><br><br>
                         <label for="last_name">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -46,7 +47,7 @@ include_once("../controller/jobApplyCheck.php");
                         <input type="text" name="cv_link" required><br><br>
                         <label for="education">Education:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="education" required><br><br>
-                        <label for="skills">Skills <br>(3 skills, separate with commas):</label>
+                        <label for="skills">Skills <br>(Each skill is separated with commas):</label>
                         <input type="text" name="skills" required><br><br>
                         <label for="experience">Work Experience:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <select name="experience">
@@ -62,7 +63,7 @@ include_once("../controller/jobApplyCheck.php");
                             <option value="full-time">Full-Time</option>
                             <option value="part-time">Part-Time</option>
                             <option value="contract">Contract</option>
-                        </select><br><br>
+                        </select><br><br><hr>
                         <p style="color: red;"><?= $error_message ?></p>
                         <input type="submit" name="submit" value="Apply for Job">
                         <input type="reset" value="Reset">
