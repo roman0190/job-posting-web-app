@@ -53,7 +53,7 @@ if (isset($_REQUEST['submit'])) {
 
     if ($name !== '' && $email !== '' && $username !== '' && $password !== '' && $confirm_pass !== '' && $confirm_pass == $password && $gender !== '' && $date_of_birth !== '') {
 
-        require('../model/model.php'); // Include the model.php file for 
+        require('../model/model.php'); /
         $error_message = insertUser($name, $email, $username, $password, $user_type, $gender, $date_of_birth);
     }
 }
