@@ -146,6 +146,65 @@ function fetchAllJobs()
 
     return $jobs;
 }
+function fetchAllJobsWithFilters(
+    $search,
+    $category,
+    $subCategory,
+    $skills,
+    $experience,
+    $type,
+    $location
+) {
+
+
+
+
+
+    $con = getConnection();
+    $sql = "select * from jobs where ";
+
+    $andString = "";
+
+    if ($search) {
+        $sql .= "( title LIKE '%$search%' or job_position LIKE '%$search%' or job_description LIKE '%$search%' or job_location LIKE '%$search%' or job_type LIKE '%$search%' or job_responsibilities LIKE '%$search%')";
+        $andString = " AND ";
+    }
+    if ($category) {
+        $sql .= " $andString category = '$category'";
+        $andString = " AND ";
+    }
+
+    if ($subCategory) {
+        $sql .= " $andString sub_category = '$subCategory'";
+        $andString = " AND ";
+    }
+    if ($skills) {
+        $sql .= " $andString required_skills = '$skills'";
+        $andString = " AND ";
+    }
+    if ($experience) {
+        $sql .= " $andString required_experience = '$experience'";
+        $andString = " AND ";
+    }
+    if ($type) {
+        $sql .= " $andString job_type = '$type'";
+        $andString = " AND ";
+    }
+    if ($location) {
+        $sql .= " $andString job_location = '$location'";
+        $andString = " AND ";
+    }
+
+
+
+    $result = mysqli_query($con, $sql);
+    $jobs = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($jobs, $row);
+    }
+
+    return $jobs;
+}
 
 
 function fetchOneJob($id)

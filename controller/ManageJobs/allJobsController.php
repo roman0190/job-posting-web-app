@@ -1,7 +1,6 @@
 <?php
 include_once("../../model/jobModel.php");
-// $userId = $_COOKIE['user'];
-$userId = 1;
+$userId = $_COOKIE['userId'];
 
 $jobs = fetchAllJobsForOneRecruiter($userId);
 
