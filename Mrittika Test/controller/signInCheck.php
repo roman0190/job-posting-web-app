@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['userId'] = $user['id'];
             }
 
-            header('Location:../view/rules.php');
+            header('Location:../view/Rules/rulesAll.php');
             exit();
         } else {
             $error_message = "Invalid username or password.";

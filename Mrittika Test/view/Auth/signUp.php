@@ -1,5 +1,5 @@
 <?php
-    include_once('../controller/signUpCheck.php');
+    include_once('../../controller/signUpCheck.php');
 ?>
 
 <!DOCTYPE html>

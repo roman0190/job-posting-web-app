@@ -22,7 +22,7 @@ function getRule() {
     }
 }
  
-    function updateRule($newRule) {
+function updateRule($newRule) {
     $conn = getConnection();
 
     if (!$conn) {

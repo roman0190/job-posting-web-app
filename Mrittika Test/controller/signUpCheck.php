@@ -1,9 +1,9 @@
 <?php
 
-include_once('../model/db.php'); 
+include_once('../../model/db.php'); 
 
 if (isset($_POST['submit'])) {
-    require('../model/model.php');
+    require('../../model/model.php');
 
     $error_message = '';
 

@@ -38,7 +38,10 @@ events -> id, title, description, location, date, start_time , end_time, interes
 
 interested -> id, name, user_id, email, event_id
 
-
+$sql = "SELECT * FROM applications
+            INNER JOIN jobs ON applications.job_id = jobs.id
+            WHERE applications.applicant_id = '$applicantId'";
+    $result = mysqli_query($conn, $sql);
 
 
 

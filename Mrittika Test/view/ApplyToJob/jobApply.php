@@ -1,5 +1,5 @@
 <?php
-include_once("../controller/jobApplyCheck.php");
+include_once("../../controller/jobApplyCheck.php");
 ?>
 
 <!DOCTYPE html>

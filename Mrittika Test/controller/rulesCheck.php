@@ -1,11 +1,11 @@
 <?php
-require_once('../model/rulesModel.php');
+require_once('../../model/rulesModel.php');
 
 if (isset($_POST['newRule'])) {
     $newRule = $_POST['newRule'];
 
     if (updateRule($newRule)) {
-        header('Location: ../view/rulesAdmin.php');
+        header('Location: rulesAdmin.php');
         exit();
     }
 }
