@@ -17,7 +17,7 @@ $user_type = $_SESSION['user_type'];
     } else{
 
         header('location: ../view/signin.php');
-
+        
     }
 
 ?>

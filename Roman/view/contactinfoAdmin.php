@@ -1,10 +1,11 @@
 <?php 
 session_start();
 require('../controls/sessionCheck_dash.php');
-require_once('../model/userModel.php');
+require_once('../model/contactinfoModel.php');
+require('components/header.php');
+
 $logInfo = $_SESSION['logInfo'];
 $headname = 'Contact Information Update';
-require('components/dashboardDesign.php');
 $id = 1;
 $view=contactinfoView($id);
 $email= $view['email'];

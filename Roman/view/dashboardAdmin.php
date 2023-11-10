@@ -7,13 +7,13 @@ $values = [
     '<a href=".php">Reported job posts</a>',
     '<a href="../view/.php">Reported applicants</a>',
     '<a href="../view/.php">Post Event</a>',
-    '<a href="../view/.php">Edit privacy policy</a>',
-    '<a href="../view/.php">View Notification</a>',
-    '<a href="contactinfoAdmin.php">Update Contact Information</a>',
+    '<a href=" policyEdit.php">Edit privacy policy</a>',
+    '<a href="notifications.php">View Notification</a>',
+    '<a href=" contactinfoAdmin.php">Update Contact Information</a>',
     '<a href="../view/.php">Edit Rules and regulation</a>',
     '<a href="../view/.php">Edit FQA</a>',
     '<a href="../view/.php">Edit Terms of Services </a>',
-    '<a href="../view/.php">Chat</a>',
+    '<a href=" chatPage.php">Chat</a>',
 ];
 
 ?>

@@ -31,7 +31,7 @@ if(isset($_REQUEST["submit"])){
             $_SESSION['flag']=true;
             header('location: dashboardCheck.php');
             if ($remember_me) {
-                setcookie('remember_me',$remember_me, time() + (60 * 60 * 24 * 5), "/"); // Cookie set for 5
+                setcookie('remember_me',$remember_me, time() + (60), "/"); // Cookie set for 10
             }
             
          } else{

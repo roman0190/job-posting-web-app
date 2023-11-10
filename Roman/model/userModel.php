@@ -4,14 +4,20 @@
         $con = getConnection();
         $sql = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}'";
         $result = mysqli_query($con, $sql);
+
     
         if (mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
             $user_type = $row['user_type']; 
+            $name=$row['name'];
 
             session_start();
             $_SESSION['user_type'] = $user_type;
-    
+
+            $text = "A/An " . $user_type . " Signed in.";
+            $sql_notification = "INSERT INTO notifications (text) VALUES ('$text')";
+            mysqli_query($con, $sql_notification);
+
             return true;
         } else {
             return false;
@@ -38,9 +44,15 @@
     
         $sql = "INSERT INTO users (username, name, email, gender, dob, password, user_type) 
                 VALUES ('$username', '$name', '$email', '$gender', '$dob', '$password', '$user_type')";
+
+       
     
         if (mysqli_query($con, $sql)) {
+            $text1 = "  " . $name . " created an account as a/an ".$user_type." ";
+            $sql_notification = "INSERT INTO notifications (text) VALUES ('$text1')";
+            mysqli_query($con, $sql_notification);
             return true;
+            
         } else {
             return false;
         }
@@ -105,35 +117,7 @@
         }
     }
 
-    function contactinfoView($id) {
-        $con = getConnection();
-    
-            $sqlFetch = "SELECT * FROM contact_info WHERE id = '$id'"; 
-            $result = mysqli_query($con, $sqlFetch);
-    
-            if ($result && mysqli_num_rows($result) > 0) {
-                $contactInfo = mysqli_fetch_assoc($result);
-                return $contactInfo; 
-            } else {
-                return "No Information Found"; 
-            }
-       
-    }
-    
-    function contactInfoUpdate($id, $email, $phoneNumber, $link) {
-        $con = getConnection();
-    
-        
-        $sql = "UPDATE contact_info 
-                SET email = '$email', phone_number = '$phoneNumber', link = '$link'
-                WHERE id = $id";
-    
-        if (mysqli_query($con, $sql)) {
-            return "Contact Information Updated Successfully"; 
-        } else {
-            return false; 
-        }
-    }
+   
 
     function updatePassword($email, $new_password) {
         $con = getConnection();
@@ -147,6 +131,7 @@
             return false; 
         }
     }
-    
+
+
 
 ?>

@@ -11,11 +11,12 @@
                 '<a href="../view/.php">Change Profile Photo</a>',
                 '<a href="../view/.php">Change Password</a>',
                 '<a href="../view/.php">Notification</a>',
-                '<a href="contactinfoView.php.php">Contact Information</a>',
+                '<a href="contactinfoView.php">Contact Information</a>',
+                '<a href="policyView.php">View Privacy Policy</a>',
                 '<a href="../view/.php">Rules and regulation</a>',
                 '<a href="../view/.php">FQA</a>',
                 '<a href="../view/.php">Terms of Services </a>',
-                '<a href="../view/.php">Chat</a>',
+                '<a href="chatPage.php">Chat</a>',
             ];
 ?>
 
