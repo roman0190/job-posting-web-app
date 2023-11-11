@@ -22,7 +22,7 @@ if (isset($_COOKIE['userId'])) {
 
 $validForApply = checkIfUserApplied($applicantId, $jobId);
 if (!$validForApply) {
-    header('Location: ../view/alreadyApplied.php');
+    header('Location: alreadyApplied.php');
 }
 
 $error_message = '';

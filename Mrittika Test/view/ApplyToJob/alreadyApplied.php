@@ -15,8 +15,8 @@
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="../../Alvi Test/view/nonadminHome.php">Home</a>|
-                    <a href="signUp.php">SignUp</a>
+                    <a href="../../../Alvi Test/view/nonadminHome.php">Home</a>|
+                    <a href="../Auth/signUp.php">SignUp</a>
                 </h5>
             </th>
         </tr>

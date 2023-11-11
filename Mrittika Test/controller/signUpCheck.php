@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
     if (empty($error_message)) {
         if (insertUser($name, $email, $username, $password, $user_type, $gender, $date_of_birth)) {
-            header('Location: ../view/signIn.php');
+            header('Location: signIn.php');
             exit();
         } else {
             $error_message = "Error occurred while registering.";

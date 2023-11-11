@@ -27,8 +27,9 @@
             <td>
                 <h1 align="center">TERMS of SERVICES</h1>
 
+                
                 <p>Welcome to MARZ JOB SITE! By accessing and using our services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.</p>
-
+                <fieldset>
             <h2>1. Acceptance of Terms</h2>
             <p>By using our services, you agree to be bound by these terms. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
 
@@ -46,7 +47,8 @@
 
             <h2>6. Changes to Terms</h2>
             <p>MARZ JOB SITE may revise these terms at any time without notice. By using our website, you agree to be bound by the current version of these terms and conditions.</p>
-            </td>
+            </fieldset>    
+        </td>
         </tr>
         <tr>
             <td>

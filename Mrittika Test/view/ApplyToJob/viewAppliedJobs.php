@@ -42,6 +42,6 @@ $applications = getAppliedJobs($applicantId);
         }
         ?>
     </div>
-    <a href="../../Alvi Test/view/nonadminHome.php">Go Back</a>
+    <a href="jobApply.php">Go Back</a>
 </body>
 </html>
