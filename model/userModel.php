@@ -18,21 +18,21 @@ function login($username, $password, $remember)
         if ($remember) {
             $remembering_timespan = time() + 7 * 24 * 60 * 60;
             setcookie('userId', $userId,  $remembering_timespan);
-            setcookie('user_type', $userType,  $remembering_timespan);
+            setcookie('userType', $userType,  $remembering_timespan);
             setcookie('auth', true,  $remembering_timespan);
         } else {
             session_start();
             $_SESSION['userId'] = $userId;
-            $_SESSION['user_type'] = $userType;
+            $_SESSION['userType'] = $userType;
             $_SESSION['auth'] = "true";
         }
 
         if ($userType == 'admin') {
-            header('location: ../views/admin_home.php');
+            header('location: admin_home.php');
         } elseif ($userType == 'recruiter') {
-            header('location: ../views/recruiter_home.php');
+            header('location: recruiter_home.php');
         } else {
-            header('location: ../views/applicant_home.php');
+            header('location: applicant_home.php');
         }
     } else {
 
@@ -91,6 +91,7 @@ function register(
 
 
     if ($result) {
+        login($username, $password, "");
         header('location: login.php');
     } else {
 

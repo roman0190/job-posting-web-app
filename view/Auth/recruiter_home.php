@@ -1,7 +1,5 @@
 <?php
 
-
-
 $userId = "";
 $userType = "";
 if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['userType'])) {
@@ -21,24 +19,22 @@ if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['user
 if ($userType == "applicant") {
 	header('location: applicant_home.php');
 }
-if ($userType == "recruiter") {
-	header('location: recruiter_home.php');
+if ($userType == "admin") {
+	header('location: admin_home.php');
 }
-
 
 ?>
 <html>
 
 <head>
-	<title>Admin Home</title>
+	<title>Recruiter Home</title>
 	<link rel="stylesheet" href="../../assets/style.css">
 </head>
 
 <body>
 	<?php include_once("../components/header.php") ?>
 	<center>
-		<h1>Welcome Admin!</h1>
-
+		<h1>Welcome Recruiter!</h1>
 		<a href="../BrowseJobs/browseAllJobs.php">Browse All Jobs + Job Filter [applicant][Admin]</a>
 		<br />
 		<br />

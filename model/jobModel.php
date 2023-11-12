@@ -18,12 +18,13 @@ function postJob(
     $description,
     $responsibilities,
     $tags,
-    $deadline
+    $deadline,
+    $jobPoster
 ) {
 
     $postTime = date("d/m/Y, h:i:sa");
     // $poster=$_COOKIE['user']['id'];
-    $poster = 1;
+    $poster = $jobPoster;
     $con = getConnection();
 
 

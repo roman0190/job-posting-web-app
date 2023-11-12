@@ -1,5 +1,5 @@
 <?php
-include_once("../controls/logout.php")
+include_once("../../controller/Auth/logout.php")
 
 ?><html>
 

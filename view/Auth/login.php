@@ -34,7 +34,7 @@ include_once("../../controller/Auth/loginCheck.php");
 
 				<tr>
 					<td><label for="password">Password</label> </td>
-					<td> : <input type="text" name="password" value="<?php echo $password ?>" </td>
+					<td> : <input type="password" name="password" value="<?php echo $password ?>" </td>
 				</tr>
 				<tr>
 					<td colspan="2">

@@ -64,7 +64,7 @@ include_once("../../controller/Auth/registrationCheck.php");
                 </tr>
                 <tr>
                     <td><label for="password">Password</label> </td>
-                    <td> : <input type="text" name="password" value="<?php echo $password ?>" </td>
+                    <td> : <input type="password" name="password" value="<?php echo $password ?>" </td>
                 </tr>
                 <tr>
                     <td>
@@ -74,7 +74,7 @@ include_once("../../controller/Auth/registrationCheck.php");
                 </tr>
                 <tr>
                     <td><label for="confirmPassword">Confirm Password</label> </td>
-                    <td> : <input type="text" name="confirmPassword" value="<?php echo $confirmPassword ?>" </td>
+                    <td> : <input type="password" name="confirmPassword" value="<?php echo $confirmPassword ?>" </td>
                 </tr>
                 <tr>
                     <td>
