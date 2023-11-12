@@ -27,13 +27,7 @@ function login($username, $password, $remember)
             $_SESSION['auth'] = "true";
         }
 
-        if ($userType == 'admin') {
-            header('location: admin_home.php');
-        } elseif ($userType == 'recruiter') {
-            header('location: recruiter_home.php');
-        } else {
-            header('location: applicant_home.php');
-        }
+        header('location: homePage.php');
     } else {
 
         return "Invalid username or password";
@@ -149,8 +143,52 @@ function getAllUser()
 
 function updateUser($user)
 {
+
+
+    $con = getConnection();
+
+
+    $id = $user['id'];
+    $username = $user['username'];
+    $email = $user['email'];
+
+    $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
+
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function deleteUser($id)
 {
+
+    $con = getConnection();
+    $sql = "DELETE FROM users WHERE id = $id";
+
+    if (mysqli_query($con, $sql)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getUserType($username)
+{
+    $con = getConnection();
+    $sql = "SELECT user_type FROM users WHERE username = '{$username}'";
+    $result = mysqli_query($con, $sql);
+
+    if ($result) {
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user) {
+            return $user['user_type']; // Return the user type
+        } else {
+            return false; // User not found
+        }
+    } else {
+        return false; // Error in the query
+    }
 }
