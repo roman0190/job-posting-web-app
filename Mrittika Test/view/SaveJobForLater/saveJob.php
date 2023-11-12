@@ -106,15 +106,13 @@
                                 <p id="jobDescription">
                                     We are seeking a highly skilled and motivated Software Developer to join our dynamic team.
                                     As a Full Stack Developer, you will be responsible for designing, developing, and maintaining
-                                    web applications. The ideal candidate should have a strong understanding of front-end and
-                                    back-end technologies and be able to work collaboratively in a fast-paced environment.
+                                    web applications.
 
                                     <br><br>
 
                                     <b>Key Responsibilities:</b>
                                     <ul>
                                         <li>Develop and maintain web applications using PHP, JavaScript, and MySQL</li>
-                                        <li>Collaborate with cross-functional teams to define, design, and ship new features</li>
                                         <li>Perform code reviews to ensure the code quality and adherence to coding standards</li>
                                         <li>Troubleshoot, debug, and optimize code for performance</li>
                                         <li>Stay up-to-date with emerging technologies and industry trends</li>
