@@ -44,6 +44,9 @@ if ($userType == "admin") {
 		<a href="../AboutPage/about.php">About Page</a>
 		<br />
 		<br />
+		<a href="../FAQ/faq.php">FAQ</a>
+		<br />
+		<br />
 		<a href="logout.php">Logout</a>
 	</center>
 	<?php include_once("../components/footer.php") ?>

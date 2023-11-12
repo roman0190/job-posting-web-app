@@ -17,9 +17,9 @@ function login($username, $password, $remember)
 
         if ($remember) {
             $remembering_timespan = time() + 7 * 24 * 60 * 60;
-            setcookie('userId', $userId,  $remembering_timespan);
-            setcookie('userType', $userType,  $remembering_timespan);
-            setcookie('auth', true,  $remembering_timespan);
+            setcookie('userId', $userId,  $remembering_timespan, "/");
+            setcookie('userType', $userType,  $remembering_timespan, "/");
+            setcookie('auth', true,  $remembering_timespan, "/");
         } else {
             session_start();
             $_SESSION['userId'] = $userId;
@@ -98,12 +98,7 @@ function register(
         return "Database error!";
     }
 }
-$arr1 = [1, 2, 3];
-$session = [];
-$session[0] = "abc";
-$session[1] = 23;
-$session[2] = 143;
-$session[2] = $arr1;
+
 
 function getUser($id)
 {

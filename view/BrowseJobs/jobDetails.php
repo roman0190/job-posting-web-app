@@ -35,7 +35,7 @@ include_once("../../controller/BrowseJobs/jobDetailsController.php");
         <p> <?= $job['job_description'] ?> </p>
 
         <br>
-        <p><a href='../ApplyToJob/apply.php?id=<?= $job['id'] ?>'>Apply</a> |
+        <p><a href='../../Mrittika Test/view/ApplyToJob/jobApply.php?id=<?= $job['id'] ?>'>Apply</a> |
             <a href='../Report/reportJob.php?id=<?= $job['id'] ?>'>Report</a>
         </p>
 

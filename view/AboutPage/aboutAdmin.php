@@ -8,16 +8,27 @@ include_once('../../controller/AboutPage/aboutAdminController.php');
 
 
 <html>
-<center>
 
-    <h1>About Us</h1>
-    <p><?= $about ?></p>
+<head>
+    <title>Applicant Home</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
 
-    <form method="POST" action="" enctype="">
-        <h4>Edit to update about page</h4>
-        <textarea name="about" rows="20" name="about" value="<?= $about ?>"></textarea><br>
-        <input type="submit" name="submit" value="submit" />
-    </form>
-</center>
+<body>
+    <?php include_once("../components/header.php") ?>
+    <center>
+
+        <h1>About Us</h1>
+        <p><?= $about ?></p>
+
+        <form method="POST" action="" enctype="">
+            <h4>Edit to update about page</h4>
+            <textarea name="about" rows="20" name="about" value="<?= $about ?>"></textarea><br>
+            <input type="submit" name="submit" value="submit" />
+        </form>
+    </center>
+
+    <?php include_once("../components/footer.php") ?>
+</body>
 
 </html>

@@ -5,8 +5,8 @@ session_start();
 unset($_SESSION['auth']);
 unset($_SESSION['userId']);
 unset($_SESSION['userType']);
-setcookie('auth', "",  -1);
-setcookie('userId', "",  -1);
-setcookie('userType', "",  -1);
+setcookie('auth', "",  time() - 3600);
+setcookie('userId', "",  time() - 3600);
+setcookie('userType', "",  time() - 3600);
 
 header('location: login.php');
