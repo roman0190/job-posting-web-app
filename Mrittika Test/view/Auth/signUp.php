@@ -57,10 +57,12 @@
                             <input type="radio" name="gender" value="Other" required> Other<br><br>
                             <label>&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth</label>
                             <input type="date" name="dob" required><br><br><hr>
+                        <p style="color: red;"> <?php echo $error_message;?></p>
                         <input type="submit" name="submit" value="Submit">
                         <input type="reset" value="Reset"><hr>
     </fieldset>
                 </form>
+                
             </td>
         </tr>
     </table>

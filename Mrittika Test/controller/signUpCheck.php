@@ -1,7 +1,7 @@
 <?php
 
 include_once('../../model/db.php'); 
-
+$error_message = '';
 if (isset($_POST['submit'])) {
     require('../../model/model.php');
 
@@ -36,6 +36,9 @@ if (isset($_POST['submit'])) {
 
     if (empty($password)) {
         $error_message .= "You must fill in your Password! <br>";
+    }
+    if (strlen($password)<6) {
+        $error_message .= "There must be at least 6 characters in the password! <br>";
     }
 
     if ($password !== $confirm_pass) {
