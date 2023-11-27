@@ -38,6 +38,7 @@ $deadline = "";
 $error = "";
 
 if (isset($_REQUEST['submit'])) {
+
     $error = "";
     $title = $_REQUEST['title'];
     $category = $_REQUEST['category'];
@@ -52,7 +53,6 @@ if (isset($_REQUEST['submit'])) {
     $responsibilities = $_REQUEST['responsibilities'];
     $tags = $_REQUEST['tags'];
     $deadline = $_REQUEST['deadline'];
-
 
 
     if (
@@ -70,8 +70,9 @@ if (isset($_REQUEST['submit'])) {
         !$tags ||
         !$deadline
     ) {
-        $error = "Please complete all the fields";
+        echo "Please complete all the fields";
     } else {
+
         postJob(
             $title,
             $category,
@@ -90,8 +91,3 @@ if (isset($_REQUEST['submit'])) {
         );
     }
 }
-
-?>
-<html>
-
-</html>

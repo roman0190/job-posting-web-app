@@ -22,6 +22,7 @@ function postJob(
     $jobPoster
 ) {
 
+
     $postTime = date("d/m/Y, h:i:sa");
     // $poster=$_COOKIE['user']['id'];
     $poster = $jobPoster;
@@ -68,9 +69,9 @@ function postJob(
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        header("Location: ./myJobs.php");
+        echo "success!";
     } else {
-        echo "error";
+        echo "error creating job!";
     }
 }
 function editJob(
@@ -112,9 +113,9 @@ function editJob(
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        header("Location: ./myJobs.php");
+        echo "success!";
     } else {
-        echo "error";
+        echo "error updating job!";
     }
 }
 
@@ -222,8 +223,3 @@ function fetchOneJob($id)
         return false;
     }
 }
-
-?>
-<html>
-
-</html>

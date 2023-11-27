@@ -20,21 +20,28 @@ include_once("../../controller/ManageJobs/editJobController.php");
 
 
         <center>
+            <h3>Edit Job</h3>
             <form method="POST" action="" enctype="">
 
                 <table>
+                    <input id="id" type="hidden" name="title" value="<?= $_GET['id'] ?>">
                     <tr>
                         <td><label for="title">title</label></td>
-                        <td><input type="text" name="title" value="<?= $title ?>"></td>
+                        <td><input id="title" type="text" name="title" value="<?= $title ?>"></td>
                     </tr>
                     <tr>
-                        <td><label for="category">category</label></td>
-                        <td><select name="category">
+                        <td><label for="category">Category</label></td>
+                        <td>
+                            <select id="category" name="category">
                                 <option>-</option>
-                                <option value="software engineering" <?= $category == "software engineering" ? 'selected="selected"' : "" ?>>Software engineering</option>
-                                <option value="data science" <?= $category == "data science" ? 'selected="selected"' : "" ?>>Data Science</option>
-                            </select> </td>
+
+
+                                <option value="software engineering" <?= $category == "software engineering" ? 'selected="selected"' : "" ?>>Software Engineering</option>
+                                <option value="Data Science" <?= $category == "Data Science" ? 'selected="selected"' : "" ?>>Data Science</option>
+                            </select>
+                        </td>
                     </tr>
+
 
 
 
@@ -44,45 +51,37 @@ include_once("../../controller/ManageJobs/editJobController.php");
                         <td><label for="subCategory">subCategory</label></td>
                         <td>
 
-                            <select name="subCategory">
-                                <option value="">-</option>
-                                <?php
-                                if ($category === 'software engineering') {
-                                    echo '<option value="front end engineering" >front end engineer</option>';
-                                    echo '<option value="back end enginnering" >back end engineer</option>';
-                                } elseif ($category === 'data science') {
-                                    echo '<option value="machine learning engineering" >machine learning engineer</option>';
-                                    echo '<option value="AI enginnering" >AI engineer</option>';
-                                } else {
-                                    echo '<option value="front end engineering" >front end engineer</option>';
-                                    echo '<option value="back end enginnering" >back end engineer</option>';
-                                    echo '<option value="machine learning engineering" >machine learning engineer</option>';
-                                    echo '<option value="AI enginnering" >AI engineer</option>';
-                                }
-                                ?>
+                            <select id="subCategory" name="subCategory">
+                                <option>-</option>
+                                <option value="front end engineering" <?= $subCategory == "front end engineering" ? 'selected="selected"' : "" ?>>front end engineer</option>
+                                <option value="back end enginnering" <?= $subCategory == "back end enginnering" ? 'selected="selected"' : "" ?>>back end engineer</option>
+
+                                <option value="machine learning engineering" <?= $subCategory == "machine learning engineer" ? 'selected="selected"' : "" ?>>machine learning engineer</option>
+                                <option value="AI enginnering" <?= $subCategory == "AI enginnering" ? 'selected="selected"' : "" ?>>AI engineer</option>
+
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="position">position</label></td>
-                        <td><input type="text" name="position" value="<?= $position ?>"></td>
+                        <td><input id="position" type="text" name="position" value="<?= $position ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="skills">skills</label></td>
-                        <td><input type="text" name="skills" value="<?= $skills ?>"></td>
+                        <td><input id="skills" type="text" name="skills" value="<?= $skills ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="education">education</label></td>
-                        <td><input type="text" name="education" value="<?= $education ?>"></td>
+                        <td><input id="education" type="text" name="education" value="<?= $education ?>"></td>
                     </tr>
                     <tr>
-                        <td><label for="$experience">experience (in years)</label></td>
-                        <td><input type="number" name="experience" value="<?= $experience ?>"></td>
+                        <td><label for="experience">experience (in years)</label></td>
+                        <td><input id="experience" type="number" name="experience" value="<?= $experience ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="type">type</label></td>
                         <td>
-                            <select name="type">
+                            <select name="type" id="type">
                                 <option>-</option>
                                 <option value="internship" <?= $type == "internship" ? 'selected="selected"' : "" ?>>internship</option>
                                 <option value="part time" <?= $type == "part time" ? 'selected="selected"' : "" ?>>part time</option>
@@ -93,32 +92,32 @@ include_once("../../controller/ManageJobs/editJobController.php");
                     </tr>
                     <tr>
                         <td><label for="location">location</label></td>
-                        <td><input type="text" name="location" value="<?= $location ?>"></td>
+                        <td><input id="location" type="text" name="location" value="<?= $location ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="description">description</label></td>
-                        <td><input type="text" name="description" value="<?= $description ?>"></td>
+                        <td><input id="description" type="text" name="description" value="<?= $description ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="responsibilities">responsibilities</label></td>
-                        <td><input type="text" name="responsibilities" value="<?= $responsibilities ?>"></td>
+                        <td><input id="responsibilities" type="text" name="responsibilities" value="<?= $responsibilities ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="tags">tags</label></td>
-                        <td><input type="text" name="tags" value="<?= $tags ?>"></td>
+                        <td><input id="tags" type="text" name="tags" value="<?= $tags ?>"></td>
                     </tr>
                     <tr>
                         <td><label for="deadline">deadline</label></td>
-                        <td><input type="date" name="deadline" value="<?= $deadline ?>"></td>
+                        <td><input id="deadline" type="date" name="deadline" value="<?= $deadline ?>"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p style="color:red;"><?= $error ?></p>
+                            <p style="color:red;" id="error"><?= $error ?></p>
                         </td>
                     </tr>
                     <tr>
 
-                        <td colspan="2"><input type="submit" value="Submit" name="submit"></td>
+                        <td colspan="2"><input type="button" onclick="validateJob()" value="Edit" name="submit"></td>
                     </tr>
 
                 </table>
@@ -128,6 +127,7 @@ include_once("../../controller/ManageJobs/editJobController.php");
 
     </main>
     <?php include_once("../components/footer.php") ?>
+    <script src="../../assets/JS/ManageJobs/editJob.js"></script>
 </body>
 
 </html>

@@ -20,13 +20,13 @@ if ($userType != "recruiter") {
     header('location: ../BrowseJobs/browseAllJObs.php');
 }
 
-if (!isset($_GET['id'])) {
+if (!isset($_REQUEST['id'])) {
     header('location: myJobs.php');
 }
 
 
 include_once("../../model/jobModel.php");
-$id = $_GET['id'];
+$id = $_REQUEST['id'];
 $job = fetchOneJob($id);
 
 
@@ -51,6 +51,7 @@ $deadline = $job['application_deadline'];
 $error = "";
 
 if (isset($_REQUEST['submit'])) {
+
     $error = "";
     $title = $_REQUEST['title'];
     $category = $_REQUEST['category'];
@@ -65,7 +66,7 @@ if (isset($_REQUEST['submit'])) {
     $responsibilities = $_REQUEST['responsibilities'];
     $tags = $_REQUEST['tags'];
     $deadline = $_REQUEST['deadline'];
-    echo $deadline;
+
 
 
     if (
@@ -103,9 +104,3 @@ if (isset($_REQUEST['submit'])) {
         );
     }
 }
-
-?>
-
-<html>
-
-</html>
