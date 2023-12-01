@@ -28,7 +28,9 @@ if (!isset($_REQUEST['id'])) {
 include_once("../../model/jobModel.php");
 $id = $_REQUEST['id'];
 $job = fetchOneJob($id);
-
+if (isset($job['error'])) {
+    header('location: invalidJob.php');
+}
 
 
 
@@ -50,23 +52,24 @@ $deadline = $job['application_deadline'];
 
 $error = "";
 
-if (isset($_REQUEST['submit'])) {
+if (isset($_REQUEST['data'])) {
+
+    $data = json_decode($_REQUEST['data']);
 
     $error = "";
-    $title = $_REQUEST['title'];
-    $category = $_REQUEST['category'];
-    $subCategory = $_REQUEST['subCategory'];
-    $position = $_REQUEST['position'];
-    $skills = $_REQUEST['skills'];
-    $education = $_REQUEST['education'];
-    $experience = $_REQUEST['experience'];
-    $type = $_REQUEST['type'];
-    $location = $_REQUEST['location'];
-    $description = $_REQUEST['description'];
-    $responsibilities = $_REQUEST['responsibilities'];
-    $tags = $_REQUEST['tags'];
-    $deadline = $_REQUEST['deadline'];
-
+    $title = $data->title;
+    $category = $data->category;
+    $subCategory = $data->subCategory;
+    $position = $data->position;
+    $skills = $data->skills;
+    $education = $data->education;
+    $experience = $data->experience;
+    $type = $data->type;
+    $location = $data->location;
+    $description = $data->description;
+    $responsibilities = $data->responsibilities;
+    $tags = $data->tags;
+    $deadline = $data->deadline;
 
 
     if (
@@ -84,9 +87,10 @@ if (isset($_REQUEST['submit'])) {
         !$tags ||
         !$deadline
     ) {
-        $error = "Please complete all the fields";
+
+        echo json_encode(['error' => "Please complete all the fields!"]);
     } else {
-        editJob(
+        echo editJob(
             $id,
             $title,
             $category,

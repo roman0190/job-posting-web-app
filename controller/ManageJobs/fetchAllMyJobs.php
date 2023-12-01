@@ -1,7 +1,6 @@
 <?php
+include_once("../../model/jobModel.php");
 
-$userId = "";
-$userType = "";
 if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['userType'])) {
     $userId = $_COOKIE['userId'];
     $userType = $_COOKIE['userType'];
@@ -15,17 +14,5 @@ if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['user
     }
 }
 
-if ($userType != "recruiter") {
-    header('location: ../BrowseJobs/browseAllJObs.php');
-}
 
-if (!isset($_REQUEST['id'])) {
-    echo json_encode(['error' => "invalidJobId!"]);
-} else {
-    include_once("../../model/jobModel.php");
-    $id = $_REQUEST['id'];
-    echo json_encode(fetchOneJob($id));
-    if (isset($job['error'])) {
-        echo json_encode(['error' => "invalidJobId"]);
-    }
-}
+echo json_encode(fetchAllJobsForOneRecruiter($userId));

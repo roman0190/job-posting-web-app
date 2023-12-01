@@ -26,9 +26,6 @@ if (!isset($_GET['id'])) {
 include_once("../../model/jobModel.php");
 $id = $_GET['id'];
 $job = fetchOneJob($id);
-
-?>
-
-<html>
-
-</html>
+if (isset($job['error'])) {
+    header('location: invalidJob.php');
+}

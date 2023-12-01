@@ -60,41 +60,30 @@ function addJob() {
         true
     );
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(
-        "title=" +
-            title +
-            "&category=" +
-            category +
-            "&subCategory=" +
-            subCategory +
-            "&position=" +
-            position +
-            "&skills=" +
-            skills +
-            "&education=" +
-            education +
-            "&experience=" +
-            experience +
-            "&type=" +
-            type +
-            "&location=" +
-            location +
-            "&description=" +
-            description +
-            "&responsibilities=" +
-            responsibilities +
-            "&tags=" +
-            tags +
-            "&deadline=" +
-            deadline +
-            "&submit=" +
-            "true"
-    );
+    let data = {
+        title: title,
+        category: category,
+        subCategory: subCategory,
+        position: position,
+        skills: skills,
+        education: education,
+        experience: experience,
+        type: type,
+        location: location,
+        description: description,
+        responsibilities: responsibilities,
+        tags: tags,
+        deadline: deadline,
+    };
+    let jsondata = JSON.stringify(data);
+    xhttp.send("data=" + jsondata);
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if (this.responseText === "success!") {
+            let responseText = this.responseText;
+            let data = JSON.parse(responseText);
+            if (!data.error) {
                 window.location.href = "./myJobs.php";
-            } else error.innerHTML = this.responseText;
+            } else error.innerHTML = data.error;
         }
     };
 }

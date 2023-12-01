@@ -18,14 +18,3 @@ if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['user
 if ($userType != "recruiter") {
     header('location: ../BrowseJobs/browseAllJObs.php');
 }
-
-include_once("../../model/jobModel.php");
-
-
-$jobs = fetchAllJobsForOneRecruiter($userId);
-
-?>
-
-<html>
-
-</html>

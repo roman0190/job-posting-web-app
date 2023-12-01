@@ -2,9 +2,6 @@
 
 include_once("db.php");
 
-
-
-
 function postJob(
     $title,
     $category,
@@ -69,9 +66,10 @@ function postJob(
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        echo "success!";
+        return json_encode(['error' => false, 'success' => true]);
     } else {
-        echo "error creating job!";
+
+        return json_encode(['error' => "Database Error Creating the Job!"]);
     }
 }
 function editJob(
@@ -113,9 +111,9 @@ function editJob(
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        echo "success!";
+        return json_encode(['error' => false, 'success' => true]);
     } else {
-        echo "error updating job!";
+        return json_encode(['error' => "Database Error editing the Job!"]);
     }
 }
 
@@ -219,7 +217,6 @@ function fetchOneJob($id)
         $row = mysqli_fetch_assoc($result);
         return $row;
     } else {
-        echo "Invalid Job";
-        return false;
+        return ['error' => "Database: Invalid Job!"];
     }
 }
