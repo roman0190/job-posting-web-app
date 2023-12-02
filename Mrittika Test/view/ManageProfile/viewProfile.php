@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+ require_once("../../controller/ManageProfile/viewCheck.php")
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -49,7 +52,7 @@
                                 <label for="name">Name:</label><hr>
                             </td>
                             <td>
-                                <text id="name">John Doe</text><hr>
+                                <text id="name"><?php echo $user["name"] ?> </text><hr>
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +60,7 @@
                                 <label for="email">Email:</label><hr>
                             </td>
                             <td>
-                                <text id="email">john@example.com</text><hr>
+                                <text id="email"><?php echo $user["email"] ?></text><hr>
                             </td>
                         </tr>
                         <tr>
@@ -65,7 +68,7 @@
                                 <label for="gender">Gender:</label><hr>
                             </td>
                             <td>
-                                <text id="gender">Male</text><hr>
+                                <text id="gender"><?php echo $user["gender"] ?></text><hr>
                             </td>
                         </tr>
                         <tr>
@@ -73,7 +76,7 @@
                                 <label for="dob">Date of Birth:</label><hr>
                             </td>
                             <td>
-                                <text id="dob">01/01/1990</text><hr>
+                                <text id="dob"><?php echo $user["dob"] ?></text><hr>
                             </td>
                         </tr>
                         <tr>

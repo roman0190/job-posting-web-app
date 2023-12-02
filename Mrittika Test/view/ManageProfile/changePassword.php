@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+require_once("../../controller/ManageProfile/viewCheck.php")
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -39,39 +42,44 @@
         </tr>
         <tr>
             <td colspan="2">
-                <form action="" method="post">
+                <form action="changePassCheck.php" method="post">
                     <table>
                         <tr>
                             <th colspan="2"><h2 align="center">Change Password</h2></th>
                         </tr>
                         <tr>
                             <td>
-                                <label for="old-password">Old Password:</label>
+                                <label for="oldPassword">Old Password:</label><hr>
                             </td>
                             <td>
-                                <input type="password" id="old-password" name="old-password" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="new-password">New Password:</label>
-                            </td>
-                            <td>
-                                <input type="password" id="new-password" name="new-password" required>
+                                <input type="password" id="oldPassword" name="oldPassword" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="confirm-new-password">Confirm New Password:</label>
+                                <label for="newPassword">New Password:</label><hr>
                             </td>
                             <td>
-                                <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="confirmPassword">Confirm Password:</label><hr>
+                            </td>
+                            <td>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button type="submit">Update</button>
+                                <button type="button" onclick="saveChanges()">Save Changes</button>
                                 <a href="viewProfile.php"><button type="button">Back to Profile</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p id="error" style="color:red;"></p>
                             </td>
                         </tr>
                     </table>
@@ -79,5 +87,6 @@
             </td>
         </tr>
     </table>
+    <script src="../../assets/JS/ManageProfile/changePass.js"></script>
 </body>
 </html>
