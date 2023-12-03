@@ -8,7 +8,7 @@ include_once("../../controller/BrowseJobs/browseAllJobsController.php");
 
 <head>
     <title>All Jobs</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
 <body>

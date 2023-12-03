@@ -2,7 +2,7 @@
 
 <head>
     <title>My Job</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
 <body>

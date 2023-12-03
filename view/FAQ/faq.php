@@ -12,7 +12,7 @@ include_once('../../controller/FAQ/faqFetch.php');
 
 <head>
     <title>Applicant Home</title>
-    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
 <body>
