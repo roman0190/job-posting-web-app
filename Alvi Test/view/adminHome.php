@@ -4,6 +4,7 @@ include_once("../controller/adminHomecheck.php");
 include_once("../model/adminHomemodel.php");
 
 
+
 ?>
  
  <!DOCTYPE html>
@@ -12,6 +13,9 @@ include_once("../model/adminHomemodel.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" href="../assets/adminHome.css">
+
+   
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
@@ -22,8 +26,11 @@ include_once("../model/adminHomemodel.php");
                         MARZ JOB SITE
                     </h2>
                     <h5 align="right">
-                        <a href="dashboard.php">Dashboard</a> |
-                        <a href="logOut.php">Logout</a>
+                   
+                        <a href="adminEvent.php">Event</a> |
+                        <a href="logOut.php">Logout</a> |
+                        <a href="reportJobandApplicant.php">Reported Job & Applicant </a> 
+                    
                     </h5>
                 </th>
         </tr>
@@ -31,28 +38,29 @@ include_once("../model/adminHomemodel.php");
         <tr>
             <td>
             <p align="center">
-                  
+                    
                     <a href="terms.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="privacy.php">Privacy Policy</a>
                 </p>
                 
                 <header align="center">
-                    <h1>Welcome, Admin</h1>
+                <h1>Welcome, <?php echo $username; ?>!</h1>
                 </header>
     
                
                 <section>
                     <h2>Description</h2>
+                    <p id="details"></p>
                     <?php
-                  
-                    echo "<p>$description</p>";
+                    
                     ?>
         
                     <form action="" method="post">
                         <label for="newDescription">Update Description:</label>
                         <textarea id="newDescription" name="newDescription" rows="10" cols="150"></textarea>
                         <br>
-                        <input type="submit" value="Save">
+                        <input type="button" value="Save" onclick="updatedescription()" />
+                        
                     </form>
                 </section>
             </td>
@@ -66,5 +74,6 @@ include_once("../model/adminHomemodel.php");
             </td>
         </tr>
     </table>
+    <script src="home.js">  </script>
 </body>
 </html>

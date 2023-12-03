@@ -13,6 +13,9 @@ include_once("../model/adminHomemodel.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <!-- Inside the head section of your HTML file -->
+<link rel="stylesheet" href="../assets/userHome.css">
+
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
@@ -36,7 +39,7 @@ include_once("../model/adminHomemodel.php");
                 
                 <h2 align="center">Welcome to MARZ JOB SITE</h2>
                 <h2>Description</h2>
-                   <p><?php echo $description; ?></p>
+                <p id="details"></p>
                
              
             </td>
@@ -50,5 +53,6 @@ include_once("../model/adminHomemodel.php");
             </td>
         </tr>
     </table>
+    <script src="home.js">  </script>
 </body>
 </html>

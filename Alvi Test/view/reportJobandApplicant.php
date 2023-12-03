@@ -21,41 +21,43 @@
         </tr>
         <tr>
             <td>
-                <h3>Reported Jobs</h3>
+                                        <h1>Admin Report Page</h1>
 
+                            <h2>Reported Jobs</h2>
+                            <ul>
+                                <?php
+                               
+                                $reportedJobs = [
+                                    ['id' => 1, 'title' => 'Job Title 1'],
+                                    ['id' => 2, 'title' => 'Job Title 2'],
+                                    ['id' => 3, 'title' => 'Job Title 3'],
+                                    
+                                ];
 
-                <div class="container">
-                    <?php
-                    foreach ($jobs as $job) {
-                        echo "
-            <div class='card'  >
-           <h4> {$job['title']}</h4>
-           category: {$job['category']}   |   sub category:  {$job['sub_category']}<br>
-           position: {$job['job_position']}   |   Application Deadline {$job['application_deadline']} 
-           <br>
-           <a href='jobDetails.php?id={$job['id']}'>See details</a>
-            </div>";
-                    }
-                    ?>
+                                foreach ($reportedJobs as $job) {
+                                    echo "<li><a href='manageJobReport.php?job_id={$job['id']}'>{$job['title']}</a></li>";
+                                }
+                                ?>
+                            </ul>
 
-                </div>
+                            <h2>Reported Applicants</h2>
+                            <ul>
+                                <?php
+                                
+                                $reportedApplicants = [
+                                    ['id' => 1, 'name' => 'Applicant Name 1'],
+                                    ['id' => 2, 'name' => 'Applicant Name 2'],
+                                    ['id' => 3, 'name' => 'Applicant Name 3'],
+                                    
+                                ];
 
-
-                <h3>Reported Applicants</h3>
-                <ul>
-                    <?php
-                    // Fetch reported applicants from your database and replace this example
-                    $reportedApplicants = [
-                        ['id' => 1, 'name' => 'Applicant Name 1'],
-                        ['id' => 2, 'name' => 'Applicant Name 2'],
-                        // Add more reported applicants here
-                    ];
-
-                    foreach ($reportedApplicants as $applicant) {
-                        echo "<li><a href='manageApplicantReport.php?applicant_id={$applicant['id']}'>{$applicant['name']}</a></li>";
-                    }
-                    ?>
-                </ul>
+                                foreach ($reportedApplicants as $applicant) {
+                                    echo "<li><a href='manageApplicantReport.php?applicant_id={$applicant['id']}'>{$applicant['name']}</a></li>";
+                                }
+                                ?>
+                            </ul>
+                            <a href="manageReportjob.php">Manage Report job</a> |
+                            <a href="manageReportedapplicant.php">Manage Report applicant</a> 
             </td>
         </tr>
 

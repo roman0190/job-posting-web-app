@@ -36,7 +36,7 @@ function insertUser($name, $email, $username, $password, $user_type, $gender, $d
             VALUES ('$name', '$email', '$username', '$password', '$user_type', '$gender', '$dob')";
     if (mysqli_query($conn, $sql)) {
         mysqli_close($conn);
-        header("Location: ../view/signIn.php");
+        return "successfully inserted";
     } else {
         echo  mysqli_error($conn);
         mysqli_close($conn);
