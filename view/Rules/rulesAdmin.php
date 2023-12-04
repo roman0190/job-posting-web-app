@@ -1,5 +1,5 @@
 <?php
-include_once("../../controller/rulescheck.php");
+include_once("../../controller/Rules/rulescheck.php");
 include_once("../../model/rulesModel.php");
 ?>
 

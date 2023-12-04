@@ -1,5 +1,5 @@
 <?php
-include_once("../../controller/termsCheck.php");
+include_once("../../controller/Terms/termsCheck.php");
 include_once("../../model/termsModel.php");
 ?>
 
