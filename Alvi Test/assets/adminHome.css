@@ -1,0 +1,113 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1c1c1c, #333333); /* Dark Gray Gradient */
+    color: #fff; /* White */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2c2c2c; /* Dark Gray */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #555; /* Darker Gray */
+}
+
+th {
+    background: linear-gradient(to right, #4CAF50, #45a049); /* Green Gradient */
+    color: #fff; /* White */
+}
+
+h2 {
+    color: #ffffff; /* Green */
+    margin-bottom: 20px;
+}
+
+p {
+    color: #ccc; /* Light Gray */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    background: #333; /* Dark Gray */
+    color: #fff; /* White */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    color: #3498db; /* Dodger Blue */
+}
+
+nav {
+    background: #000000; /* Dark Gray */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff; /* White */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #3498db; /* Dodger Blue */
+}
+
+section {
+    padding: 20px;
+    background: #2c2c2c; /* Dark Gray */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #b6b6b6; /* Dark Gray */
+    color: #fff; /* White */
+    border: 1px solid #555; /* Darker Gray */
+}
+
+input[type="submit"] {
+    background: #4cafa3; /* Green */
+    color: #fff; /* White */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #abd5ad; /* Darker Green */
+}
+
+footer {
+    background: #333; /* Dark Gray */
+    color: #fff; /* White */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    color: #123d47; /* Dodger Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2980b9; /* Darker Dodger Blue */
+}
