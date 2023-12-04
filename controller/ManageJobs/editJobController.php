@@ -55,7 +55,7 @@ $error = "";
 if (isset($_REQUEST['data'])) {
 
     $data = json_decode($_REQUEST['data']);
-
+    $id = $data->id;
     $error = "";
     $title = $data->title;
     $category = $data->category;
@@ -73,6 +73,7 @@ if (isset($_REQUEST['data'])) {
 
 
     if (
+        !$id ||
         !$title ||
         !$category ||
         !$subCategory ||

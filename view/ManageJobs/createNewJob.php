@@ -3,20 +3,24 @@ include_once("../../controller/ManageJobs/createNewJobCheck.php");
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>create new job</title>
+    <title>Create job</title>
     <link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
-
-
 <body>
-    <?php include_once("../components/header.php") ?>
-    <main>
+    <header style="width: 100%;height: 100px; background: #f0f0f0; display: flex; align-items: center; justify-content: space-between; border-bottom: solid black 3px; margin-bottom: 50px;">
 
+        <a href="../Auth/homePage.php"> <img src="../../assets/images/logo.png" alt="marz" style="width: 100px; height: 100px; object-fit: contain;" /></a>
+        <div>links</div>
+
+
+    </header>
+    <main>
 
 
         <center>
@@ -124,9 +128,14 @@ include_once("../../controller/ManageJobs/createNewJobCheck.php");
         </center>
 
 
+
     </main>
-    <?php include_once("../components/footer.php") ?>
+    <footer style="width: 100%; height:200px; background: #f0f0f0; margin-top: 50px;">
+        <hr>
+
+    </footer>
     <script src="../../assets/JS/ManageJobs/createJob.js"></script>
+
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,14 +7,33 @@
 </head>
 
 <body>
-    <?php include_once("../components/header.php") ?>
+    <header style="width: 100%;height: 100px; background: #f0f0f0; display: flex; align-items: center; justify-content: space-between; border-bottom: solid black 3px; margin-bottom: 50px;">
 
-    <div class="container" id="container"></div>
+        <a href="../Auth/homePage.php"> <img src="../../assets/images/logo.png" alt="marz" style="width: 100px; height: 100px; object-fit: contain;" /></a>
+        <div>links</div>
+
+
+    </header>
+    <main>
+
+        <div class="container" id="container"></div>
+
+
+
+    </main>
+    <footer style="width: 100%; height:200px; background: #f0f0f0; margin-top: 50px;">
+        <hr>
+
+    </footer>
 
 
 
 
-    <?php include_once("../components/footer.php") ?><script src="../../assets/JS/ManageJobs/myjob.js"></script>
+
+
+
+
+    <script src="../../assets/JS/ManageJobs/myjob.js"></script>
 </body>
 
 </html>

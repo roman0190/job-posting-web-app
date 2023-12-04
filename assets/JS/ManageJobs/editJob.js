@@ -1,3 +1,9 @@
+let form = document.getElementById("form");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    validateJob();
+});
+
 function validateJob() {
     let title = document.getElementById("title")?.value;
     let category = document.getElementById("category")?.value;
@@ -16,7 +22,7 @@ function validateJob() {
     let errorText = "";
     error.innerHTML = "";
 
-    if (!title) errorText += "Please fill in the title<br>";
+    if (!title) errorText += "Please fill in the title!<br>";
     if (!category) errorText += "Please fill in the category<br>";
     if (!subCategory) errorText += "Please fill in the subCategory<br>";
     if (!position) errorText += "Please fill in the position<br>";
@@ -30,10 +36,10 @@ function validateJob() {
         errorText += "Please fill in the responsibilities<br>";
     if (!tags) errorText += "Please fill in the tags<br>";
     if (!deadline) errorText += "Please fill in the deadline<br>";
+
     if (!errorText) {
         updateJob();
     } else {
-        console.log(errorText);
         error.innerHTML = errorText;
     }
 }
@@ -62,41 +68,30 @@ function updateJob() {
         true
     );
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(
-        "id=" +
-            id +
-            "&title=" +
-            title +
-            "&category=" +
-            category +
-            "&subCategory=" +
-            subCategory +
-            "&position=" +
-            position +
-            "&skills=" +
-            skills +
-            "&education=" +
-            education +
-            "&experience=" +
-            experience +
-            "&type=" +
-            type +
-            "&location=" +
-            location +
-            "&description=" +
-            description +
-            "&responsibilities=" +
-            responsibilities +
-            "&tags=" +
-            tags +
-            "&deadline=" +
-            deadline +
-            "&submit=" +
-            "true"
-    );
+    let data = {
+        id: id,
+        title: title,
+        category: category,
+        subCategory: subCategory,
+        position: position,
+        skills: skills,
+        education: education,
+        experience: experience,
+        type: type,
+        location: location,
+        description: description,
+        responsibilities: responsibilities,
+        tags: tags,
+        deadline: deadline,
+        submit: true,
+    };
+    let jsonData = JSON.stringify(data);
+    xhttp.send("data=" + jsonData + "&id=" + id);
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if (this.responseText === "success!") {
+            let response = JSON.parse(this.responseText);
+            console.log(response);
+            if (!response.error) {
                 window.location.href = "./myJobs.php";
             } else error.innerHTML = this.responseText;
         }

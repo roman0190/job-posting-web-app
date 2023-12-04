@@ -4,24 +4,27 @@ include_once("../../controller/ManageJobs/editJobController.php");
 ?>
 
 
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <title>create new job</title>
+    <title>Edit Job</title>
     <link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
-
-
 <body>
-    <?php include_once("../components/header.php") ?>
+    <header style="width: 100%;height: 100px; background: #f0f0f0; display: flex; align-items: center; justify-content: space-between; border-bottom: solid black 3px; margin-bottom: 50px;">
+
+        <a href="../Auth/homePage.php"> <img src="../../assets/images/logo.png" alt="marz" style="width: 100px; height: 100px; object-fit: contain;" /></a>
+        <div>links</div>
+
+
+    </header>
     <main>
-
-
 
         <center>
             <h3>Edit Job</h3>
-            <form method="POST" action="" enctype="">
+            <form method="POST" action="" enctype="" id="form">
 
                 <table>
                     <input id="id" type="hidden" name="title" value="<?= $_GET['id'] ?>">
@@ -112,12 +115,12 @@ include_once("../../controller/ManageJobs/editJobController.php");
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p style="color:red;" id="error"><?= $error ?></p>
+                            <p style="color:red;" id="error"></p>
                         </td>
                     </tr>
                     <tr>
 
-                        <td colspan="2"><input type="button" onclick="validateJob()" value="Edit" name="submit"></td>
+                        <td colspan="2"><input type="submit" value="Edit" name="submit"></td>
                     </tr>
 
                 </table>
@@ -125,9 +128,20 @@ include_once("../../controller/ManageJobs/editJobController.php");
         </center>
 
 
+
+
     </main>
-    <?php include_once("../components/footer.php") ?>
-    <script src="../../assets/JS/ManageJobs/editJob.js"></script>
+    <footer style="width: 100%; height:200px; background: #f0f0f0; margin-top: 50px;">
+        <hr>
+
+    </footer>
+    <script src="../../assets/JS/ManageJobs/editJob.js">
+    </script>
+
+
+
+
+
 </body>
 
 </html>

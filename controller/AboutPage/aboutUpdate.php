@@ -9,19 +9,24 @@ if (isset($_COOKIE['auth']) && isset($_COOKIE['userId']) && isset($_COOKIE['user
     if (isset($_SESSION['auth']) && isset($_SESSION['userId']) && isset($_SESSION['userType'])) {
         $userId = $_SESSION['userId'];
         $userType = $_SESSION['userType'];
-    } else {
-        header('location: ../Auth/login.php');
     }
 }
 
 if ($userType != "admin") {
-    header('location:about.php');
+    echo json_encode(['error' => "Not an admin user"]);
 }
 
 
 include_once('../../model/aboutModel.php');
-$about = fetchAbout();
 
-if (isset($_REQUEST['submit']) && $_REQUEST['about'] != '') {
-    updateAbout($_REQUEST['about']);
+
+if (isset($_REQUEST['data'])) {
+
+    $data = json_decode($_REQUEST['data']);
+
+    if ($data->about) {
+        echo json_encode(updateAbout($data->about));
+    } else {
+        echo json_encode(['error' => "Empty data"]);
+    }
 }

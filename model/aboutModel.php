@@ -13,9 +13,9 @@ function fetchAbout()
             array_push($aboutTexts, $row);
         }
         $text = $aboutTexts[0]['about'];
-        return $text;
+        return ['error' => false,  'data' => $text];
     } else {
-        return "No about page info found";
+        return ['error' => true,  'data' => "No texts saved."];
     }
 }
 
@@ -34,12 +34,8 @@ function updateAbout($about)
     }
     $result = mysqli_query($con, $sql);
     if ($result) {
-        header("Location: ./aboutAdmin.php");
+        return fetchAbout();
     } else {
-        echo "error";
+        return ['error' => true,  'data' => "Could not update in db"];
     }
 }
-
-?><html>
-
-</html>
