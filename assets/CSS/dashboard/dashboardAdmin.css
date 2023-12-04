@@ -72,8 +72,9 @@
 }
 
 .main {
-   max-height: 800px;
-   height: 910px;
+   display: flex;
+   max-height: 810px;
+   height: 810px;
 }
 
 .footer {
@@ -83,3 +84,11 @@
     font-size: 20px;
     padding-top: 30px;
 }
+
+.main p {
+    max-height: 200px;
+    height:200px;
+    width:200px;
+    margin:50px;
+    background-color:aqua;
+ }

@@ -27,14 +27,19 @@
                 <li><a href="#">Edit Pricay & Policy</a></li>
                 <li><a href="#">Edit Contact Information</a></li>
                 <li><a href="#">Chat</a></li>
-                <li><a href="#">Other</a></li>
+                <li><a href="#">Notification</a></li>
             </ul>
         </div>
 
         <div class="main">
             <p>img</p>
             <p>img</p>
+            <p>img</p>
+            <p>img</p>
+            <p>img</p>
+            <p>img</p>
         </div>
+        
         <div class="footer">
             @Copyright Job-posting-web-app
         </div>    
