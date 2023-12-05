@@ -11,7 +11,7 @@ function login($username, $password, $remember)
     if ($count == 1) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-
+            $userInfo = $row;
             $userId = $row['id'];
             $userType = $row['user_type'];
             $username = $row['username'];
@@ -24,6 +24,7 @@ function login($username, $password, $remember)
             setcookie('username', $username,  $remembering_timespan, "/");
             setcookie('loggedIn', true,  $remembering_timespan, "/");
             setcookie('auth', true,  $remembering_timespan, "/");
+            setcookie('userInfo', json_encode($userInfo),  $remembering_timespan, "/");
         } else {
             session_start();
             $_SESSION['userId'] = $userId;
@@ -31,6 +32,7 @@ function login($username, $password, $remember)
             $_SESSION['username'] = $username;
             $_SESSION['loggedIn'] = true;
             $_SESSION['auth'] = true;
+            $_SESSION['userInfo'] = json_encode($userInfo);
         }
 
         header("location: homePage.php");
