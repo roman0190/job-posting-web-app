@@ -2,7 +2,8 @@
     require_once("../../model/policyModel.php");
     session_start();
     $policy = policyView();
-    $name = "Roman";          
+    $userInfo =  $_SESSION['userInfo'] ;
+    $Name =  $userInfo['name'];            
 ?>
 
 <html lang="en">
