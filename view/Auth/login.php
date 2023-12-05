@@ -8,7 +8,7 @@ include_once("../../controller/Auth/loginCheck.php");
 
 <head>
 	<title>My Jobs</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+	<link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
 <body>

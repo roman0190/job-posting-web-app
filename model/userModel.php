@@ -11,7 +11,7 @@ function login($username, $password, $remember)
     if ($count == 1) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $userInfo = $row;
+
             $userId = $row['id'];
             $userType = $row['user_type'];
             $username = $row['username'];
@@ -21,15 +21,19 @@ function login($username, $password, $remember)
             $remembering_timespan = time() + 7 * 24 * 60 * 60;
             setcookie('userId', $userId,  $remembering_timespan, "/");
             setcookie('userType', $userType,  $remembering_timespan, "/");
-            setcookie('username', true,  $remembering_timespan, "/");
+            setcookie('username', $username,  $remembering_timespan, "/");
+            setcookie('loggedIn', true,  $remembering_timespan, "/");
+            setcookie('auth', true,  $remembering_timespan, "/");
         } else {
             session_start();
             $_SESSION['userId'] = $userId;
             $_SESSION['userType'] = $userType;
             $_SESSION['username'] = $username;
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['auth'] = true;
         }
 
-        header('location: homePage.php');
+        header("location: homePage.php");
     } else {
 
         return "Invalid username or password";
@@ -99,7 +103,7 @@ function register(
 function getUser($id)
 {
     session_start();
-    if (isset($_SESSION['auth']) && $_SESSION['user']) {
+    if ($_SESSION['username']) {
         $id = $_SESSION['user']['id'];
     }
     $con = getConnection();

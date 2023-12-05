@@ -1,7 +1,5 @@
-import { ajaxRequest } from "./ajaxRequest";
-data = {
-    name: "albi",
-};
-function checkLogin() {
-    let response = ajaxRequest("GET", "common/checkLogin.php", data);
+import { ajaxRequest } from "./ajaxRequest.js";
+
+export async function checkLogin() {
+    return await ajaxRequest("GET", "common/checkLogin.php", {});
 }

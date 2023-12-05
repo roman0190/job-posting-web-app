@@ -11,7 +11,7 @@ include_once("../../controller/Auth/sessionCheck.php");
 
 <head>
 	<title><?= $userType ?> Home</title>
-	<link rel="stylesheet" href="../../assets/style.css">
+	<link rel="stylesheet" href="../../assets/CSS/Common/style.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@ include_once("../../controller/Auth/sessionCheck.php");
 		<a href="../ManageJobs/myJobs.php">Browse My Jobs (Jobs that I posted) [recruiter] (Admin and applicant will be redirected to browse all jobs)</a>
 		<br />
 		<br />
-		<a href="../AboutPage/about.php">About Page</a>
+		<a href="../AboutPage/about.html">About Page</a>
 		<br />
 		<br />
 		<a href="../FAQ/faq.php">FAQ</a>
