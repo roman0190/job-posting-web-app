@@ -11,22 +11,22 @@ function login($username, $password, $remember)
     if ($count == 1) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $userInfo=$row;
+            $userInfo = $row;
             $userId = $row['id'];
             $userType = $row['user_type'];
+            $username = $row['username'];
         }
 
         if ($remember) {
             $remembering_timespan = time() + 7 * 24 * 60 * 60;
             setcookie('userId', $userId,  $remembering_timespan, "/");
             setcookie('userType', $userType,  $remembering_timespan, "/");
-            setcookie('auth', true,  $remembering_timespan, "/");
+            setcookie('username', true,  $remembering_timespan, "/");
         } else {
             session_start();
-            $_SESSION['userInfo'] = $userInfo;
             $_SESSION['userId'] = $userId;
             $_SESSION['userType'] = $userType;
-            $_SESSION['auth'] = "true";
+            $_SESSION['username'] = $username;
         }
 
         header('location: homePage.php');
