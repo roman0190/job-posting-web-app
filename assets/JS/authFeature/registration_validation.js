@@ -83,7 +83,7 @@ function registration() {
     let xhttp = new XMLHttpRequest();
     xhttp.open(
         "POST",
-        "../../../controller/authFeature/signUpcheck.php",
+        "../../controller/authFeature/signUpcheck.php",
         true
     );
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -116,7 +116,7 @@ function registration() {
             if(data.message==="successfully inserted"){
                 setTimeout(() => {
                     
-                    window.location.replace("../../../view/authFeature/signIn.php");
+                    window.location.replace("../../view/authFeature/signIn.php");
                 }, 2000);
             }
 

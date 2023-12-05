@@ -1,5 +1,6 @@
 <?php 
     require_once("../../model/policyModel.php");
+    session_start();
     $policy = policyView();
     $name = "Roman";          
 ?>

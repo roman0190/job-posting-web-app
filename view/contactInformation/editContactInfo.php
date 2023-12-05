@@ -1,7 +1,9 @@
 <?php 
     require_once("../../model/contactinfoModel.php");
+    session_start();
     $contactInfo = contactinfoView();
-    $name = "Roman";          
+    $userInfo =  $_SESSION['userInfo'] ;
+    $Name =  $userInfo['name'];      
 ?>
 <html>
     <head>
@@ -13,7 +15,7 @@
             <header>
                 <img src="../../assets/images/chatProfileimage.png" alt="">
                 <h1>Edit Contact Information</h1>
-                <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $name;?></b></a> </span>
+                <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
             </header>
             <main>
                 <label for="email">Email:</label> 

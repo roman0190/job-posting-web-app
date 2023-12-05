@@ -1,11 +1,12 @@
 <?php
-//fatch name and user type from database
-//example name
-    $name = 'Roman';
-    $role ='admin';
+
+    session_start();
+    $userInfo =  $_SESSION['userInfo'] ;
+    $Name =  $userInfo['name'];
+    $role =$userInfo['user_type'];
 
     $userInfo = [
-        'name' => $name,
+        'name' => $Name,
         'role' => $role
     ];
 

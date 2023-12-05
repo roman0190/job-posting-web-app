@@ -3,7 +3,7 @@ let flag=document.getElementById("details")
 
 function getdescription(){
     let xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../../../controller/LandingPage/abc.php', true);
+    xhttp.open('POST', '../../controller/LandingPage/abc.php', true);
    
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send()
@@ -21,7 +21,8 @@ function updatedescription(){
     let newDescription=document.getElementById("newDescription").value
     console.log(newDescription)
     let xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../../../controller/LandingPage/updatedescription.php', true);
+    console.log("fadfa")
+    xhttp.open('POST', '../../controller/LandingPage/updatedescription.php', true);
     
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("update="+newDescription+"&change="+newDescription)

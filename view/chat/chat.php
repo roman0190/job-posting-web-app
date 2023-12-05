@@ -1,6 +1,8 @@
 <?php
-session_start();
-//session uname and email;
+    session_start();
+    $userInfo =  $_SESSION['userInfo'] ;
+    $Name =  $userInfo['name'];
+    $email = $userInfo['email'];
 ?>
 <html lang="en">
 <head>
@@ -15,9 +17,9 @@ session_start();
             <div style="padding: 1px;">
                 <img id="profile_image" src="../../assets/images/chatProfileimage.png" alt="">
                 <br>
-                <span style="font-size: 25px;">Roman Howladar</span>
+                <span style="font-size: 25px;"><?php echo $Name ?></span>
                 <br>
-                <span style="font-size: 12px; opacity: 0.5;">romanhowladar@gmail.com</span>
+                <span style="font-size: 12px; opacity: 0.5;"><?php echo $email ?></span>
              
                 <div >
                     <label for="label_chat" >Chat<img  src="../../assets/images/chatIcon.png" align="right" alt=""></label>
@@ -125,7 +127,7 @@ session_start();
                     _("myInput").value = "";
                 }
             };
-              ///reload test
+              ///reload testing 
             setInterval(function() {
                 getAllmassages(receiverName);
             }, 100);    
@@ -195,12 +197,6 @@ session_start();
     });
 </script>
 
-
-
-
-<html>
-
-</html>
 
 
 

@@ -1,7 +1,7 @@
 
 <?php
 require('db.php'); 
- 
+
 function getAdminDescription() {
     $con = getConnection(); 
     
@@ -9,7 +9,7 @@ function getAdminDescription() {
         die("Database connection failed: " . mysqli_connect_error());
     }
  
-    $sql = "SELECT description FROM description_admin "; 
+    $sql = "SELECT description FROM landing_page "; 
     $result = mysqli_query($con, $sql);
  
     if (mysqli_num_rows($result) > 0) {
@@ -31,14 +31,14 @@ function updateAdminDescription($newDescription) {
  
  
  
-    $sql = "select * from description_admin";
+    $sql = "select * from landing_page";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
  
     if ($count == 1) {
-        $sql = "UPDATE description_admin SET description = '$newDescription'";
+        $sql = "UPDATE landing_page SET description = '$newDescription'";
     } else {
-        $sql = "insert into description_admin (description) values ('{$newDescription}')";
+        $sql = "insert into landing_page (description) values ('{$newDescription}')";
     }
    
    
@@ -62,7 +62,7 @@ function getSiteDescription() {
         die("Database connection failed: " . mysqli_connect_error());
     }
  
-    $sql = "SELECT description FROM description_admin WHERE id = 1";
+    $sql = "SELECT description FROM landing_page WHERE id = 1";
     $result = mysqli_query($con, $sql);
  
     if (mysqli_num_rows($result) > 0) {

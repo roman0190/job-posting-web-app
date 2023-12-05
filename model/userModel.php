@@ -4,13 +4,14 @@ require_once('db.php');
 function login($username, $password, $remember)
 {
     $con = getConnection();
-    $sql = "select id, user_type from users where username='{$username}' and password='{$password}'";
+    $sql = "select * from users where username='{$username}' and password='{$password}'";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
 
         while ($row = mysqli_fetch_assoc($result)) {
+            $userInfo=$row;
             $userId = $row['id'];
             $userType = $row['user_type'];
         }
@@ -22,6 +23,7 @@ function login($username, $password, $remember)
             setcookie('auth', true,  $remembering_timespan, "/");
         } else {
             session_start();
+            $_SESSION['userInfo'] = $userInfo;
             $_SESSION['userId'] = $userId;
             $_SESSION['userType'] = $userType;
             $_SESSION['auth'] = "true";

@@ -1,4 +1,5 @@
 <?php 
+    // require_once('../../controller/dashboard/dashboardSession.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
         <div class="header">
             <div class='user-info'>
                 <img src="../../assets/images/profilePicture.jpg" alt="">
-                <span>Welcome,<a href="viewprofile.php"><b id='name'>Roman Howladar</b></a></span>
+                <span>Welcome,<a href="viewprofile.php"><b id='name'></b></a></span>
             </div>
            <div class=head-content>
                 <h1>Dashboard</h1><h6 id='role'style="text-transform: uppercase;" ></h6>
@@ -24,20 +25,28 @@
 
         <div class="nav">
             <ul>
-                <li><a href="#">Pricay & Policy</a></li>
-                <li><a href="#">Contact Information</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Other</a></li>
+                <li><a href="../privacyPolicy/viewPrivacyPolicy.php">Pricay & Policy</a></li>
+                <li><a href="../contactInformation/viewContactInfo.php">Contact Information</a></li>
+                <li><a href="#">Terms & Condition</a></li>
+                <li><a href="#">Rules & Regulation</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="../chat/chat.php">Chat</a></li>
+                <li><a href="#">Notifications</a></li>
             </ul>
         </div>
 
         <div class="main">
-            <p>img</p>
-            <p>img</p>
+            <p> <a href=".php">View Profile</a></p>
+            <p> <a href=".php">View All Applicants</a></p>
+            <p> <a href=".php">View All Jobs</a></p>
+            <p> <a href=".php">Create new Jobs</a></p>
+            <p> <a href=".php">View Posted Event</a></p>
         </div>
+
         <div class="footer">
             @Copyright Job-posting-web-app
-        </div>    
+        </div>  
+          
 </div>
 </body>
 </html>
@@ -61,5 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getValue();
 
 });
+
+
 
 </script>

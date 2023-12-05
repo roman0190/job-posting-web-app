@@ -1,4 +1,5 @@
 <?php 
+    // require('../../controller/dashboard/dashboardSession.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
         <div class="header">
             <div class='user-info'>
                 <img src="../../assets/images/profilePicture.jpg" alt="">
-                <span>Welcome,<a href="viewprofile.php"><b id='name'>Roman Howladar</b></a></span>
+                <span>Welcome,<a href="viewprofile.php"><b id='name'></b></a></span>
             </div>
            <div class=head-content>
                 <h1>Dashboard</h1><h6 id='role'style="text-transform: uppercase;" ></h6>
@@ -24,20 +25,22 @@
 
         <div class="nav">
             <ul>
-                <li><a href="#">Edit Pricay & Policy</a></li>
-                <li><a href="#">Edit Contact Information</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Notification</a></li>
+                <li><a href="../privacyPolicy/editPrivacyPolicy.php">Edit Pricay & Policy</a></li>
+                <li><a href="../contactInformation/editContactInfo.php">Edit Contact Information</a></li>
+                <li><a href="#">Edit Terms & Condition</a></li>
+                <li><a href="#">Edit Rules & Regulation</a></li>
+                <li><a href="#">Edit FAQ</a></li>
+                <li><a href="../chat/chat.php">Chat</a></li>
+                <li><a href="#">Notifications</a></li>
             </ul>
         </div>
 
         <div class="main">
-            <p>img</p>
-            <p>img</p>
-            <p>img</p>
-            <p>img</p>
-            <p>img</p>
-            <p>img</p>
+            <p> <a href=".php">View Profile</a></p>
+            <p> <a href=".php">View Reported Jobs</a></p>
+            <p> <a href=".php">View Reported Applicant</a></p>
+            <p> <a href=".php">Post Event</a></p>
+            <p> <a href=".php">Edit Event</a></p>
         </div>
         
         <div class="footer">
