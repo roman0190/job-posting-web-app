@@ -39,8 +39,8 @@
             <p> <a href=".php">View Profile</a></p>
             <p> <a href=".php">View Reported Jobs</a></p>
             <p> <a href=".php">View Reported Applicant</a></p>
-            <p> <a href=".php">Post Event</a></p>
-            <p> <a href=".php">Edit Event</a></p>
+            <p> <a href="../Event/adminEvent.php">Event</a></p>
+           
         </div>
         
         <div class="footer">

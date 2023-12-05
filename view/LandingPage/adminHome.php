@@ -1,7 +1,6 @@
 <?php
 
 include_once("../../controller/LandingPage/adminHomecheck.php");
-echo 'ddad';
 include_once("../../model/adminHomemodel.php");
 
 

@@ -6,14 +6,11 @@
 <body>
     <h1>Welcome to our Events</h1>
     <?php
-   
-    include ('../../model/db.php');
-    $con = getConnection();
+    include ('../../model/eventModel.php');
 
-    $sql = "SELECT * FROM events";
-    $result = mysqli_query($con, $sql);
+    $events = getAllEvents();
 
-    while ($row = mysqli_fetch_assoc($result)) {
+    foreach ($events as $row) {
         echo '<div class="event">';
         echo '<h2>' . $row['title'] . '</h2>';
         echo '<p>Date: ' . $row['date'] . '</p>';
