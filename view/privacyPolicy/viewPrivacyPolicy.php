@@ -3,8 +3,7 @@
     session_start();
     $policy = policyView();
     $userInfo =  $_SESSION['userInfo'] ;
-    $Name =  $userInfo['name'];
-    $name = "Roman";          
+    $Name =  $userInfo['name'];        
 ?>
 
 <head>
@@ -25,3 +24,5 @@
             <h3>@Copyright for Job-Posting-Web-App</h3>
         </footer>
     </div>
+
+   

@@ -1,5 +1,6 @@
 
 <?php
+
 function getEvents() {
     $con = getConnection();
     $sql = "SELECT * FROM events";
