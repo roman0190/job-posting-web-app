@@ -40,7 +40,7 @@
             <p> <a href=".php">View Profile</a></p>
             <p> <a href=".php">View All saved Jobs</a></p>
             <p> <a href=".php">View Post Jobs</a></p>
-            <p> <a href=".php">View Posted Event</a></p>
+            <p> <a href="../Event/userEvent.php">View Posted Event</a></p>
         </div>
         
         <div class="footer">

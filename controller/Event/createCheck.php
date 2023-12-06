@@ -1,22 +1,19 @@
-
 <?php
+include('../../model/eventModel.php');
+
 if (isset($_POST['submit'])) {
-    include ('../../model/db.php');
-    include ('../../model/Event/createModel.php');
-    
- 
     $title = $_POST['title'];
     $location = $_POST['location'];
     $date = $_POST['date'];
     $description = $_POST['description'];
     $contact_info = $_POST['contact_info'];
-    
-    if (createEvent($title, $location, $date, $description, $contact_info)) {
-        header('Location: ../../view/Event/adminEvent.php');
+
+    $result = createEvent($title, $location, $date, $description, $contact_info);
+
+    if ($result) {
+        header("Location: ../../view/Event/adminEvent.php");
     } else {
-        echo 'Failed to create the event.';
+        echo "Error creating event.";
     }
 }
-
-
 ?>

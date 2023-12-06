@@ -9,33 +9,19 @@
 
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
-        <tr>
-            <th colspan="2">
-                <h2 align="center">
-                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
-                    MARZ JOB SITE
-                </h2>
-                <h5 align="right">
-                    <a href="dashboard.php">Dashboard</a> |
-                    <a href="logOut.php">Logout</a>
-                </h5>
-            </th>
-        </tr>
+        <!-- ... (other HTML code) ... -->
 
         <tr>
             <td>
                 <h1>Edit Event</h1>
                 <?php
-                include('../../model/db.php');
-                include('../../controller/Event/editCheck.php');
-                $con = getConnection();
-
+                include('../../model/eventModel.php');
+                
                 if (isset($_GET['event_id']) && is_numeric($_GET['event_id'])) {
                     $event_id = $_GET['event_id'];
                    
-                    $sql = "SELECT * FROM events WHERE id = $event_id";
-                    $result = mysqli_query($con, $sql);
-                    $event = mysqli_fetch_assoc($result);
+                    $event = getEventById($event_id);
+
                     if ($event) {
                 ?>
                         <form method="post" action="../../controller/Event/editCheck.php">
@@ -67,13 +53,8 @@
             </td>
         </tr>
 
-        <tr>
-            <td>
-                <footer align="center">
-                    <p>&copy; 2023 MARZ JOB SITE. All rights reserved.</p>
-                </footer>
-            </td>
-        </tr>
+        <!-- ... (other HTML code) ... -->
+
     </table>
 </body>
 

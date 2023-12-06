@@ -14,7 +14,7 @@
                     MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="nonadminHome.php">Home</a> |
+                    <a href="../LandingPage/nonadminHome.php">Home</a> |
                     <a href="signUp.php">Signup</a>
                 </h5>
             </th>

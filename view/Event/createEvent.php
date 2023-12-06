@@ -1,8 +1,7 @@
 <?php
 include ('../../controller/Event/createCheck.php');
-include ('../../model/db.php');
 ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,18 +11,7 @@ include ('../../model/db.php');
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
-        <tr>
-                <th colspan="2">
-                    <h2 align="center">
-                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
-                        MARZ JOB SITE
-                    </h2>
-                    <h5 align="right">
-                        <a href="dashboard.php">Dashboard</a> |
-                        <a href="logOut.php">Logout</a>
-                    </h5>
-                </th>
-        </tr>
+        <!-- ... (other HTML code) ... -->
 
         <tr>
             <td>
@@ -45,14 +33,9 @@ include ('../../model/db.php');
                     </h4>
             </td>
         </tr>
-       
-        <tr>
-            <td>
-                <footer align="center">
-                    <p>&copy; 2023 MARZ JOB SITE. All rights reserved.</p>
-                </footer>
-            </td>
-        </tr>
+
+        <!-- ... (other HTML code) ... -->
+
     </table>
 </body>
 </html>

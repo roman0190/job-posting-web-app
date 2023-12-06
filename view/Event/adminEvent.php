@@ -5,32 +5,17 @@
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
-        <tr>
-            <th colspan="2">
-                <h2 align="center">
-                    <img align="left" src="logo.png" alt="Company Logo" width="80" height="80">
-                    MARZ JOB SITE
-                </h2>
-                <h5 align="right">
-                    <a href="dashboard.php">Dashboard</a> |
-                    <a href="logOut.php">Logout</a>
-                </h5>
-            </th>
-        </tr>
+        <!-- ... (other HTML code) ... -->
 
         <tr>
             <td>
                 <h1>Admin Events</h1>
                 <?php
-            
-                include ('../../model/db.php');
-                
-                $con = getConnection();
+                include('../../model/eventModel.php');
 
-                $sql = "SELECT * FROM events";
-                $result = mysqli_query($con, $sql);
+                $events = getAllEvents();
 
-                while ($row = mysqli_fetch_assoc($result)) {
+                foreach ($events as $row) {
                     echo '<div class="event">';
                     echo '<h2>' . $row['title'] . '</h2>';
                     echo '<p>Date: ' . $row['date'] . '</p>';
@@ -53,14 +38,9 @@
                 </h5>
             </td>
         </tr>
-       
-        <tr>
-            <td>
-                <footer align="center">
-                    <p>&copy; 2023 MARZ JOB SITE. All rights reserved.</p>
-                </footer>
-            </td>
-        </tr>
+
+        <!-- ... (other HTML code) ... -->
+
     </table>
 </body>
 </html>
