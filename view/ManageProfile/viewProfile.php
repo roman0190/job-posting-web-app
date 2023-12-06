@@ -13,6 +13,7 @@
         }
 
         th, td {
+            /* background-color: #D3D3D3; */
             padding: 10px;
             text-align: left;
         }
@@ -25,9 +26,18 @@
             display: block;
             margin-bottom: 5px;
         }
+        .container{
+            width: 100%;
+            height: 100vh;
+            /* background-image: url(bgPic.jfif); */
+            /* background-color: lightblue; */
+            background-size: cover;
+            background-position: center
+        }
     </style>
 </head>
 <body>
+    <div class ="container"> 
     <table border="1">
         <tr>
             <th colspan="2">
@@ -97,5 +107,6 @@
             </td>
         </tr>
     </table>
+    </div>
 </body>
 </html>
