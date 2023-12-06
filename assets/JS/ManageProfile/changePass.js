@@ -15,6 +15,9 @@ function saveChanges() {
     if (confirmPassword === "") {
         error += "Confirm your new password!<br>";
     }
+    if(newPassword.length<5 || confirmPassword.length<5){
+        error += "Password must contain at least 5 characters!<br>";
+    }
 
     if (error) {
         errorElement.innerHTML = error;
