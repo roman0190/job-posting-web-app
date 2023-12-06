@@ -1,6 +1,5 @@
 <?php
     require_once("../../model/chatModel.php");
-    session_start();
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
@@ -13,6 +12,7 @@
             // no userInfo in $_SESSION or $_COOKIE
         }
     }
+    
     $Name =  $userInfo['name'];
     $sender = $Name; //get from session
     $receiver = $_POST['receiver'];
