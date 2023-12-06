@@ -1,4 +1,5 @@
 <?php
+
 include('../../model/eventModel.php');
 
 if (isset($_POST['submit'])) {
