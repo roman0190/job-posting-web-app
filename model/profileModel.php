@@ -52,7 +52,10 @@ function updateUser($user){
 
         return $jsonData;
     } else {
-        return "error";
+        $dataToSend=["success"=>false, "error"=>true];
+        $jsonData=json_encode($dataToSend);
+
+        return $jsonData;
     }
 }
 
@@ -73,8 +76,10 @@ function changePass($user)
         mysqli_close($conn);
         return $jsonData;
     } else {
-        mysqli_close($conn);
-        return "error";
+        $dataToSend=["success"=>false, "error"=>true];
+        $jsonData=json_encode($dataToSend);
+
+        return $jsonData;
     }
 }
 
