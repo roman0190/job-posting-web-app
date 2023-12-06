@@ -5,8 +5,7 @@
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
-        <!-- ... (other HTML code) ... -->
-
+        
         <tr>
             <td>
                 <h1>Admin Events</h1>
