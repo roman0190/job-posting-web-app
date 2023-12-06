@@ -12,7 +12,7 @@ fetchText();
 async function adminFunctions() {
     let user = await checkLogin();
     console.log(user);
-    if (user?.loggedIn) {
+    if (user?.loggedIn && user.userType === "admin") {
         let adminDiv = document.getElementById("adminContainer");
         let form = document.createElement("form");
         console.log(adminDiv);

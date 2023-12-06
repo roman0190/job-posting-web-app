@@ -15,6 +15,7 @@ export function ajaxRequest(method, route, data) {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
                 if (this.status == 200) {
+                    console.log(this.responseText);
                     let response = JSON.parse(this.responseText);
                     resolve(response);
                 } else {

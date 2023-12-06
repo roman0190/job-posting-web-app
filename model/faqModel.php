@@ -3,43 +3,58 @@ include_once("db.php");
 function fetchFAQ()
 {
     $con = getConnection();
-    $sql = "select * from about";
+    $sql = "select * from faq";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
 
-    if ($count == 1) {
+    if ($count) {
         $faqTexts = [];
         while ($row = mysqli_fetch_assoc($result)) {
             array_push($faqTexts, $row);
         }
-        $text = $faqTexts[0]['about'];
-        return $text;
+        return ['data' => $faqTexts, "success" => true];
     } else {
-        return "No about page info found";
+        return ['success' => true, 'message' => "No FAQ in Database."];
     }
 }
 
+function add($faq)
+{
 
+    $con = getConnection();
+
+    $sql = "insert into faq (question,answer) values ('{$faq['question']}','{$faq['answer']}')";
+
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        return fetchFAQ();
+    } else {
+        return ["error" => "error in db"];
+    }
+}
 function updateFAQ($faq)
 {
 
     $con = getConnection();
-    $sql = "select * from about";
-    $result = mysqli_query($con, $sql);
-    $count = mysqli_num_rows($result);
-    if ($count == 1) {
-        $sql = "update about set about='{$faq}' where id=1";
-    } else {
-        $sql = "insert into about (id,about) values ('1','{$faq}')";
-    }
+    $sql = "update faq set question='{$faq['question']}', answer='{$faq['answer']}' where id={$faq['id']}";
+
     $result = mysqli_query($con, $sql);
     if ($result) {
-        header("Location: ./aboutAdmin.php");
+        return fetchFAQ();
     } else {
-        echo "error";
+        return ["error" => "error in db"];
     }
 }
+function deleteFAQ($faq)
+{
 
-?><html>
+    $con = getConnection();
+    $sql = "delete from faq where id={$faq['id']}";
 
-</html>
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        return fetchFAQ();
+    } else {
+        return ["error" => "error in db"];
+    }
+}
