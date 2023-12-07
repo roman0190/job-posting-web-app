@@ -45,25 +45,44 @@ function insertUser($name, $email, $username, $password, $user_type, $gender, $d
     }
 }
 
-function validateUser($username, $password)
+
+
+function validateUser($username, $password, $remember)
 {
     $con = getConnection();
+    $sql = "select * from users where username='{$username}' and password='{$password}'";
+    $result = mysqli_query($con, $sql);
+    $count = mysqli_num_rows($result);
 
-    if (!$con) {
-        die("Database connection failed: " . mysqli_connect_error());
+    if ($count == 1) {
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $userInfo = $row;
+            $userId = $row['id'];
+            $userType = $row['user_type'];
+            $username = $row['username'];
+        }
+
+        if ($remember) {
+            $remembering_timespan = time() + 7 * 24 * 60 * 60;
+            setcookie('userId', $userId,  $remembering_timespan, "/");
+            setcookie('userType', $userType,  $remembering_timespan, "/");
+            setcookie('username', $username,  $remembering_timespan, "/");
+            setcookie('loggedIn', true,  $remembering_timespan, "/");
+            setcookie('auth', true,  $remembering_timespan, "/");
+            setcookie('userInfo', json_encode($userInfo),  $remembering_timespan, "/");
+        } else {
+            session_start();
+            $_SESSION['userId'] = $userId;
+            $_SESSION['userType'] = $userType;
+            $_SESSION['username'] = $username;
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['auth'] = true;
+            $_SESSION['userInfo'] = json_encode($userInfo);
+        }
+          return json_encode(["success"=>true]);
+    } else {
+        return json_encode(["error"=>"Invalid username or password"]);
+        
     }
-
-    $query = "SELECT * FROM users WHERE username = ? AND password = ?";
-    $stmt = mysqli_prepare($con, $query);
-
-    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
-
-    mysqli_stmt_execute($stmt);
-
-    $result = mysqli_stmt_get_result($stmt);
-
-    mysqli_stmt_close($stmt);
-    mysqli_close($con);
-
-    return mysqli_num_rows($result) > 0;
 }

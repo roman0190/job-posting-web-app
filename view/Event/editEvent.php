@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/Event/editEvent.css">
 </head>
 
 <body>
@@ -25,18 +26,18 @@
                     if ($event) {
                 ?>
                         <form method="post" action="../../controller/Event/editCheck.php">
-                            <input type="hidden" name="eventId" value="<?php echo $event_id; ?>">
+                            <input type="hidden"id="event_id" name="event_id" value="<?php echo $event_id; ?>">
                             <label>Title:</label>
-                            <input type="text" name="title" value="<?php echo $event['title']; ?>"><br>
+                            <input type="text" id="title" name="title" value="<?php echo $event['title']; ?>"><br>
                             <label>Date:</label>
-                            <input type="text" name="date" value="<?php echo $event['date']; ?>"><br>
+                            <input type="text"id="date" name="date" value="<?php echo $event['date']; ?>"><br>
                             <label>Location:</label>
-                            <input type="text" name="location" value="<?php echo $event['location']; ?>"><br>
+                            <input type="text"id="location" name="location" value="<?php echo $event['location']; ?>"><br>
                             <label>Description:</label>
-                            <textarea name="description"><?php echo $event['description']; ?></textarea><br>
+                            <textarea id="description" name="description"><?php echo $event['description']; ?></textarea><br>
                             <label>Contact Information:</label>
-                            <input type="text" name="contact_info" value="<?php echo $event['contact_info']; ?>"><br>
-                            <input type="submit" name="submit" value="Submit">
+                            <input type="text" id="contact_info" name="contact_info" value="<?php echo $event['contact_info']; ?>"><br>
+                            <input type="button" name="submit" value="Submit" onclick="EUPDATE()"/>
                         </form>
                         <br><br>
                         <h4 align="center">
@@ -53,9 +54,9 @@
             </td>
         </tr>
 
-        <!-- ... (other HTML code) ... -->
 
     </table>
+    <script src="../../assets/JS/Event/editEvent.js">  </script>
 </body>
 
 </html>

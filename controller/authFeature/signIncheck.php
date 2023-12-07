@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
         require_once('../../model/model.php');
 
-        if (validateUser($username, $password)) {
+        if (validateUser($username, $password,$remember)) {
         
             if ($remember_me) {
                 

@@ -1,0 +1,76 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #282c35; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    padding: 20px;
+}
+
+h1 {
+    color: #61dafb; /* Light blue heading color */
+    text-align: center;
+}
+
+.event {
+    border: 1px solid #444; /* Dark border color */
+    background-color: #333; /* Dark background color for each event */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #61dafb; /* Light blue heading color */
+}
+
+p {
+    margin: 0;
+    color: #ccc; /* Light gray text color */
+}
+
+form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: #cc0000; /* Dark red button color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #61dafb; /* Light blue link color */
+}
+
+button {
+    background-color: #61dafb; /* Light blue button color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #3f8ebc; /* Slightly darker blue on hover */
+}
+
+.create-event-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}

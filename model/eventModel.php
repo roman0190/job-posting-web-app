@@ -23,17 +23,17 @@ function createEvent($title, $location, $date, $description, $contact_info) {
     return mysqli_query($con, $sql);
 }
 
-function updateEvent($eventId, $title, $location, $date, $description, $contact_info) {
+function updateEvent($event_id, $title, $location, $date, $description, $contact_info) {
     $con = getConnection();
     $sql = "UPDATE events SET title='$title', location='$location', date='$date', 
-            description='$description', contact_info='$contact_info' WHERE id=$eventId";
+            description='$description', contact_info='$contact_info' WHERE id=$event_id";
 
     return mysqli_query($con, $sql);
 }
 
-function getEventById($eventId) {
+function getEventById($event_id) {
     $con = getConnection();
-    $sql = "SELECT * FROM events WHERE id = $eventId";
+    $sql = "SELECT * FROM events WHERE id = $event_id";
     $result = mysqli_query($con, $sql);
 
     return mysqli_fetch_assoc($result);

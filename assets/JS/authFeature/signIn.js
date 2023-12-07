@@ -1,33 +1,3 @@
-
-function validateEvent() {
-    var event_id = document.getElementById("event_id").value;
-    var title = document.getElementById("title").value;
-    var location = document.getElementById("location").value;
-    var date = document.getElementById("date").value;
-    var description = document.getElementById("description").value;
-    var contact_info = document.getElementById("contact_info").value;
-
-    if (title === "" || location === "" || date === "" || description === "" || contact_info === "") {
-        alert("All fields must be filled out");
-        return false;
-    }
-
-   
-    if (title !== title.toUpperCase()) {
-        alert("Title must have all uppercase letters");
-        return false;
-    }
-
-    if (description.split(/\s+/).length > 500) {
-        alert("Description cannot contain more than 500 words");
-        return false;
-    }
-
-    return true;
-}
-
-
-   
 function EUPDATE() {
     
 

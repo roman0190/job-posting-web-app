@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
-    
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/Event/createEvent.css">
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">

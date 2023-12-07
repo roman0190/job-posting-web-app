@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/Event/adminEvent.css">
+</head>
 </head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
@@ -38,7 +40,6 @@
             </td>
         </tr>
 
-        <!-- ... (other HTML code) ... -->
 
     </table>
 </body>
