@@ -156,3 +156,4 @@ CREATE TABLE chat (
     text TEXT NOT NULL,
     time DATETIME NOT NULL
 );
+
