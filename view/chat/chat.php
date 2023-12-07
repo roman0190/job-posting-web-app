@@ -13,6 +13,7 @@
     }
     $Name =  $userInfo['name'];
     $email = $userInfo['email'];
+        
 ?>
 <html lang="en">
 <head>
@@ -194,7 +195,7 @@
 
                 chatDisplay.innerHTML = container;
 
-                // If the user is already at the bottom, auto-scroll to the bottom
+                // jodi user agei niche thake scroll up korte parbe
                 if (isScrolledToBottom) {
                     chatDisplay.scrollTop = chatDisplay.scrollHeight;
                 }

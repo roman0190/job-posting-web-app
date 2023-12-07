@@ -16,7 +16,7 @@ function getdescription(){
         }
     }
 }
-// getdescription()
+getdescription()
 function updatedescription(){
     let newDescription=document.getElementById("newDescription").value
     console.log(newDescription)

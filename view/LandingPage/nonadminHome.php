@@ -53,6 +53,6 @@ include_once("../../model/adminHomemodel.php");
             </td>
         </tr>
     </table>
-    <script src="../../assets/js/LandingPage/home.js">  </script>
+    <script src="../../assets/JS/LandingPage/home.js">  </script>
 </body>
 </html>

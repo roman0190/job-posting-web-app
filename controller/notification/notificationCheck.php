@@ -1,3 +1,6 @@
 <?php
-  echo "Alvi & Tasdid er matha soru tai ora gooru";
+  require_once("../../model/notificationModel.php");
+  //sendNotification($username, $message);
+  echo getNotification($user_type);
+  // echo "boss";
 ?>
