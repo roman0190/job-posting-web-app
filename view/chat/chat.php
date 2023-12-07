@@ -1,4 +1,5 @@
 <?php
+ 
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
@@ -13,7 +14,6 @@
     }
     $Name =  $userInfo['name'];
     $email = $userInfo['email'];
-        
 ?>
 <html lang="en">
 <head>
