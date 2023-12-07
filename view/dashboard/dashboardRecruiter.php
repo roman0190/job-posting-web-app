@@ -27,8 +27,8 @@
             <ul>
                 <li><a href="../privacyPolicy/viewPrivacyPolicy.php">Pricay & Policy</a></li>
                 <li><a href="../contactInformation/viewContactInfo.php">Contact Information</a></li>
-                <li><a href="#">Terms & Condition</a></li>
-                <li><a href="#">Rules & Regulation</a></li>
+                <li><a href="../TermsOfServices/termsAll.php">Terms Of Services</a></li>
+                <li><a href="../Rules/rulesAll.php">Rules & Regulation</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="../chat/chat.php">Chat</a></li>
                 <li><a href="#">Notifications</a></li>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="main">
-            <p> <a href=".php">View Profile</a></p>
+        <p> <a href="../ManageProfile/viewProfile.php">View Profile</a></p>
             <p> <a href=".php">View All Applicants</a></p>
             <p> <a href=".php">View All Jobs</a></p>
             <p> <a href=".php">Create new Jobs</a></p>
