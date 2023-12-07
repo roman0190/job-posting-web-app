@@ -82,11 +82,14 @@ CREATE TABLE reported_applications (
     reported_by INT
 );
 
-
-
 CREATE TABLE rules (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    rule TEXT
+    R1 TEXT,
+    R2 TEXT,
+    R3 TEXT,
+    R4 TEXT,
+    R5 TEXT,
+    R6 TEXT
 );
 
 CREATE TABLE faq (
@@ -100,11 +103,14 @@ CREATE TABLE about (
     about TEXT
 );
 
-
-
 CREATE TABLE terms_of_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    terms_of_services TEXT
+    T1 TEXT,
+    T2 TEXT,
+    T3 TEXT,
+    T4 TEXT,
+    T5 TEXT,
+    T6 TEXT
 );
 
 CREATE TABLE events (
@@ -125,9 +131,6 @@ CREATE TABLE interested (
     event_id INT
 );
 
-
-
-
 -- Create the contact_info table
 CREATE TABLE contact_info (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -140,14 +143,12 @@ CREATE TABLE contact_info (
 INSERT INTO contact_info (email, phone_number, link) VALUES
 ('example@email.com', '+1234567890', 'https://example.com');
 
-
 CREATE TABLE policy_table (
     id INT PRIMARY KEY,
     policy TEXT
 );
 
 INSERT INTO policy_table (id, policy) VALUES (1, 'Default Policy Text');
-
 
 CREATE TABLE chat (
     id INT AUTO_INCREMENT PRIMARY KEY,

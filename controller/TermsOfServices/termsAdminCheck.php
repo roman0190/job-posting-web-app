@@ -8,7 +8,7 @@ else if(isset($_SESSION["userId"])){
     $terms = getTerms();
 }
 else{
-    header('Location: ../Auth/signIn.php');
+    header('Location: ../Auth/login.php');
 }
 
 if(isset($_REQUEST['data'])){

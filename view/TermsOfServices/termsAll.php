@@ -39,7 +39,7 @@ $user = "";
                     &nbsp;&nbsp;&nbsp;&nbsp;MARZ JOB SITE
                 </h2>
                 <h5 align="right">
-                    <a href="../Auth/signIn.php">Sign out</a>
+                    <a href="../Auth/logout.php">Sign out</a>
                 </h5>
             </th>
         </tr>

@@ -8,6 +8,6 @@ else if(isset($_SESSION["userId"])){
     $rules = getRules();
 }
 else{
-    header('Location: ../Auth/signIn.php');
+    header('Location: ../Auth/login.php');
 }
 ?>

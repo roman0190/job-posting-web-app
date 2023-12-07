@@ -54,7 +54,7 @@ $rules = getRules();
                 </h2>
                 <h5 align="right">
                     <a href="../TermsOfServices/termsAdmin.php">Terms of Services</a> |
-                    <a href="../authFeature/signIn.php">Sign out</a>
+                    <a href="../Auth/logout.php">Sign out</a>
                 </h5>
             </th>
         </tr>
