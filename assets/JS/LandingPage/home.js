@@ -16,12 +16,11 @@ function getdescription(){
         }
     }
 }
-// getdescription()
+   getdescription()
 function updatedescription(){
     let newDescription=document.getElementById("newDescription").value
     console.log(newDescription)
     let xhttp = new XMLHttpRequest();
-    console.log("fadfa")
     xhttp.open('POST', '../../controller/LandingPage/updatedescription.php', true);
     
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
