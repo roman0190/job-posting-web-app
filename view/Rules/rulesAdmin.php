@@ -22,7 +22,7 @@ $rules = getRules();
                 <th colspan="2">
                     <h2 align="left">
                         <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
-                        &nbsp;&nbsp;&nbsp;&nbsp;MARZ JOB SITE
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MARZ JOB SITE
                     </h2>
                     <h5 align="right">
                         <a href="../TermsOfServices/termsAdmin.php">Terms of Services</a> |
