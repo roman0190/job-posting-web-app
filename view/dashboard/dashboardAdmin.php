@@ -1,5 +1,5 @@
 <?php 
-    // require('../../controller/dashboard/dashboardSession.php'); 
+     require_once('../../controller/Auth/session.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
                 <h1>Dashboard</h1><h6 id='role'style="text-transform: uppercase;" ></h6>
            </div>
            <div class='logout'>
-                <a href="logout.php">logout</a>
+                <a href="../Auth/logout.php">logout</a>
            </div>
         </div>
 

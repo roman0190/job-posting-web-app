@@ -1,4 +1,5 @@
-<?php 
+<?php
+    require_once('../../controller/Auth/session.php'); 
     require_once("../../model/contactinfoModel.php");
     session_start();
     $contactInfo = contactinfoView();
