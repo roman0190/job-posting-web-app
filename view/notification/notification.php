@@ -1,8 +1,17 @@
 <?php 
-session_start();
-$userInfo =  $_SESSION['userInfo'] ;
-$Name =  $userInfo['name'];
-$name = "Roman";  
+    $userInfo = [];
+ 
+    if (isset($_COOKIE['userInfo'])) {
+        $userInfo = (array) json_decode($_COOKIE['userInfo']);
+    } else {
+        session_start();
+        if (isset($_SESSION['userInfo'])) {
+            $userInfo = (array)  json_decode($_SESSION['userInfo']);
+        } else {
+            // no userInfo in $_SESSION or $_COOKIE
+        }
+    }
+    $Name =  $userInfo['name'];
 ?>
 
 
@@ -17,13 +26,10 @@ $name = "Roman";
         <header>
             <img src="../../assets/images/chatProfileimage.png" alt="">
             <h1>Notification</h1>
-            <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $name;?></b></a> </span>
+            <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
         </header>
         <main id ="viewNotification" onclick="getNotification()">
-            <span>Alvi sent you a messege</span>
-            <span>Alvi sent you a messege</span>
-            <span>Alvi sent you a messege</span>
-            <span>Alvi sent you a messege</span>
+            <span id="newNotification">Alvi sent you a messege.<input type="button" value="Clear"></span> 
         </main>
         <footer>
             <h3>@Copyright for Job-Posting-Web-App</h3>
@@ -46,7 +52,7 @@ $name = "Roman";
 
                 if(this.readyState == 4 && this.status == 200){
 
-                    document.getElementById('viewNotification').innerHTML = this.responseText;
+                    document.getElementById('newNotification').innerHTML = this.responseText;
                     
                 }
             }

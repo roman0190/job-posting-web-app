@@ -49,10 +49,10 @@ include_once("../../model/adminHomemodel.php");
             <td>
                 <footer align="center">
                     <p>&copy; 2023 MARZ JOB SITE. All rights reserved.</p>
-                </footer>
+                </footer> 
             </td>
         </tr>
     </table>
-    <script src="../../assets/js/LandingPage/home.js">  </script>
+    <script src="../../assets/JS/LandingPage/home.js">  </script>
 </body>
 </html>

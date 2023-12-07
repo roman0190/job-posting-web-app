@@ -16,7 +16,11 @@ function getdescription(){
         }
     }
 }
+<<<<<<< HEAD
    getdescription()
+=======
+getdescription()
+>>>>>>> 13cb63207a4e98bfaa99ab8b913baa0fa73bc961
 function updatedescription(){
     let newDescription=document.getElementById("newDescription").value
     console.log(newDescription)
