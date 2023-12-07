@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     mysqli_query($con, $queryDeleteApplicant);
     
 
-    header("Location:../../view/manageJobandApplicant manageReportedapplicant.php");
+    header("Location:../../view/manageJobandApplicant/manageReportedapplicant.php");
     exit();
 }
 ?>
