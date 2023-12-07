@@ -1,5 +1,5 @@
 <?php 
-    // require('../../controller/dashboard/dashboardSession.php'); 
+     require_once('../../controller/Auth/session.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
                 <h1>Dashboard</h1><h6 id='role'style="text-transform: uppercase;" ></h6>
            </div>
            <div class='logout'>
-                <a href="logout.php">logout</a>
+                <a href="../Auth/logout.php">logout</a>
            </div>
         </div>
 
@@ -27,8 +27,8 @@
             <ul>
                 <li><a href="../privacyPolicy/editPrivacyPolicy.php">Edit Pricay & Policy</a></li>
                 <li><a href="../contactInformation/editContactInfo.php">Edit Contact Information</a></li>
-                <li><a href="#">Edit Terms & Condition</a></li>
-                <li><a href="#">Edit Rules & Regulation</a></li>
+                <li><a href="../TermsOfServices/termsAdmin.php">Terms Of Services</a></li>
+                <li><a href="../Rules/rulesAdmin.php">Rules & Regulation</a></li>
                 <li><a href="#">Edit FAQ</a></li>
                 <li><a href="../chat/chat.php">Chat</a></li>
                 <li><a href="#">Notifications</a></li>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="main">
-            <p> <a href=".php">View Profile</a></p>
+        <p> <a href="../ManageProfile/viewProfile.php">View Profile</a></p>
             <p> <a href=".php">View Reported Jobs</a></p>
             <p> <a href=".php">View Reported Applicant</a></p>
             <p> <a href="../Event/adminEvent.php">Event</a></p>

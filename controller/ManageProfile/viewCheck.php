@@ -12,7 +12,7 @@ else if(isset($_SESSION["userId"])){
     $user=getUserFunc($_SESSION["userId"]);
 }
 else{
-    header('Location: ../Auth/signIn.php');
+    header('Location: ../Auth/login.php');
 }
 
 ?>

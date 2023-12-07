@@ -82,31 +82,14 @@ CREATE TABLE reported_applications (
     reported_by INT
 );
 
-CREATE TABLE notifications (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    notification TEXT,
-    receiver INT,
-    seen BOOLEAN DEFAULT FALSE
-);
-
-CREATE TABLE contact_information (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255),
-    number VARCHAR(15),
-    fb VARCHAR(255),
-    twitter VARCHAR(255)
-);
-
-CREATE TABLE chat (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    sender INT,
-    receiver INT,
-    text TEXT
-);
-
 CREATE TABLE rules (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    rule TEXT
+    R1 TEXT,
+    R2 TEXT,
+    R3 TEXT,
+    R4 TEXT,
+    R5 TEXT,
+    R6 TEXT
 );
 
 CREATE TABLE faq (
@@ -120,14 +103,14 @@ CREATE TABLE about (
     about TEXT
 );
 
-CREATE TABLE privacy_policy (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    privacy_policy TEXT
-);
-
 CREATE TABLE terms_of_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    terms_of_services TEXT
+    T1 TEXT,
+    T2 TEXT,
+    T3 TEXT,
+    T4 TEXT,
+    T5 TEXT,
+    T6 TEXT
 );
 
 CREATE TABLE events (
@@ -147,3 +130,31 @@ CREATE TABLE interested (
     email VARCHAR(255),
     event_id INT
 );
+
+-- Create the contact_info table
+CREATE TABLE contact_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
+    link VARCHAR(255) NOT NULL
+);
+
+-- Insert values into the contact_info table
+INSERT INTO contact_info (email, phone_number, link) VALUES
+('example@email.com', '+1234567890', 'https://example.com');
+
+CREATE TABLE policy_table (
+    id INT PRIMARY KEY,
+    policy TEXT
+);
+
+INSERT INTO policy_table (id, policy) VALUES (1, 'Default Policy Text');
+
+CREATE TABLE chat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender VARCHAR(255) NOT NULL,
+    receiver VARCHAR(255) NOT NULL,
+    text TEXT NOT NULL,
+    time DATETIME NOT NULL
+);
+
