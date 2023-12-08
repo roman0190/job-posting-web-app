@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
-    <link rel="stylesheet" type="text/css" href="../../assets/CSS/">
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/manageReport/manageReportedAplicant.css">
 
    
 </head>
@@ -26,21 +26,21 @@
             <td>
             <h2>Manage Reported Applicants</h2>
 
-<?php
-include ('../../model/db.php');
-$con = getConnection();
-$queryApplicants = "SELECT * FROM reported_applicants";
-$resultApplicants = mysqli_query($con, $queryApplicants);
+                <?php
+                include ('../../model/db.php');
+                $con = getConnection();
+                $queryApplicants = "SELECT * FROM reported_applicants";
+                $resultApplicants = mysqli_query($con, $queryApplicants);
 
-echo "<h3>Reported Applicants</h3>";
-while ($row = mysqli_fetch_assoc($resultApplicants)) {
-    echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . " | ";
-    echo "<a href='../../controller/manageReport/manageReportedapplicantcheck.php?id=" . $row['id'] . "'>Remove Report</a><br>";
-}
-?>
+                echo "<h3>Reported Applicants</h3>";
+                while ($row = mysqli_fetch_assoc($resultApplicants)) {
+                    echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . " | ";
+                    echo "<a href='../../controller/manageReport/manageReportedapplicantcheck.php?id=" . $row['id'] . "'>Remove Report</a><br>";
+                }
+                ?>
 
-<br>
-<a href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
+                <br>
+                <a href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
             </td>
         </tr>
        

@@ -25,7 +25,7 @@
                     echo '<p>Contact Information: ' . $row['contact_info'] . '</p>';
                    
                     echo '<form method="post" action="../../controller/Event/deleteEvent.php">';
-                    echo '<input type="hidden" name="event_id" value="' . $row['id'] . '">';
+                    echo '<input type="hidden" name="event_id" value="' . $row['id'] . '">'; 
                     echo '<input type="submit" name="delete" value="Delete">';
                     echo '</form>';
                   
@@ -35,7 +35,8 @@
                 }
                 ?>        
                 <h5 align="center">
-                    <a href="createEvent.php">Create New Event</a>
+                    <a href="createEvent.php">Create New Event</a><br><br>
+                    <a href="../dashboard/commonDashboard.php">Back to Dashboard</a>
                 </h5>
             </td>
         </tr>

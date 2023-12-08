@@ -1,17 +1,14 @@
-/* Reset some default styles */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
-/* Body styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Table styles */
 table {
     width: 80%;
     margin: 20px auto;
@@ -32,12 +29,10 @@ th {
     text-align: center;
 }
 
-/* Header styles */
 h2 {
     color: #ffffff;
 }
 
-/* Navigation styles */
 h5 {
     margin: 10;
 }
@@ -49,7 +44,6 @@ h5 a {
     font-weight: bold;
 }
 
-/* Footer styles */
 footer {
     margin-top: 20px;
     padding: 10px 0;
@@ -57,7 +51,6 @@ footer {
     color: #fff;
 }
 
-/* Links styles */
 a {
     color: #3498db;
     text-decoration-line: none;

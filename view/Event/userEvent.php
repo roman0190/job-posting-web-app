@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>User Events</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/Event/userEvent.css">
 </head>
 <body>
     <h1>Welcome to our Events</h1>
@@ -21,5 +22,9 @@
         echo '</div>';
     }
     ?>
+    <h5 align="center">  
+    <a href="../dashboard/commonDashboard.php">Back to Dashboard</a>
+    </h5>
+    
 </body>
 </html>

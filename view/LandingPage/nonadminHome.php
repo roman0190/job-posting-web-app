@@ -13,7 +13,7 @@ include_once("../../model/adminHomemodel.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARZ JOB SITE - Your Job Search Partner</title>
-    <!-- Inside the head section of your HTML file -->
+   
 <link rel="stylesheet" href="../../assets/CSS/LandingPage/userHome.css">
 
 </head>

@@ -33,7 +33,7 @@
                         <?php
                         include('../../model/db.php');
 
-                        // Get database connection
+                        
                         $con = getConnection();
 
                         $queryJobs = "SELECT * FROM reported_jobs";
@@ -54,7 +54,7 @@
                             echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . "<br>";
                         }
 
-                        // Close the database connection
+                      
                         mysqli_close($con);
                         ?>
 

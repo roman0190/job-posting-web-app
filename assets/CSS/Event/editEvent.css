@@ -1,24 +1,22 @@
-/* style.css */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #282c35; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #282c35;
+    color: #fff;
 }
 
 .container {
     width: 50%;
     margin: 50px auto;
-    background-color: #333; /* Dark container background color */
+    background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for a subtle effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    color: #61dafb; /* Light blue heading color */
+    color: #61dafb;
     text-align: center;
 }
 
@@ -29,7 +27,7 @@ form {
 label {
     display: block;
     margin: 10px 0;
-    color: #61dafb; /* Light blue label color */
+    color: #61dafb;
 }
 
 input[type="text"],
@@ -38,13 +36,13 @@ textarea {
     padding: 10px;
     margin-bottom: 15px;
     box-sizing: border-box;
-    border: 1px solid #444; /* Dark border color */
-    background-color: #333; /* Dark background color for input fields */
-    color: #fff; /* Light text color */
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
 }
 
 input[type="button"] {
-    background-color: #61dafb; /* Light blue button color */
+    background-color: #61dafb;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -52,16 +50,16 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #3f8ebc; /* Slightly darker blue on hover */
+    background-color: #3f8ebc;
 }
 
 a {
     text-decoration: none;
-    color: #61dafb; /* Light blue link color */
+    color: #61dafb;
 }
 
 a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
 h4 {
