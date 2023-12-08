@@ -162,10 +162,11 @@ function updateUser($user)
     $result = mysqli_query($con, $checkEmailQuery);
 
     if (mysqli_num_rows($result) > 0) {
-     
-        return "Email already exist in Database.";
+    
+        return false;
     }
 
+    
     $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
 
     if (mysqli_query($con, $sql)) {
