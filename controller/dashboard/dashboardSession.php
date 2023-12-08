@@ -23,7 +23,7 @@
             header('location: ../../view/dashboard/dashboardRecruiter.php');
         
         } else {
-            header('location: ../../view/Auth/login.php');
+            header('location: ../../view/Auth/logout.php');
         }
 ?>
 

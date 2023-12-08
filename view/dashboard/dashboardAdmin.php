@@ -27,8 +27,8 @@
             <ul>
                 <li><a href="../privacyPolicy/editPrivacyPolicy.php">Edit Privacy & Policy</a></li>
                 <li><a href="../contactInformation/editContactInfo.php">Edit Contact Information</a></li>
-                <li><a href="../TermsOfServices/termsAdmin.php">Terms Of Services</a></li>
-                <li><a href="../Rules/rulesAdmin.php">Rules & Regulation</a></li>
+                <li><a href="../TermsOfServices/termsAdmin.php">Edit Terms Of Services</a></li>
+                <li><a href="../Rules/rulesAdmin.php">Edit Rules & Regulation</a></li>
                 <li><a href="#">Edit FAQ</a></li>
                 <li><a href="../chat/chat.php">Chat</a></li>
                 <li><a href="../notification/notification.php">Notifications</a></li>
