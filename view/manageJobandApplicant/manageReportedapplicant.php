@@ -1,80 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Admin Page</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/">
 
+   
+</head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
         <tr>
-            <td>
-                <header>
-                    <img src="logo.png" alt="MARZ JOB SITE Logo" style="max-width: 100px; float: left;">
-                    <h1 align="center">MARZ JOB SITE</h1>
-                    <h4 align="right">
-                        <a href="logOut.php">Logout</a>
-                    </h4>
-                </header>
-            </td>
+                <th colspan="2">
+                    <h2 align="center">
+                    <img align="left" src="../../assets/images/logo.png" alt="Company Logo" width="80" height="80">
+                        MARZ JOB SITE
+                    </h2>
+                    
+                    
+                </th>
         </tr>
+
         <tr>
             <td>
-                <h1>Manage Reported Applicant</h1>
+            <h2>Manage Reported Applicants</h2>
 
-                <h2>Reported Applicants</h2>
-                <ul>
-                    <?php
+<?php
+include ('../../model/db.php');
+$con = getConnection();
+$queryApplicants = "SELECT * FROM reported_applicants";
+$resultApplicants = mysqli_query($con, $queryApplicants);
 
-                    $reportedApplicants = [
-                        ['id' => 1, 'title' => 'Reported Applicant 1', 'details' => 'Details of Reported Applicant 1'],
-                        ['id' => 2, 'title' => 'Reported Applicant 2', 'details' => 'Details of Reported Applicant 2'],
-                    ];
+echo "<h3>Reported Applicants</h3>";
+while ($row = mysqli_fetch_assoc($resultApplicants)) {
+    echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . " | ";
+    echo "<a href='../../controller/manageReport/manageReportedapplicantcheck.php?id=" . $row['id'] . "'>Remove Report</a><br>";
+}
+?>
 
-                    if (isset($_GET['applicant_id'])) {
-                        $selectedApplicantId = $_GET['applicant_id'];
-
-                        $selectedApplicant = null;
-                        foreach ($reportedApplicants as $applicant) {
-                            if ($applicant['id'] == $selectedApplicantId) {
-                                $selectedApplicant = $applicant;
-                                break;
-                            }
-                        }
-
-                        if ($selectedApplicant) {
-                            // Display reported applicant details
-                            echo "<h2>Reported Applicant Details</h2>";
-                            echo "<p><strong>ID:</strong> {$selectedApplicant['id']}</p>";
-                            echo "<p><strong>Title:</strong> {$selectedApplicant['title']}</p>";
-                            echo "<p><strong>Details:</strong> {$selectedApplicant['details']}</p>";
-
-                            // Display action buttons (dismiss and delete)
-                            echo "<p><a href='#' onclick='dismissApplicant()'>Dismiss</a> | <a href='#' onclick='deleteApplicant()'>Delete</a></p>";
-                        } else {
-                            echo "<p>Invalid applicant ID</p>";
-                        }
-                    } else {
-                        echo "<p>No applicant selected</p>";
-                    }
-
-                    ?>
-
-                </ul>
-
-                <script>
-                    function dismissApplicant() {
-                        alert("Applicant dismissed");
-                    }
-
-                    function deleteApplicant() {
-                        alert("Applicant deleted");
-                    }
-                </script>
+<br>
+<a href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
             </td>
         </tr>
-
+       
         <tr>
             <td>
                 <footer align="center">
@@ -83,6 +52,6 @@
             </td>
         </tr>
     </table>
+   
 </body>
-
 </html>
