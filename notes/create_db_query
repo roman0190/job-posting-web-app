@@ -158,3 +158,10 @@ CREATE TABLE chat (
     time DATETIME NOT NULL
 );
 
+CREATE TABLE notification (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    user_type VARCHAR(50) NOT NULL,
+    notification_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

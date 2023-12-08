@@ -24,13 +24,16 @@ header span {
     padding-top: 20px;
 }
 
+
 main {
+    max-height:850px;
     color: #fff;
     background-color: #2E313F;
-    flex : 5;
     display: flex;
+    flex: 5; 
     flex-direction: column;
     text-align: center;
+    overflow-y: scroll;
 }
 
 footer {
