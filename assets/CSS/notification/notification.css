@@ -32,7 +32,6 @@ main {
     display: flex;
     flex: 5; 
     flex-direction: column;
-    text-align: center;
     overflow-y: scroll;
 }
 

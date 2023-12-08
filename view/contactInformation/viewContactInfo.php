@@ -27,7 +27,7 @@
             <header>
                 <img src="../../assets/images/chatProfileimage.png" alt="">
                 <h1>Contact Information</h1>
-                <span>Login as <a href="../../view/viewProfile.php"><b id="name-link"><?php echo $Name;?></b></a> </span>
+                <span>Login as <a href="../ManageProfile/viewProfile.php"><b id="name-link"><?php echo $Name;?></b></a> </span>
             </header>
             <main>
                 <label for="email">Email:</label> 
@@ -35,7 +35,7 @@
                 <label for="number">Number: </label>
                 <?php echo $contactInfo["phone_number"];?><br>
                 <label for="link">Link: </label>
-                <a href="<?php echo $contactInfo["link"];?>" id = "link">Facebook</a>
+                <a href="<?php echo $contactInfo["link"];?>" id = "link">W3School</a>
             </main>
             <footer>
                 <h3>@Copyright for Job-Posting-Web-App</h3>

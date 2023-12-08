@@ -13,7 +13,7 @@
         <div class="header">
             <div class='user-info'>
                 <img src="../../assets/images/profilePicture.jpg" alt="">
-                <span>Welcome,<a href="viewprofile.php"><b id='name'></b></a></span>
+                <span>Welcome,<a href="../ManageProfile/viewProfile.php"><b id='name'></b></a></span>
             </div>
            <div class=head-content>
                 <h1>Dashboard</h1><h6 id='role'style="text-transform: uppercase;" ></h6>
@@ -50,27 +50,4 @@
 </div>
 </body>
 </html>
-<script>
-
-function getValue() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../../controller/dashboard/dashboardCheck.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let userInfo = JSON.parse(this.responseText);
-            document.getElementById('name').innerHTML = userInfo.name;
-            document.getElementById('role').innerHTML = userInfo.role;
-        }
-    };
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    getValue();
-
-});
-
-
-
-</script>
+<script src="../../assets/JS/dashboard/dashboardRecruiter.js"></script>

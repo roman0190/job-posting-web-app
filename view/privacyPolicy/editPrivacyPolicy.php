@@ -28,7 +28,7 @@
         <header>
             <img src="../../assets/images/chatProfileimage.png" alt="">
             <h1>Edit Privacy & Policy</h1>
-            <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
+            <span>Login as <a href="../ManageProfile/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
         </header>
         <main>
             <label for="policy-input">Policy: </label> <br>
@@ -40,37 +40,7 @@
             <h3>@Copyright for Job-Posting-Web-App</h3>
         </footer>
     </div>
-
-
-    <script type="text/javascript" >
-
-        function _(element){
-            return document.getElementById(element).value;
-        }
-
-        function push_get_data(){
-
-            let policy_input = _("policy-input");
-
-            let xhttp = new XMLHttpRequest();
-            xhttp.open('POST', '../../controller/privacyPolicy/editPrivacyPolicyCheck.php', true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("policy-input="+policy_input); 
-
-            xhttp.onreadystatechange = function(){
-
-                if(this.readyState == 4 && this.status == 200){
-
-                    document.getElementById('preview').innerHTML = this.responseText;
-                    
-                }
-            }
-        }
-
-        setInterval(push_get_data, 50);
-    
-    
-    </script>
 </body>
 </html>
 
+<script src="../../assets/JS/privacyPolicy/editPrivacyPolicy.js"></script>
