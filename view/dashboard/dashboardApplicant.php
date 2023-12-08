@@ -26,7 +26,7 @@
 
         <div class="nav">
             <ul>
-                <li><a href="../privacyPolicy/viewPrivacyPolicy.php">Pricay & Policy</a></li>
+                <li><a href="../privacyPolicy/viewPrivacyPolicy.php">Privacy & Policy</a></li>
                 <li><a href="../contactInformation/viewContactInfo.php">Contact Information</a></li>
                 <li><a href="../TermsOfServices/termsAll.php">Terms Of Services</a></li>
                 <li><a href="../Rules/rulesAll.php">Rules & Regulation</a></li>
