@@ -122,12 +122,9 @@
 include_once('../../model/db.php');
 require('../../model/jobApplyModel.php');
 
-if (!isset($_REQUEST['data'])) {
-    echo json_encode(['error' => 'no data recieved']);
-    // header('Location: ' . $_SERVER['HTTP_REFERER']);
-}else{
+if (isset($_REQUEST['data'])) {
     
-$data = json_decode(  $_REQUEST['data'],true);
+    $data = json_decode(  $_REQUEST['data'],true);
    
     $jobId = $data['id'];
     
@@ -147,9 +144,8 @@ $data = json_decode(  $_REQUEST['data'],true);
         ];
         
         echo json_encode($response);
-    }
-    
-    $error_message = '';
+    }else{
+        $error_message = '';
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = '';
@@ -190,6 +186,10 @@ $data = json_decode(  $_REQUEST['data'],true);
         }
     }
 
+
+    }
+    
+    
     
     //JSON
     

@@ -34,7 +34,7 @@ include_once("../../controller/ApplyToJob/jobApplyCheck.php");
                             </center>
                         </label>
                         <label for="first_name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="hidden" name="id" value=<?=$_GET['id'] ?> ><br><br>
+                        <input type="hidden" name="id" value=<?=$_GET['id'] ?> >
                         <input type="text" name="first_name" required><br><br>
                         <label for="last_name">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="last_name" required><br><br>
@@ -65,8 +65,8 @@ include_once("../../controller/ApplyToJob/jobApplyCheck.php");
                             <option value="part-time">Part-Time</option>
                             <option value="contract">Contract</option>
                         </select><br><br><hr>
-                        <!-- <p style="color: red;"><?= $error_message ?></p> -->
-                        <p style="color:red" id = "errormess"><?= $error_message ?></p>
+                    
+                        <p style="color:red" id = "errormess"></p>
                         <input type="submit" name="submit" value="Apply for Job">
                         <input type="reset" value="Reset">
                     </fieldset>
@@ -75,5 +75,6 @@ include_once("../../controller/ApplyToJob/jobApplyCheck.php");
         </tr>
     </table>
     <script src="../../assets/JS/ApplyToJob/jobApply.js"></script>
+    <script src="../../assets/JS/ApplyToJob/kick.js" type="module"></script>
 </body>
 </html>
