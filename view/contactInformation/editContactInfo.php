@@ -1,14 +1,12 @@
 <?php
     require_once('../../controller/Auth/session.php'); 
     require_once("../../model/contactinfoModel.php");
-    session_start();
     $contactInfo = contactinfoView();
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
         $userInfo = (array) json_decode($_COOKIE['userInfo']);
     } else {
-        session_start();
         if (isset($_SESSION['userInfo'])) {
             $userInfo = (array)  json_decode($_SESSION['userInfo']);
         } else {
