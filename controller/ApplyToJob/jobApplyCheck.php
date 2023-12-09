@@ -122,61 +122,77 @@
 include_once('../../model/db.php');
 require('../../model/jobApplyModel.php');
 
-if (!isset($_REQUEST['id'])) {
-    // header('Location: ' . $_SERVER['HTTP_REFERER']);
-}
-
-$jobId = $_REQUEST['id'];
-
-$applicantId = 1;
-session_start();
-if (isset($_COOKIE['userId'])) {
-    $applicantId = $_COOKIE['userId'];
-} elseif (isset($_SESSION['userId'])) {
-    $applicantId = $_SESSION['userId'];
-}
-
-$validForApply = checkIfUserApplied($applicantId, $jobId);
-if (!$validForApply) {
-    header('Location: alreadyApplied.php');
-}
-
-$error_message = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $error_message = '';
-
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['phone_number'];
-    $address = $_POST['address'];
-    $cv_link = $_POST['cv_link'];
-    $education = $_POST['education'];
-    $skills = $_POST['skills'];
-    $experience = $_POST['experience'];
-    $availability = $_POST['availability'];
-
-    if (empty($first_name) || empty($last_name) || empty($email) || empty($phone_number) || empty($address) || empty($cv_link) || empty($education) || empty($skills) || empty($experience) || empty($availability)) {
-        $error_message = "All fields are required.";
-    } else {
-        $insertResult = insertJobApplication($applicantId, $first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability, $jobId);
-
-        if ($insertResult) {
-            header('Location: viewAppliedJobs.php');
-            exit();
+if (isset($_REQUEST['data'])) {
+    
+    $data = json_decode(  $_REQUEST['data'],true);
+   
+    $jobId = $data['id'];
+    
+    $applicantId = 3;
+    session_start();
+    if (isset($_COOKIE['userId'])) {
+        $applicantId = $_COOKIE['userId'];
+    } elseif (isset($_SESSION['userId'])) {
+        $applicantId = $_SESSION['userId'];
+    }
+    
+    $validForApply = checkIfUserApplied($applicantId, $jobId);
+    if (!$validForApply) {
+        $response = [
+            'error' => true,
+            'message' => "already applied",
+        ];
+        
+        echo json_encode($response);
+    }else{
+        $error_message = '';
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $error_message = '';
+        
+        $first_name = $data['first_name'];
+        $last_name = $data['last_name'];
+        $email = $data['email'];
+        $phone_number = $data['phone_number'];
+        $address = $data['address'];
+        $cv_link = $data['cv_link'];
+        $education = $data['education'];
+        $skills = $data['skills'];
+        $experience = $data['experience'];
+        $availability = $data['availability'];
+        
+        if (empty($first_name) || empty($last_name) || empty($email) || empty($phone_number) || empty($address) || empty($cv_link) || empty($education) || empty($skills) || empty($experience) || empty($availability)) {
+            $error_message = "All fields are required.";
         } else {
-            $error_message = "Error occurred while submitting the job application.";
+            $insertResult = insertJobApplication($applicantId, $first_name, $last_name, $email, $phone_number, $address, $cv_link, $education, $skills, $experience, $availability, $jobId);
+            
+            if ($insertResult) {
+               
+                exit();
+                $response = [
+                    'success' => true,
+                    'message' => "successfully applied",
+                ];
+                
+                echo json_encode($response);
+            } else {
+                $response = [
+                    'error' => true,
+                    'message' => $error_message,
+                ];
+                
+                echo json_encode($response);
+            }
         }
     }
+
+
+    }
+    
+    
+    
+    //JSON
+    
 }
-
-//JSON
-$response = [
-    'success' => empty($error_message),
-    'message' => $error_message,
-];
-
-echo json_encode($response);
-?>
+    ?>
 

@@ -75,7 +75,7 @@ require_once("../../controller/ManageProfile/viewCheck.php")
                                 <td>
                                     <img id="current-profile-picture" src="<?php echo $user['pfp']; ?>" alt="Profile Picture">
                                     <br>
-                                    <input type="file" id="profile-picture" name="profile-picture">
+                                    <input type="file" id="pfp" name="profile-picture">
                                 </td>
                             </tr>
                             <tr>

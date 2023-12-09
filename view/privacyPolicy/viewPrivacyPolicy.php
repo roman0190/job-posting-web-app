@@ -1,21 +1,22 @@
 <?php 
-    require_once('../../controller/Auth/session.php'); 
+   // require_once('../../controller/Auth/session.php'); 
     require_once("../../model/policyModel.php");
-    session_start();
     $policy = policyView();
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
         $userInfo = (array) json_decode($_COOKIE['userInfo']);
+        $Name =  $userInfo['name']; 
     } else {
         session_start();
         if (isset($_SESSION['userInfo'])) {
             $userInfo = (array)  json_decode($_SESSION['userInfo']);
+            $Name =  $userInfo['name']; 
         } else {
-            // no userInfo in $_SESSION or $_COOKIE
+            $Name="Guest";
         }
     }
-    $Name =  $userInfo['name'];        
+           
 ?>
 
 <head>

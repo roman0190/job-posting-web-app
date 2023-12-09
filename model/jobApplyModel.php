@@ -101,7 +101,7 @@ function getAppliedJobs($applicantId)
         die("Error: " . mysqli_error($conn));
     }
 }
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 function getAllApplications($jobId)
@@ -119,7 +119,4 @@ function getAllApplications($jobId)
         return ['success' => true, 'message' => "Database error"];
     }
 }
-=======
 ?>
-
->>>>>>> 1cf9c7c6e8687a8a9d66abbf650255ec81b695b8
