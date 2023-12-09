@@ -43,8 +43,7 @@ function login($username, $password, $remember)
 }
 
 function register(
-    $first_name,
-    $last_name,
+    $name,
     $username,
     $email,
     $gender,
@@ -68,8 +67,7 @@ function register(
     }
 
     $sql = "insert into users (
-        first_name,
-        last_name, 
+       name, 
         username,
         email,
         gender,
@@ -79,8 +77,7 @@ function register(
 
         ) values (
 
-        '$first_name',
-        '$last_name',
+        '$name',
         '$username',
         '$email',
         '$gender',
@@ -93,11 +90,10 @@ function register(
 
 
     if ($result) {
-        login($username, $password, "");
-        header('location: login.php');
+        return login($username, $password, "");
     } else {
 
-        return "Database error!";
+        return ['error' => "Database error!"];
     }
 }
 
@@ -157,16 +153,16 @@ function updateUser($user)
     $username = $user['username'];
     $email = $user['email'];
 
-    
+
     $checkEmailQuery = "SELECT id FROM users WHERE email = '$email' AND id != $id";
     $result = mysqli_query($con, $checkEmailQuery);
 
     if (mysqli_num_rows($result) > 0) {
-    
+
         return false;
     }
 
-    
+
     $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
 
     if (mysqli_query($con, $sql)) {
