@@ -101,8 +101,6 @@ function getAppliedJobs($applicantId)
         die("Error: " . mysqli_error($conn));
     }
 }
-//<<<<<<< HEAD
-
 
 function getAllApplications($jobId)
 {

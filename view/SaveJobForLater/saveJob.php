@@ -1,6 +1,9 @@
+<?php
+include_once("../../controller/SaveJobForLater/saveJobCheck.php");
+?>
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Save Job for Later</title>
@@ -36,8 +39,8 @@
             <th colspan="2">
                 <h2 align="left">
                     <img align="left" src="logo.png" alt="Company Logo" width="100" height="80">
-    </h2>
-    <h2 align="center">MARZ JOB SITE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                </h2>
+                <h2 align="center">MARZ JOB SITE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
                 <h5 align="right">
                     <a href="../Auth/signIn.php">Sign out</a>
                 </h5>
@@ -50,84 +53,71 @@
                         <tr>
                             <th colspan="2"><h2 align="center">Job Information</h2></th>
                         </tr>
-                        <tr>
-                            <td>
-                                <label for="jobTitle">Job Title:</label><hr>
-                            </td>
-                            <td>
-                                <text id="jobTitle">Software Developer</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="category">Category:</label><hr>
-                            </td>
-                            <td>
-                                <text id="category">Information Technology</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="jobPosition">Job Position:</label><hr>
-                            </td>
-                            <td>
-                                <text id="jobPosition">Full Stack Developer</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="jobType">Job Type:</label><hr>
-                            </td>
-                            <td>
-                                <text id="jobType">Permanent</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="requiredSkills">Required Skills:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><hr>
-                            </td>
-                            <td>
-                                <text id="requiredSkills">PHP, JavaScript, MySQL</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="requiredEducation">Required Education:</label><hr>
-                            </td>
-                            <td>
-                                <text id="requiredEducation">Bachelor's Degree in Computer Science</text><hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="jobDescription">Job Description:</label><hr>
-                            </td>
-                            <td>
-                                <p id="jobDescription">
-                                    We are seeking a highly skilled and motivated Software Developer to join our dynamic team.
-                                    As a Full Stack Developer, you will be responsible for designing, developing, and maintaining
-                                    web applications.
+                        <?php
+foreach ($user['saved_jobs'] as $job) {
+    echo "<tr>";
+    echo "<td colspan='2'>";
+    echo "<label for='jobTitle'>Job Title:</label><hr>";
+    echo "<text id='jobTitle'>" . $job['title'] . "</text><hr>";
+    echo "</td>";
+    echo "</tr>";
 
-                                    <br><br>
+    echo "<tr>";
+    echo "<td><label for='category'>Category:</label><hr></td>";
+    echo "<td><text id='category'>" . $job['category'] . "</text><hr></td>";
+    echo "</tr>";
 
-                                    <b>Key Responsibilities:</b>
-                                    <ul>
-                                        <li>Develop and maintain web applications using PHP, JavaScript, and MySQL</li>
-                                        <li>Perform code reviews to ensure the code quality and adherence to coding standards</li>
-                                        <li>Troubleshoot, debug, and optimize code for performance</li>
-                                        <li>Stay up-to-date with emerging technologies and industry trends</li>
-                                    </ul>
+    echo "<tr>";
+    echo "<td><label for='jobPosition'>Job Position:</label><hr></td>";
+    echo "<td><text id='jobPosition'>" . $job['job_position'] . "</text><hr></td>";
+    echo "</tr>";
 
-                                    <b>Qualifications:</b>
-                                    <ul>
-                                        <li>Bachelor's degree in Computer Science or related field</li>
-                                        <li>Proven experience in web development with a strong portfolio</li>
-                                        <li>Proficiency in PHP, JavaScript, HTML, CSS, and MySQL</li>
-                                        <li>Excellent problem-solving and communication skills</li>
-                                    </ul>
-                                </p>
-                            </td>
-                        </tr>
+    echo "<tr>";
+    echo "<td><label for='jobType'>Job Type:</label><hr></td>";
+    echo "<td><text id='jobType'>" . $job['job_type'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='requiredSkills'>Required Skills:</label><hr></td>";
+    echo "<td><text id='requiredSkills'>" . $job['required_skills'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='requiredEducation'>Required Education:</label><hr></td>";
+    echo "<td><text id='requiredEducation'>" . $job['required_education'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='requiredExperience'>Required Experience:</label><hr></td>";
+    echo "<td><text id='requiredExperience'>" . $job['required_experience'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='jobLocation'>Job Location:</label><hr></td>";
+    echo "<td><text id='jobLocation'>" . $job['job_location'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='jobResponsibilities'>Job Responsibilities:</label><hr></td>";
+    echo "<td><p id='jobResponsibilities'>" . $job['job_responsibilities'] . "</p></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='tags'>Tags:</label><hr></td>";
+    echo "<td><text id='tags'>" . $job['tags'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='applicationDeadline'>Application Deadline:</label><hr></td>";
+    echo "<td><text id='applicationDeadline'>" . $job['application_deadline'] . "</text><hr></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td><label for='jobPoster'>Job Poster:</label><hr></td>";
+    echo "<td><text id='jobPoster'>" . $job['job_poster'] . "</text><hr></td>";
+    echo "</tr>";
+}
+?>
                         <tr>
                             <td colspan="2">
                                 <button type="button">Save for Later</button>

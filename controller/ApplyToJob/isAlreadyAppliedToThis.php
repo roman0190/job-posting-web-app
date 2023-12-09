@@ -2,9 +2,8 @@
 
 if (!isset($_REQUEST['id'])) {
     echo json_encode(['error' => 'no data recieved']);
+
 } else {
-
-
 
     $jobId =  $_REQUEST['id'];
 
@@ -16,12 +15,14 @@ if (!isset($_REQUEST['id'])) {
         $applicantId = $_SESSION['userId'];
     }
     require('../../model/jobApplyModel.php');
+
     $validForApply = checkIfUserApplied($applicantId, $jobId);
     if (!$validForApply) {
         $response = [
             'error' => true,
             'alreadyApplied' => true,
         ];
+
 
         echo json_encode($response);
     } else {

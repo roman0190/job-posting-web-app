@@ -1,7 +1,15 @@
 <?php
 require('../../model/db.php');
 require('../../model/jobApplyModel.php');
-$applicantId = $_COOKIE["userId"];
+
+$applicantId = "";
+session_start();
+if (isset($_SESSION['userId'])) {
+    $applicantId = $_SESSION['userId'];
+} else if (isset($_COOKIE['userId'])) {
+
+    $applicantId = $_COOKIE['userId'];
+}
 
 $applications = getAppliedJobs($applicantId);
 

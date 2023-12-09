@@ -175,6 +175,7 @@ if (isset($_REQUEST['data'])) {
                     ];
 
                     echo json_encode($response);
+                    exit();
                 } else {
                     $response = [
                         'error' => true,
@@ -186,11 +187,6 @@ if (isset($_REQUEST['data'])) {
             }
         }
     }
-
-
-
-    //JSON
-
 }
 ?>
 
