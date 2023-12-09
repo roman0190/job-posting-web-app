@@ -3,92 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/manageReport/manageReportedjob.css">
 </head>
 
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
         <tr>
-            <td>
-                <header>
-                    <img src="logo.png" alt="MARZ JOB SITE Logo" style="max-width: 100px; float: left;">
-                    <h1 align="center">MARZ JOB SITE</h1>
-                    <h4 align="right">
-                        <a href="logOut.php">Logout</a>
-                    </h4>
-                </header>
-            </td>
+            <th colspan="2">
+                <h2 align="center">
+                    <img align="left" src="../../assets/images/logo.png" alt="Company Logo" width="80" height="80">
+                    MARZ JOB SITE
+                </h2>
+            </th>
         </tr>
+
         <tr>
             <td>
-                                        <h1>Manage Reported Job</h1>
+                <h2>Manage Reported Jobs</h2>
 
-                            <h2>Reported Jobs</h2>
-                            <ul>
-                            <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Manage Reported Job</title>
-</head>
-<body>
+                <?php
+                include('../../model/db.php');
+                $con = getConnection();
 
-<?php
+                $queryJobs = "SELECT * FROM reported_jobs";
+                $resultJobs = mysqli_query($con, $queryJobs);
 
-$reportedJobs = [
-    ['id' => 1, 'title' => 'Reported Job 1', 'details' => 'Details of Reported Job 1'],
-    ['id' => 2, 'title' => 'Reported Job 2', 'details' => 'Details of Reported Job 2'],
-    
-];
+                echo "<h3>Reported Jobs</h3>";
+                while ($row = mysqli_fetch_assoc($resultJobs)) {
+                    echo "Job ID: " . $row['job_id'] . " | Reported By: " . $row['reported_by'] . " | ";
+                    echo "<a href='../../controller/manageReport/manageReportedjobcheck.php?id=" . $row['id'] . "'>Remove Report</a><br>";
+                }
+                ?>
 
-if (isset($_GET['job_id'])) {
-    $selectedJobId = $_GET['job_id'];
-
-   
-    $selectedJob = null;
-    foreach ($reportedJobs as $job) {
-        if ($job['id'] == $selectedJobId) {
-            $selectedJob = $job;
-            break;
-        }
-    }
-
-    if ($selectedJob) {
-        
-        echo "<h2>Reported Job Details</h2>";
-        echo "<p><strong>ID:</strong> {$selectedJob['id']}</p>";
-        echo "<p><strong>Title:</strong> {$selectedJob['title']}</p>";
-        echo "<p><strong>Details:</strong> {$selectedJob['details']}</p>";
-
-        // Display action buttons (dismiss and delete)
-        echo "<p><a href='#' onclick='dismissJob()'>Dismiss</a> | <a href='#' onclick='deleteJob()'>Delete</a></p>";
-    } else {
-        echo "<p>Invalid job ID</p>";
-    }
-} else {
-    echo "<p>No job selected</p>";
-}
-
-?>
-
-<script>
-    function dismissJob() {
-        alert("Job dismissed");
-      
-    }
-
-    function deleteJob() {
-        alert("Job deleted");
-      
-    }
-</script>
-
-</body>
-</html>
- 
+                <br>
+                <a href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
             </td>
         </tr>
-
 
         <tr>
             <td>

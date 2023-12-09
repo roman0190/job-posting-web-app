@@ -1,4 +1,5 @@
 <?php 
+    require_once('../../controller/Auth/session.php'); 
     require_once("../../model/policyModel.php");
     session_start();
     $policy = policyView();
@@ -26,7 +27,7 @@
         <header>
             <img src="../../assets/images/chatProfileimage.png" alt="">
             <h1>View Privacy & Policy</h1>
-            <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
+            <span>Login as <a href="../ManageProfile/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
         </header>
         <main>
             <p id="view-policy" ><?php echo $policy["policy"];?></p> 

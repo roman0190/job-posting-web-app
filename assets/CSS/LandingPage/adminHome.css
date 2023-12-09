@@ -1,11 +1,9 @@
-/* adminHome.css */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* Light grey background color */
-    color: #333; /* Dark text color */
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 table {
@@ -16,8 +14,8 @@ table {
 th {
     padding: 20px;
     text-align: center;
-    background-color: #3498db; /* Blue header background color */
-    color: #fff; /* White text color */
+    background-color: #3498db;
+    color: #fff;
 }
 
 th h2 {
@@ -34,7 +32,7 @@ td {
 }
 
 h1 {
-    color: #333; /* Dark grey heading color */
+    color: #333;
     text-align: center;
 }
 
@@ -50,22 +48,22 @@ label {
     display: block;
     margin: 10px 0;
     font-weight: bold;
-    color: #333; /* Dark grey label color */
+    color: #333;
 }
 
 textarea {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
-    border: 1px solid #ddd; /* Light grey border color */
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff; /* White background color for input */
-    color: #333; /* Dark text color */
+    background-color: #fff;
+    color: #333;
 }
 
 input[type="button"] {
-    background-color: #3498db; /* Blue button color */
-    color: #fff; /* White text color */
+    background-color: #3498db;
+    color: #fff;
     border: none;
     padding: 15px;
     cursor: pointer;
@@ -73,12 +71,12 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    background-color: #2574a9; /* Slightly darker blue on hover */
+    background-color: #2574a9;
 }
 
 footer {
     margin-top: 20px;
     text-align: center;
-    color: #777; /* Grey text color */
+    color: #777;
     font-size: 14px;
 }

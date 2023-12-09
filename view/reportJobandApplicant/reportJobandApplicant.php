@@ -1,67 +1,67 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Admin Page</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARZ JOB SITE - Your Job Search Partner</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/reportJobandApplicant/reportJobandApplicant.css">
 
+   
+</head>
 <body>
     <table width="100%" border="1" cellspacing="0" cellpadding="20">
         <tr>
-            <td>
-                <header>
-                    <img src="logo.png" alt="MARZ JOB SITE Logo" style="max-width: 100px; float: left;">
-                    <h1 align="center">MARZ JOB SITE</h1>
-                    <h4 align="right">
-                        <a href="logOut.php">Logout</a>
-                    </h4>
-                </header>
-            </td>
+                <th colspan="2">
+                    <h2 align="center">
+                    <img align="left" src="../../assets/images/logo.png" alt="Company Logo" width="80" height="80">
+                        MARZ JOB SITE
+                    </h2>
+                    <h5 align="right">
+                   
+                        <a href="adminEvent.php">Event</a> 
+                    </h5>
+                </th>
         </tr>
+
         <tr>
             <td>
-                                        <h1>Admin Report Page</h1>
+            <h2>Reported Jobs and Applicants</h2>
 
-                            <h2>Reported Jobs</h2>
-                            <ul>
-                                <?php
-                               
-                                $reportedJobs = [
-                                    ['id' => 1, 'title' => 'Job Title 1'],
-                                    ['id' => 2, 'title' => 'Job Title 2'],
-                                    ['id' => 3, 'title' => 'Job Title 3'],
-                                    
-                                ];
+                        <?php
+                        include('../../model/db.php');
 
-                                foreach ($reportedJobs as $job) {
-                                    echo "<li><a href='manageJobReport.php?job_id={$job['id']}'>{$job['title']}</a></li>";
-                                }
-                                ?>
-                            </ul>
+                        
+                        $con = getConnection();
 
-                            <h2>Reported Applicants</h2>
-                            <ul>
-                                <?php
-                                
-                                $reportedApplicants = [
-                                    ['id' => 1, 'name' => 'Applicant Name 1'],
-                                    ['id' => 2, 'name' => 'Applicant Name 2'],
-                                    ['id' => 3, 'name' => 'Applicant Name 3'],
-                                    
-                                ];
+                        $queryJobs = "SELECT * FROM reported_jobs";
+                        $resultJobs = mysqli_query($con, $queryJobs);
 
-                                foreach ($reportedApplicants as $applicant) {
-                                    echo "<li><a href='manageApplicantReport.php?applicant_id={$applicant['id']}'>{$applicant['name']}</a></li>";
-                                }
-                                ?>
-                            </ul>
-                            <a href="manageReportedjob.php">Manage Report job</a> |
-                            <a href="manageReportedapplicant.php">Manage Report applicant</a> 
+                        echo "<h3>Reported Jobs</h3>";
+                        while ($row = mysqli_fetch_assoc($resultJobs)) {
+                            echo "Job ID: " . $row['job_id'] . " | Reported By: " . $row['reported_by'] . "<br>";
+                        }
+                        ?>
+                        <a href="../manageJobandApplicant/manageReportedjob.php">Manage Reported Jobs</a><br>
+                        <?php
+                        $queryApplicants = "SELECT * FROM reported_applicants";
+                        $resultApplicants = mysqli_query($con, $queryApplicants);
+
+                        echo "<h3>Reported Applicants</h3>";
+                        while ($row = mysqli_fetch_assoc($resultApplicants)) {
+                            echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . "<br>";
+                        }
+
+                      
+                        mysqli_close($con);
+                        ?>
+
+                        <a href="../manageJobandApplicant/manageReportedapplicant.php">Manage Reported Applicants</a>
             </td>
         </tr>
-
-
+       
         <tr>
             <td>
                 <footer align="center">
@@ -70,6 +70,6 @@
             </td>
         </tr>
     </table>
+   
 </body>
-
 </html>

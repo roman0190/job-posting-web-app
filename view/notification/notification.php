@@ -1,5 +1,6 @@
 <?php 
-    require_once('');
+    //require_once('');
+    require_once('../../controller/Auth/session.php'); 
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
@@ -26,11 +27,11 @@
 
         <header>
             <img src="../../assets/images/chatProfileimage.png" alt="">
-            <h1>Notification</h1>
-            <span>Login as <a href="../../view/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
+            <h1>Notifications</h1>
+            <span>Login as <a href="../ManageProfile/viewProfile.php"><b id="name-linkß"><?php echo $Name;?></b></a> </span>
         </header>
-        <main id ="viewNotification" onclick="getNotification()">
-            <span id="newNotification">Alvi sent you a messege.<input type="button" value="Clear"></span> 
+        <main id ="viewNotification">
+            <span id="newNotification"></span>
         </main>
         <footer>
             <h3>@Copyright for Job-Posting-Web-App</h3>
@@ -40,23 +41,4 @@
 </body>
 </html>
 
-<script>
-    function getNotification(){
-
-
-        let xhttp = new XMLHttpRequest();
-            xhttp.open('POST', '../../controller/notification/notificationCheck.php', true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send(); 
-
-            xhttp.onreadystatechange = function(){
-
-                if(this.readyState == 4 && this.status == 200){
-
-                    document.getElementById('newNotification').innerHTML = this.responseText;
-                    
-                }
-            }
-
-    }
-</script>
+<script src="../../assets/JS/notification/notification.js"></script>

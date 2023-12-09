@@ -1,5 +1,5 @@
 <?php
-include_once("../../controller/JobApply/jobApplyCheck.php");
+include_once("../../controller/ApplyToJob/jobApplyCheck.php");
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +64,8 @@ include_once("../../controller/JobApply/jobApplyCheck.php");
                             <option value="part-time">Part-Time</option>
                             <option value="contract">Contract</option>
                         </select><br><br><hr>
-                        <p style="color: red;"><?= $error_message ?></p>
+                        <!-- <p style="color: red;"><?= $error_message ?></p> -->
+                        <p style="color:red" id = "errormess"><?= $error_message ?></p>
                         <input type="submit" name="submit" value="Apply for Job">
                         <input type="reset" value="Reset">
                     </fieldset>
@@ -72,5 +73,6 @@ include_once("../../controller/JobApply/jobApplyCheck.php");
             </td>
         </tr>
     </table>
+    <script src="../../assets/JS/ApplyToJob/jobApply.js"></script>
 </body>
 </html>

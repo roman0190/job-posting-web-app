@@ -10,7 +10,7 @@
         if (isset($_SESSION['userInfo'])) {
             $userInfo = (array)  json_decode($_SESSION['userInfo']);
         } else {
-            
+            // no userInfo in $_SESSION or $_COOKIE
         }
     }
     $Name =  $userInfo['name'];

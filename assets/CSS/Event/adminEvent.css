@@ -1,11 +1,9 @@
-/* style.css */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #282c35; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #282c35;
+    color: #fff;
 }
 
 table {
@@ -19,24 +17,24 @@ td {
 }
 
 h1 {
-    color: #61dafb; /* Light blue heading color */
+    color: #61dafb;
     text-align: center;
 }
 
 .event {
-    border: 1px solid #444; /* Dark border color */
-    background-color: #333; /* Dark background color for each event */
+    border: 1px solid #444;
+    background-color: #333;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #61dafb; /* Light blue heading color */
+    color: #61dafb;
 }
 
 p {
     margin: 0;
-    color: #ccc; /* Light gray text color */
+    color: #ccc;
 }
 
 form {
@@ -45,7 +43,7 @@ form {
 }
 
 input[type="submit"] {
-    background-color: #cc0000; /* Dark red button color */
+    background-color: #cc0000;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -54,19 +52,20 @@ input[type="submit"] {
 
 a {
     text-decoration: none;
-    color: #61dafb; /* Light blue link color */
+    color: #61dafb;
 }
 
 button {
-    background-color: #61dafb; /* Light blue button color */
+    background-color: #61dafb;
     color: #fff;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
 }
 
-button:hover, input[type="submit"]:hover {
-    background-color: #3f8ebc; /* Slightly darker blue on hover */
+button:hover,
+input[type="submit"]:hover {
+    background-color: #3f8ebc;
 }
 
 .create-event-link {

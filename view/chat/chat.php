@@ -1,5 +1,5 @@
 <?php
- 
+    require_once('../../controller/Auth/session.php'); 
     $userInfo = [];
  
     if (isset($_COOKIE['userInfo'])) {
@@ -65,7 +65,7 @@
         }
 
         function Logout(){
-            window.location.href = '../../controller/logout.php';
+            window.location.href = '../Auth/logout.php';
         }
 
 

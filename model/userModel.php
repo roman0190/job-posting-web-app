@@ -151,15 +151,22 @@ function getAllUser()
 
 function updateUser($user)
 {
-
-
     $con = getConnection();
-
 
     $id = $user['id'];
     $username = $user['username'];
     $email = $user['email'];
 
+    
+    $checkEmailQuery = "SELECT id FROM users WHERE email = '$email' AND id != $id";
+    $result = mysqli_query($con, $checkEmailQuery);
+
+    if (mysqli_num_rows($result) > 0) {
+    
+        return false;
+    }
+
+    
     $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
 
     if (mysqli_query($con, $sql)) {
@@ -168,6 +175,7 @@ function updateUser($user)
         return false;
     }
 }
+
 
 function deleteUser($id)
 {
