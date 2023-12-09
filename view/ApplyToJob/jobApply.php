@@ -34,6 +34,7 @@ include_once("../../controller/ApplyToJob/jobApplyCheck.php");
                             </center>
                         </label>
                         <label for="first_name">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="hidden" name="id" value=<?=$_GET['id'] ?> ><br><br>
                         <input type="text" name="first_name" required><br><br>
                         <label for="last_name">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" name="last_name" required><br><br>

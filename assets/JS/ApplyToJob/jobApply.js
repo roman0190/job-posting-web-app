@@ -5,16 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         let isValid = true;
 
-        isValid = validateField("first_name", "First Name cannot be empty.") && isValid;
-        isValid = validateField("last_name", "Last Name cannot be empty.") && isValid;
-        //isValid = validateField("email", "Email cannot be empty.") && isValid;
-        isValid = validateField("phone_number", "Phone Number cannot be empty.") && isValid;
-        isValid = validateField("address", "Address cannot be empty.") && isValid;
-        isValid = validateField("cv_link", "CV link cannot be empty.") && isValid;
-        isValid = validateField("education", "Education cannot be empty.") && isValid;
-        isValid = validateField("skills", "skills cannot be empty.") && isValid;
-        isValid = validateField("experience", "experience cannot be empty.") && isValid;
-        isValid = validateField("avalability", "avalability cannot be empty.") && isValid;
+        isValid = validateField(form, "first_name", "First Name cannot be empty.") && isValid;
+        isValid = validateField(form, "last_name", "Last Name cannot be empty.") && isValid;
+        // isValid = validateField(form, "email", "Email cannot be empty.") && isValid;
+        isValid = validateField(form, "phone_number", "Phone Number cannot be empty.") && isValid;
+        isValid = validateField(form, "address", "Address cannot be empty.") && isValid;
+        isValid = validateField(form, "cv_link", "CV link cannot be empty.") && isValid;
+        isValid = validateField(form, "education", "Education cannot be empty.") && isValid;
+        isValid = validateField(form, "skills", "Skills cannot be empty.") && isValid;
+        isValid = validateField(form, "experience", "Experience cannot be empty.") && isValid;
+        isValid = validateField(form, "availability", "Availability cannot be empty.") && isValid;
 
         const email = form.elements["email"].value;
         if (email.trim() === "") {
@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function validateField(fieldName, errorMessage) {
-        // const field = form.elements[fieldName].value.trim();
-        const email = form.elements["email"].value;
-        if (email === "") {
+    function validateField(form, fieldName, errorMessage) {
+        const field = form.elements[fieldName].value.trim();
+        if (field === "") {
             showError(errorMessage);
             return false;
         }
@@ -46,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function submitJobApplication() {
         // Extract data from the job application form
+        let id = document.querySelector("input[name='id']").value;
         let firstName = document.querySelector("input[name='first_name']").value;
         let lastName = document.querySelector("input[name='last_name']").value;
         let email = document.querySelector("input[name='email']").value;
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create an object with the extracted data
         let jobApplicationData = {
+            id:id,
             first_name: firstName,
             last_name: lastName,
             email: email,
@@ -81,9 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
+               
                 let response = JSON.parse(this.responseText);
+                console.log(response)
                 if (response.success) {
                     window.location.replace("../../view/ApplyToJob/viewAppliedJobs.php");
+                }else if (response.error && response.message==="already applied") {
+                    alert("already applied");
+                    setTimeout(() => {
+                        window.location.replace("../../view/ApplyToJob/alreadyApplied.php");
+                    }, 3000);
                 } else {
                     showError(response.message);
                 }
