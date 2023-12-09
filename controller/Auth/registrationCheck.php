@@ -2,7 +2,6 @@
 
 include_once("../../model/userModel.php");
 
-$first_name = isset($_REQUEST['first_name']) ? $_REQUEST['first_name'] : "";
 $last_name = isset($_REQUEST['last_name']) ? $_REQUEST['last_name'] : "";
 $username = isset($_REQUEST['username']) ? $_REQUEST['username'] : "";
 $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : "";
@@ -14,7 +13,6 @@ $user_type = isset($_REQUEST['user_type']) ? $_REQUEST['user_type'] : "";
 // $pfp = isset($_REQUEST['pfp']) ? $_REQUEST['pfp'] : "";
 
 
-$first_nameError = "";
 $last_nameError = "";
 $usernameError = "";
 $emailError = "";
@@ -33,11 +31,9 @@ $error = "";
 
 if (isset($_POST["submit"])) {
 
-    if (!$first_name) {
-        $first_nameError = "Please enter your first name";
-    }
+    
     if (!$last_name) {
-        $last_nameError = "Please enter your last name";
+        $last_nameError = "Please enter your name";
     }
     if (!$username) {
         $usernameError = "Please enter a username";
@@ -71,7 +67,7 @@ if (isset($_POST["submit"])) {
 
     // }
     if (
-        $first_name &&
+       
         $last_name &&
         $username &&
         $email &&
@@ -82,7 +78,7 @@ if (isset($_POST["submit"])) {
         $password == $confirmPassword
     ) {
         $error = register(
-            $first_name,
+            
             $last_name,
             $username,
             $email,

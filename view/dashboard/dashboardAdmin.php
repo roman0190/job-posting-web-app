@@ -25,6 +25,7 @@
 
         <div class="nav">
             <ul>
+                <li><a href="../LandingPage/adminHome.php">Edit Home</a></li>
                 <li><a href="../privacyPolicy/editPrivacyPolicy.php">Edit Privacy & Policy</a></li>
                 <li><a href="../contactInformation/editContactInfo.php">Edit Contact Information</a></li>
                 <li><a href="../TermsOfServices/termsAdmin.php">Edit Terms Of Services</a></li>

@@ -1,6 +1,7 @@
 <?php
 include_once('db.php');
 
+
 function getAllEvents() {
     $con = getConnection();
     $sql = "SELECT * FROM events";
@@ -21,7 +22,10 @@ function createEvent($title, $location, $date, $description, $contact_info) {
             VALUES ('$title', '$location', '$date', '$description', '$contact_info')";
 
     return mysqli_query($con, $sql);
+
+    
 }
+
 
 function updateEvent($event_id, $title, $location, $date, $description, $contact_info) {
     $con = getConnection();

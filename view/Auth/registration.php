@@ -22,18 +22,9 @@ include_once("../../controller/Auth/registrationCheck.php");
             <table class="form" border="0" cellspacing="0" cellpadding="0">
 
 
+              
                 <tr>
-                    <td><label for="first_name">First Name</label> </td>
-                    <td> : <input type="text" name="first_name" value="<?php echo $first_name ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $first_nameError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="last_name">Last Name</label> </td>
+                    <td><label for="last_name">Name</label> </td>
                     <td> : <input type="text" name="last_name" value="<?php echo $last_name ?>" </td>
                 </tr>
                 <tr>
@@ -113,13 +104,11 @@ include_once("../../controller/Auth/registrationCheck.php");
                     <td> :
                         <input type="radio" name="user_type" value="applicant" <?= ($user_type && $user_type == "applicant") ?
                                                                                     'checked="checked"' : "";
-                                                                                ?> /> User
+                                                                                ?> /> Applicant
                         <input type="radio" name="user_type" value="recruiter" <?= ($user_type && $user_type == "recruiter") ?
                                                                                     'checked="checked"' : "";
                                                                                 ?> /> Recruiter
-                        <input type="radio" name="user_type" value="admin" <?= ($user_type && $user_type == "admin") ?
-                                                                                'checked="checked"' : "";
-                                                                            ?> /> Admin
+          
 
                     </td>
                 </tr>

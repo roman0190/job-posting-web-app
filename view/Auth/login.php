@@ -1,8 +1,6 @@
 <?php
 include_once("../../controller/Auth/loginCheck.php");
 
-
-
 ?>
 <html>
 
@@ -19,10 +17,7 @@ include_once("../../controller/Auth/loginCheck.php");
 			<h3>Login</h3>
 			<hr style="margin: 20px 100px;">
 			<table class="form" border="0" cellspacing="0" cellpadding="0">
-
-
-
-				<tr>
+                <tr>
 					<td><label for="username">Username</label> </td>
 					<td> : <input type="text" name="username" value="<?php echo $username ?>" </td>
 				</tr>

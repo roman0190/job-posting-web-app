@@ -40,9 +40,8 @@ $Name =  $userInfo['name'];
                     </h2>
                     <h5 align="right">
                    
-                        <a href="adminEvent.php">Event</a> |
-                        <a href="logOut.php">Logout</a> |
-                        <a href="reportJobandApplicant.php">Reported Job & Applicant </a> 
+                        <a href="../dashboard/commonDashboard.php">Dashboard</a> 
+                       
                     
                     </h5>
                 </th>
@@ -50,11 +49,7 @@ $Name =  $userInfo['name'];
 
         <tr>
             <td>
-            <p align="center">
-                    
-                    <a href="terms.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="privacy.php">Privacy Policy</a>
-                </p>
+           
                 
                 <header align="center">
                 <h1>Welcome, <?php echo $Name; ?>!</h1>
