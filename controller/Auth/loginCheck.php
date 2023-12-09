@@ -1,40 +1,27 @@
 <?php
 
 include_once("../../model/userModel.php");
-
-
-$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : "";
-$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : "";
-
-$usernameError = "";
-$passwordError = "";
-
-$remember = isset($_REQUEST['remember']) ? $_REQUEST['remember'] : "";
-
-
-
+$username = "";
+$password = "";
+$remember = "";
 $error = "";
-
-if (isset($_POST["submit"])) {
-
-
-    if (!$username) {
+if (isset($_POST["data"])) {
+    $data = json_decode($_POST["data"], true);
+    if (!$data['username']) {
         $usernameError = "Please enter a username";
     }
-
-    if (!$password) {
+    if (!$data['password']) {
         $passwordError = "Please enter password";
     }
-
     if (
-        $username &&
-        $password
+        $data['username'] &&
+        $data['password']
     ) {
-        $error = login(
-            $username,
-            $password,
-            $remember
+        echo json_encode(login(
+            $data['username'],
+            $data['password'],
+            $data['remember']
 
-        );
-    }
+        ));
+    } else echo json_encode(['error' => "data not filled"]);
 }

@@ -1,165 +1,77 @@
-<?php
-include_once("../../controller/Auth/registrationCheck.php");
-
-
-
-?>
 <html>
 
 <head>
     <title>My Jobs</title>
     <link rel="stylesheet" href="../../assets/style.css">
+
 </head>
 
 <body>
-    <?php include_once("../components/header.php") ?>
     <center>
-        <form action="" method="POST" enctype="">
-
+        <form name="registrationForm" action="" method="POST" onsubmit="validateForm(e)">
 
             <h3>REGISTRATION</h3>
             <hr style="margin: 20px 100px;">
             <table class="form" border="0" cellspacing="0" cellpadding="0">
-
-
+                <!-- Input fields with IDs -->
                 <tr>
-                    <td><label for="first_name">First Name</label> </td>
-                    <td> : <input type="text" name="first_name" value="<?php echo $first_name ?>" </td>
+                    <td><label for="name">Name</label></td>
+                    <td>: <input type="text" id="name" name="name"></td>
                 </tr>
                 <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $first_nameError ?></p>
+                    <td><label for="name">Username</label></td>
+                    <td>: <input type="text" id="username" name="username"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>: <input type="text" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td>: <input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="confirmPassword">Confirm Password</label></td>
+                    <td>: <input type="password" id="confirmPassword" name="confirmPassword"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td>:
+                        <input type="radio" id="male" name="gender" value="Male"> Male
+                        <input type="radio" id="female" name="gender" value="Female"> Female
+                        <input type="radio" id="other" name="gender" value="Other"> Other
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="last_name">Last Name</label> </td>
-                    <td> : <input type="text" name="last_name" value="<?php echo $last_name ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $last_nameError ?></p>
+                    <td><label>User Type</label></td>
+                    <td>:
+                        <input type="radio" id="applicant" name="user_type" value="applicant"> Applicant
+                        <input type="radio" id="recruiter" name="user_type" value="recruiter"> Recruiter
+                        <input type="radio" id="admin" name="user_type" value="admin"> Admin
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="username">Username</label> </td>
-                    <td> : <input type="text" name="username" value="<?php echo $username ?>" </td>
+                    <td><label for="dob">Date of Birth</label></td>
+                    <td>: <input type="date" id="dob" name="dob"></td>
                 </tr>
                 <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $usernameError ?></p>
+                    <td colspan="2">
+                        <br>
+                        <p id="error" style="color: red;"></p>
                     </td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email</label> </td>
-                    <td> : <input type="text" name="email" value="<?php echo $email ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $emailError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label> </td>
-                    <td> : <input type="password" name="password" value="<?php echo $password ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $passwordError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="confirmPassword">Confirm Password</label> </td>
-                    <td> : <input type="password" name="confirmPassword" value="<?php echo $confirmPassword ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $confirmPasswordError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="gender">Gender</label> </td>
 
-
-                    <td> :
-                        <input type="radio" name="gender" value="Male" <?= ($gender && $gender == "Male") ?
-                                                                            'checked="checked"' : "";
-                                                                        ?> /> Male
-                        <input type="radio" name="gender" value="Female" <?= ($gender && $gender == "Female") ?
-                                                                                'checked="checked"' : "";
-                                                                            ?> /> Female
-                        <input type="radio" name="gender" value="Other" <?= ($gender && $gender == "Other") ?
-                                                                            'checked="checked"' : "";
-                                                                        ?> /> Other
-
-
-
-
-                    </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <p style="color:red;"><?= $genderError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="user_type">User Type</label> </td>
-                    <td> :
-                        <input type="radio" name="user_type" value="applicant" <?= ($user_type && $user_type == "applicant") ?
-                                                                                    'checked="checked"' : "";
-                                                                                ?> /> User
-                        <input type="radio" name="user_type" value="recruiter" <?= ($user_type && $user_type == "recruiter") ?
-                                                                                    'checked="checked"' : "";
-                                                                                ?> /> Recruiter
-                        <input type="radio" name="user_type" value="admin" <?= ($user_type && $user_type == "admin") ?
-                                                                                'checked="checked"' : "";
-                                                                            ?> /> Admin
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $user_typeError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="dob">Date of Birth</label> </td>
-                    <td> : <input type="date" name="dob" value="<?php echo $dob ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $dobError ?></p>
-                    </td>
-                </tr>
-
-
-
-
             </table>
             <div>
-                <p style="color: red;"><?= $error ?></p>
-                <br>
-                <p style="margin-bottom: 20px;"> <a href="login.php">Already have an account? Log In</a></p>
-                <input type="submit" value="Sign Up" name="submit" />
-
-
-
+                <!-- Submit button -->
+                <input type="button" value="Sign Up" name="submit" onclick="validateForm()" />
             </div>
-
-
         </form>
     </center>
+    <script src='../../assets/JS/Auth/registration.js'>
 
-
-    <?php include_once("../components/footer.php") ?>
+    </script>
 </body>
 
 </html>

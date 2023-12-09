@@ -33,8 +33,8 @@ include_once("../../model/adminHomemodel.php");
                 <p align="center">
                     <a href="../Auth/registration.php">Signup</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="../Auth/login.php">Signin</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="../privacyPolicy/viewPrivacyPolicy.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="../TermsOfServices/termsAll.php">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../privacyPolicy/viewPrivacyPolicy.php">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../TermsOfServices/termsAll.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="../FAQ/faq.html">FAQ</a>
                 </p>
                 

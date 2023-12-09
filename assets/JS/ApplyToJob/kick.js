@@ -1,5 +1,4 @@
 var id = window.location.toString().split("?")[1]?.split("=")[1];
-
 function handleKick() {
     return new Promise(function (resolve, reject) {
         let xhttp = new XMLHttpRequest();

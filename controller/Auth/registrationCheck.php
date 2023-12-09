@@ -2,94 +2,47 @@
 
 include_once("../../model/userModel.php");
 
-$first_name = isset($_REQUEST['first_name']) ? $_REQUEST['first_name'] : "";
-$last_name = isset($_REQUEST['last_name']) ? $_REQUEST['last_name'] : "";
-$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : "";
-$email = isset($_REQUEST['email']) ? $_REQUEST['email'] : "";
-$gender = isset($_REQUEST['gender']) ? $_REQUEST['gender'] : "";
-$dob = isset($_REQUEST['dob']) ? $_REQUEST['dob'] : "";
-$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : "";
-$confirmPassword = isset($_REQUEST['confirmPassword']) ? $_REQUEST['confirmPassword'] : "";
-$user_type = isset($_REQUEST['user_type']) ? $_REQUEST['user_type'] : "";
-// $pfp = isset($_REQUEST['pfp']) ? $_REQUEST['pfp'] : "";
 
+if (isset($_POST["data"])) {
+    $error = "";
+    $data = json_decode($_POST["data"], true);
 
-$first_nameError = "";
-$last_nameError = "";
-$usernameError = "";
-$emailError = "";
-$genderError = "";
-$dobError = "";
-$passwordError = "";
-$confirmPasswordError = "";
-$user_typeError = "";
-$pfpError = "";
+    if (!$data['name']) {
+        $error .= "Please enter your name<br>";
+    }
+    if (!$data['username']) {
+        $error .= "Please enter your username<br>";
+    }
+    if (!$data['email']) {
+        $error .= "Please enter a valid email<br>";
+    }
+    if (!$data['password']) {
+        $error .= "Please enter your password<br>";
+    }
+    if (!$data['gender']) {
+        $error .= "Please enter your gender<br>";
+    }
+    if (!$data['userType']) {
+        $error .= "Please enter your type of user<br>";
+    }
+    if (!$data['dob']) {
+        $error .= "Please enter date of birth<br>";
+    }
 
-
-
-
-
-$error = "";
-
-if (isset($_POST["submit"])) {
-
-    if (!$first_name) {
-        $first_nameError = "Please enter your first name";
-    }
-    if (!$last_name) {
-        $last_nameError = "Please enter your last name";
-    }
-    if (!$username) {
-        $usernameError = "Please enter a username";
-    }
-    if (!$email) {
-        $emailError = "Please enter your email";
-    }
-    if (!$gender) {
-        $genderError = "Please enter your gender";
-    }
-    if (!$dob) {
-        $dobError = "Please enter your date of birth";
-    }
-    if (!$password) {
-        $passwordError = "Please enter password";
-    }
-    if ($password && strlen($password) < 6) {
-        $passwordError = "Password must be at least 6 characters";
-    }
-    if (!$confirmPassword) {
-        $confirmPasswordError = "Please enter confirmPassword";
-    }
-    if ($confirmPassword != $password) {
-        $confirmPasswordError = "passwords did not match";
-    }
-    if (!$user_type) {
-        $user_typeError = "Please enter user type";
-    }
     // if (!$pfp){
     //     $pfp="Please enter user type";
 
     // }
-    if (
-        $first_name &&
-        $last_name &&
-        $username &&
-        $email &&
-        $gender &&
-        $dob &&
-        $password &&
-        $user_type &&
-        $password == $confirmPassword
-    ) {
-        $error = register(
-            $first_name,
-            $last_name,
-            $username,
-            $email,
-            $gender,
-            $dob,
-            $password,
-            $user_type
-        );
-    }
+    if (!$error) {
+        echo json_encode(register(
+            $data['name'],
+
+            $data['username'],
+            $data['email'],
+            $data['gender'],
+            $data['dob'],
+            $data['password'],
+            $data['userType']
+        ));
+    } else echo json_encode(['error' => $error]);
 }

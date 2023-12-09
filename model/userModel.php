@@ -35,16 +35,15 @@ function login($username, $password, $remember)
             $_SESSION['userInfo'] = json_encode($userInfo);
         }
 
-        header("location: homePage.php");
+        return ['success' => true];
     } else {
 
-        return "Invalid username or password";
+        return ['error' => "Error Logging In!"];
     }
 }
 
 function register(
-    $first_name,
-    $last_name,
+    $name,
     $username,
     $email,
     $gender,
@@ -68,8 +67,7 @@ function register(
     }
 
     $sql = "insert into users (
-        first_name,
-        last_name, 
+       name, 
         username,
         email,
         gender,
@@ -79,8 +77,7 @@ function register(
 
         ) values (
 
-        '$first_name',
-        '$last_name',
+        '$name',
         '$username',
         '$email',
         '$gender',
@@ -93,11 +90,10 @@ function register(
 
 
     if ($result) {
-        login($username, $password, "");
-        header('location: login.php');
+        return login($username, $password, false);
     } else {
 
-        return "Database error!";
+        return ['error' => "Database error!"];
     }
 }
 
@@ -136,18 +132,6 @@ function getUser($id)
     }
 }
 
-function getAllUser()
-{
-    $con = getConnection();
-    $sql = "select * from users";
-    $result = mysqli_query($con, $sql);
-    $users = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        array_push($users, $row);
-    }
-
-    return $users;
-}
 
 function updateUser($user)
 {
@@ -157,54 +141,21 @@ function updateUser($user)
     $username = $user['username'];
     $email = $user['email'];
 
-    
+
     $checkEmailQuery = "SELECT id FROM users WHERE email = '$email' AND id != $id";
     $result = mysqli_query($con, $checkEmailQuery);
 
     if (mysqli_num_rows($result) > 0) {
-    
+
         return false;
     }
 
-    
+
     $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
 
     if (mysqli_query($con, $sql)) {
         return true;
     } else {
         return false;
-    }
-}
-
-
-function deleteUser($id)
-{
-
-    $con = getConnection();
-    $sql = "DELETE FROM users WHERE id = $id";
-
-    if (mysqli_query($con, $sql)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function getUserType($username)
-{
-    $con = getConnection();
-    $sql = "SELECT user_type FROM users WHERE username = '{$username}'";
-    $result = mysqli_query($con, $sql);
-
-    if ($result) {
-        $user = mysqli_fetch_assoc($result);
-
-        if ($user) {
-            return $user['user_type']; // Return the user type
-        } else {
-            return false; // User not found
-        }
-    } else {
-        return false; // Error in the query
     }
 }
