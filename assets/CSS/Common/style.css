@@ -43,3 +43,9 @@ body {
 .form tr p {
     margin-left: 10px;
 }
+
+table {
+    width: 600px;
+
+    border: 1px solid #ccc;
+}

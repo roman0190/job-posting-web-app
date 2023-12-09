@@ -61,7 +61,8 @@ CREATE TABLE applications (
     phone_number VARCHAR(15),
     address VARCHAR(255),
     cv_link VARCHAR(255),
-    job_id INT
+    job_id INT,
+    shortlisted_application boolean,
 );
 
 CREATE TABLE shortlisted_applications (

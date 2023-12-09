@@ -50,4 +50,20 @@ function getAppliedJobs($applicantId)
         die("Error: " . mysqli_error($conn));
     }
 }
-?>
+
+
+function getAllApplications($jobId)
+{
+    $conn = getConnection();
+    $sql = "SELECT * FROM applications where job_id = '$jobId'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_close($conn);
+        return ['success' => true, 'data' => $applications];
+    } else {
+        return ['success' => true, 'message' => "Database error"];
+    }
+}

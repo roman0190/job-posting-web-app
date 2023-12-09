@@ -49,6 +49,8 @@ function printJob(job) {
 
         <br>
         <a href='editJob.php?id=${job.id}'>Edit Job</a>
+        <br>
+        <a href='../SeeApplicants/allApplications.html?id=${job.id}'>See Applicants</a>
        
     
         

@@ -8,15 +8,15 @@ function reportJob($jobId, $reporterId)
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
     if ($count == 1) {
-        return "You already reported this job";
+        return ['error' => true, 'message' => "You already reported this application"];
     }
     $sql = "insert into reported_jobs (job_id, reported_by) values ('{$jobId}','{$reporterId}')";
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        return "Reported";
+        return ['success' => true, 'message' => "Reported"];
     } else {
-        return "error";
+        return ['error' => true, 'message' => "database error"];
     }
 }
 function reportApplicant($application_id, $reporterId)
@@ -26,14 +26,14 @@ function reportApplicant($application_id, $reporterId)
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
     if ($count == 1) {
-        return "You already reported this job";
+        return ['error' => true, 'message' => "You already reported this job"];
     }
     $sql = "insert into reported_applications (application_id, reported_by) values ('{$application_id}','{$reporterId}')";
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        return "Reported";
+        return ['success' => true, 'message' => "Reported"];
     } else {
-        return "error";
+        return ['error' => true, 'message' => "database error"];
     }
 }
