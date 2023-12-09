@@ -1,14 +1,11 @@
-<?php 
+<?php
 
-if (!isset($_REQUEST['data'])) {
+if (!isset($_REQUEST['id'])) {
     echo json_encode(['error' => 'no data recieved']);
-    
-}else{
-    
-    $data = json_decode($_REQUEST['data'],true);
+} else {
 
-    $jobId = $data['id'];
-    
+    $jobId =  $_REQUEST['id'];
+
     $applicantId = 3;
     session_start();
     if (isset($_COOKIE['userId'])) {
@@ -16,15 +13,22 @@ if (!isset($_REQUEST['data'])) {
     } elseif (isset($_SESSION['userId'])) {
         $applicantId = $_SESSION['userId'];
     }
-    
+    require('../../model/jobApplyModel.php');
     $validForApply = checkIfUserApplied($applicantId, $jobId);
     if (!$validForApply) {
         $response = [
             'error' => true,
             'alreadyApplied' => true,
         ];
-        
-        echo json_encode($response);
-    }}
 
-?>
+        echo json_encode($response);
+    } else {
+
+        $response = [
+            'error' => false,
+            'alreadyApplied' => false,
+        ];
+
+        echo json_encode($response);
+    }
+}

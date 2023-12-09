@@ -168,13 +168,14 @@ if (isset($_REQUEST['data'])) {
             
             if ($insertResult) {
                
-                exit();
+                
                 $response = [
                     'success' => true,
                     'message' => "successfully applied",
                 ];
                 
                 echo json_encode($response);
+                exit();
             } else {
                 $response = [
                     'error' => true,
@@ -188,10 +189,6 @@ if (isset($_REQUEST['data'])) {
 
 
     }
-    
-    
-    
-    //JSON
     
 }
     ?>
