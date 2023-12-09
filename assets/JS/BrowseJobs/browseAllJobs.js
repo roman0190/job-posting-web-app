@@ -5,7 +5,8 @@ async function fetchJobs() {
     await showJobs(jobs);
 }
 fetchJobs();
-function showJobs(jobs) {
+
+export function showJobs(jobs) {
     let container = document.getElementById("container");
     jobs.forEach((job) => {
         container.appendChild(showJob(job));

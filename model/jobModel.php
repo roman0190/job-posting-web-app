@@ -161,8 +161,11 @@ function fetchAllJobsWithFilters(
 
 
     $con = getConnection();
-    $sql = "select * from jobs where ";
-
+    $sql = "select * from jobs";
+    if (!$search && !$category && !$subCategory && !$skills && !$experience && !$type && !$location) {
+    } else {
+        $sql .= " where ";
+    }
     $andString = "";
 
     if ($search) {
