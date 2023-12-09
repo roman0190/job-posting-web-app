@@ -1,7 +1,7 @@
 export function ajaxRequest(method, route, data) {
     return new Promise((resolve, reject) => {
         let xhttp = new XMLHttpRequest();
-        xhttp.open(method, `http://localhost/job-posting-web-app/controller/${route}`, true);
+        xhttp.open(method, `../../controller/${route}`, true);
         xhttp.setRequestHeader(
             "Content-type",
             "application/x-www-form-urlencoded"
