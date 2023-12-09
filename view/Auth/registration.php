@@ -13,16 +13,16 @@
             <h3>REGISTRATION</h3>
             <hr style="margin: 20px 100px;">
             <table class="form" border="0" cellspacing="0" cellpadding="0">
-<<<<<<< HEAD
                 <!-- Input fields with IDs -->
                 <tr>
-                    <td><label for="first_name">First Name</label></td>
-                    <td>: <input type="text" id="first_name" name="first_name"></td>
+                    <td><label for="name">Name</label></td>
+                    <td>: <input type="text" id="name" name="name"></td>
                 </tr>
                 <tr>
-                    <td><label for="last_name">Last Name</label></td>
-                    <td>: <input type="text" id="last_name" name="last_name"></td>
+                    <td><label for="name">Username</label></td>
+                    <td>: <input type="text" id="username" name="username"></td>
                 </tr>
+
                 <tr>
                     <td><label for="email">Email</label></td>
                     <td>: <input type="text" id="email" name="email"></td>
@@ -46,22 +46,9 @@
                 <tr>
                     <td><label>User Type</label></td>
                     <td>:
-                        <input type="radio" id="applicant" name="user_type" value="applicant"> User
+                        <input type="radio" id="applicant" name="user_type" value="applicant"> Applicant
                         <input type="radio" id="recruiter" name="user_type" value="recruiter"> Recruiter
                         <input type="radio" id="admin" name="user_type" value="admin"> Admin
-=======
-
-
-              
-                <tr>
-                    <td><label for="last_name">Name</label> </td>
-                    <td> : <input type="text" name="last_name" value="<?php echo $last_name ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $last_nameError ?></p>
->>>>>>> 67964a2dd3467862a767f5b4cea0976265cabde1
                     </td>
                 </tr>
                 <tr>
@@ -75,48 +62,6 @@
                     </td>
 
                 </tr>
-<<<<<<< HEAD
-=======
-                <tr>
-                    <td></td>
-                    <td>
-                        <p style="color:red;"><?= $genderError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="user_type">User Type</label> </td>
-                    <td> :
-                        <input type="radio" name="user_type" value="applicant" <?= ($user_type && $user_type == "applicant") ?
-                                                                                    'checked="checked"' : "";
-                                                                                ?> /> Applicant
-                        <input type="radio" name="user_type" value="recruiter" <?= ($user_type && $user_type == "recruiter") ?
-                                                                                    'checked="checked"' : "";
-                                                                                ?> /> Recruiter
-          
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $user_typeError ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="dob">Date of Birth</label> </td>
-                    <td> : <input type="date" name="dob" value="<?php echo $dob ?>" </td>
-                </tr>
-                <tr>
-                    <td>
-                    <td>
-                        <p style="color:red;"><?= $dobError ?></p>
-                    </td>
-                </tr>
-
-
-
-
->>>>>>> 67964a2dd3467862a767f5b4cea0976265cabde1
             </table>
             <div>
                 <!-- Submit button -->
