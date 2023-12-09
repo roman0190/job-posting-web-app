@@ -12,5 +12,5 @@ function getReportedJobs() {
     return $reportedJobs;
 }
 
-// Add any additional functions related to managing reported jobs if needed.
+
 ?>

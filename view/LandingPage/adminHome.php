@@ -1,7 +1,21 @@
 <?php
 
-include_once("../../controller/LandingPage/adminHomecheck.php");
+require_once("../../controller/Auth/session.php");
 include_once("../../model/adminHomemodel.php");
+
+$userInfo = [];
+ 
+if (isset($_COOKIE['userInfo'])) {
+    $userInfo = (array) json_decode($_COOKIE['userInfo']);
+} else {
+    if (isset($_SESSION['userInfo'])) {
+        $userInfo = (array)  json_decode($_SESSION['userInfo']);
+    } else {
+       
+    }
+}
+$Name =  $userInfo['name'];      
+
 
 
 ?>
@@ -43,7 +57,7 @@ include_once("../../model/adminHomemodel.php");
                 </p>
                 
                 <header align="center">
-                <h1>Welcome, <?php echo $username; ?>!</h1>
+                <h1>Welcome, <?php echo $Name; ?>!</h1>
                 </header>
     
                

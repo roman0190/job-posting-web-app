@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header('Location: ../../view/authFeature/signIn.php'); // Redirect to login page if not logged in
+    header('Location: ../../view/Auth/login.php'); // Redirect to login page if not logged in
     exit();
 }
 
@@ -20,7 +20,7 @@ if (isset($_POST['newDescription'])) {
     }
 }
 
-$description = "This is the admin home page. You can update this description to provide important information to your users.";
+
 
 $description = getAdminDescription();
 ?>

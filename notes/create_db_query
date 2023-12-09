@@ -62,8 +62,9 @@ CREATE TABLE applications (
     address VARCHAR(255),
     cv_link VARCHAR(255),
     job_id INT,
-    shortlisted_application boolean,
+    shortlisted_application BOOLEAN
 );
+
 
 CREATE TABLE shortlisted_applications (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -77,9 +78,9 @@ CREATE TABLE reported_jobs (
     reported_by INT
 );
 
-CREATE TABLE reported_applications (
+CREATE TABLE reported_applicant (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    application_id INT,
+    applicant_id INT,
     reported_by INT
 );
 

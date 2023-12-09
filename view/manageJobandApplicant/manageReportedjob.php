@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +22,7 @@
 
         <tr>
             <td>
-                <h2>Manage Reported Jobs</h2>
+                
 
                 <?php
                 include('../../model/db.php');
@@ -30,15 +31,29 @@
                 $queryJobs = "SELECT * FROM reported_jobs";
                 $resultJobs = mysqli_query($con, $queryJobs);
 
-                echo "<h3>Reported Jobs</h3>";
+                echo "<h1>Reported Jobs</h1>";
                 while ($row = mysqli_fetch_assoc($resultJobs)) {
-                    echo "Job ID: " . $row['job_id'] . " | Reported By: " . $row['reported_by'] . " | ";
-                    echo "<a href='../../controller/manageReport/manageReportedjobcheck.php?id=" . $row['id'] . "'>Remove Report</a><br>";
+                    $query = "SELECT * FROM jobs WHERE id = {$row['id']}";
+                    $res = mysqli_query($con, $query);
+                    
+                    while ($data = mysqli_fetch_assoc($res)) {
+                        echo "Job ID: " . $row['job_id'] . "   ||   Reported By: " . $row['reported_by'] . "";
+                        
+                        echo "<h5> Title :".$data['title']."</h5>";
+                        echo "<h5> Category :".$data['category']."</h5>";
+                        echo "<h5> Education :".$data['required_education']."</h5>";
+                        echo "<h5> Job Respnsibilities :".$data['job_responsibilities']."</h5>";
+                        echo "<h5> Application Deadline :".$data['application_deadline']."</h5>";
+                        echo "<a href='../../controller/manageReport/manageReportedjobcheck.php?id=" . $row['id'] . "'>Remove Report</a><br><br>";
+                      
+                        
+                    }
+
                 }
                 ?>
 
                 <br>
-                <a href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
+                <a align="center" href="../reportJobandApplicant/reportJobandApplicant.php">Back to Reported Jobs and Applicants</a>
             </td>
         </tr>
 

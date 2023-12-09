@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../controller/LandingPage/adminHomecheck.php");
+
 include_once("../../model/adminHomemodel.php");
 
 
@@ -31,10 +31,11 @@ include_once("../../model/adminHomemodel.php");
         <tr>
             <td>
                 <p align="center">
-                    <a href="signUp.php">Signup</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="signIn.php">Signin</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="terms.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="privacy.php">Privacy Policy</a>
+                    <a href="../Auth/registration.php">Signup</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../Auth/login.php">Signin</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../privacyPolicy/viewPrivacyPolicy.php">Terms of Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../TermsOfServices/termsAll.php">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../FAQ/faq.html">FAQ</a>
                 </p>
                 
                 <h2 align="center">Welcome to MARZ JOB SITE</h2>

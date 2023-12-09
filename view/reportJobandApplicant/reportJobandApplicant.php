@@ -41,7 +41,7 @@
 
                         echo "<h3>Reported Jobs</h3>";
                         while ($row = mysqli_fetch_assoc($resultJobs)) {
-                            echo "Job ID: " . $row['job_id'] . " | Reported By: " . $row['reported_by'] . "<br>";
+                            echo "Job ID: " . $row['job_id'] . " | Reported By: " . $row['reported_by']. "<br>";
                         }
                         ?>
                         <a href="../manageJobandApplicant/manageReportedjob.php">Manage Reported Jobs</a><br>
@@ -49,7 +49,7 @@
                         $queryApplicants = "SELECT * FROM reported_applicants";
                         $resultApplicants = mysqli_query($con, $queryApplicants);
 
-                        echo "<h3>Reported Applicants</h3>";
+                        echo "<br><h3>Reported Applicants</h3>";
                         while ($row = mysqli_fetch_assoc($resultApplicants)) {
                             echo "Applicant ID: " . $row['applicant_id'] . " | Reported By: " . $row['reported_by'] . "<br>";
                         }
