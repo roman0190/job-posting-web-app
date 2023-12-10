@@ -42,8 +42,8 @@ require_once('../../controller/Auth/session.php');
 
         <div class="main">
             <p> <a href="../ManageProfile/viewProfile.php">View Profile</a></p>
-            <p> <a href=".php">View Reported Jobs</a></p>
-            <p> <a href=".php">View Reported Applicant</a></p>
+            <p> <a href="../reportJobandApplicant/reportJobandApplicant.php">Reported Jobs & Applications </a></p>
+            
             <p> <a href="../Event/adminEvent.php">Event</a></p>
 
         </div>

@@ -66,8 +66,11 @@
                             </tr>
                             <tr>
                                 <td colspan="2" class="button-container">
-                                    <button class="button" type="submit">Edit Profile</button>
+                                    <button class="button" type="submit">Edit Profile</button><br><br>
+                                    <a href="../dashboard/commonDashboard.php">Dashboard</a>
+                            
                                 </td>
+                               
                             </tr>
                         </table>
                     </form>

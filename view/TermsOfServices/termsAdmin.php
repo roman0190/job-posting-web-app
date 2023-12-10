@@ -89,7 +89,7 @@ $terms = getTerms();
                             <tr>
                                 <td colspan="2">
                                     <button class="button" type="button" onclick="saveTermChanges()">Save Changes</button><br><br>
-                                    <a href="../dashboard/dashboardAdmin.php">Back</a>
+                                    <a href="../dashboard/commonDashboard.php">Back</a>
                                 </td>
                             </tr>
                             <tr>
