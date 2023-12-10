@@ -40,7 +40,7 @@ async function generateHeader() {
     let logoutbutton = document.createElement("div");
     logoutbutton.className = "logout";
     let a1 = document.createElement("a");
-    a1.href = "../Auth/logout";
+    a1.href = "../Auth/logout.php";
     a1.textContent = "Log out";
     logoutbutton.appendChild(a1);
     let header = document.getElementById("header");
