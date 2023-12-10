@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function submitJobApplication() {
-        // Extract data from the job application form
         let id = document.querySelector("input[name='id']").value;
         let firstName = document.querySelector("input[name='first_name']").value;
         let lastName = document.querySelector("input[name='last_name']").value;
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let experience = document.querySelector("select[name='experience']").value;
         let availability = document.querySelector("select[name='availability']").value;
 
-        // Create an object with the extracted data
         let jobApplicationData = {
             id:id,
             first_name: firstName,
@@ -72,10 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
             availability: availability
         };
 
-        // Converting the job application data to a JSON string
         let stringData = JSON.stringify(jobApplicationData);
 
-        // Perform an AJAX request to submit the job application data
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "../../controller/ApplyToJob/jobApplyCheck.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -98,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
 
-        // Send the AJAX request with the job application data
         xhttp.send("data=" + stringData);
     }
 

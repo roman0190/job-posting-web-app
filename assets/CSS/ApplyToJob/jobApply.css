@@ -76,7 +76,7 @@ label {
 }
 
 .input-field {
-    width: calc(100% - 10px); /* Adjust the width as needed */
+    width: 100%;
     padding: 8px;
     box-sizing: border-box;
     margin-bottom: 10px;
