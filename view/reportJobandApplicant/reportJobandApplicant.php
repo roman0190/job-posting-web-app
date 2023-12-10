@@ -21,7 +21,7 @@
                     </h2>
                     <h5 align="right">
                    
-                        <a href="adminEvent.php">Event</a> 
+                        <a href="../dashboard/commonDashboard.php">Dashboard</a> 
                     </h5>
                 </th>
         </tr>

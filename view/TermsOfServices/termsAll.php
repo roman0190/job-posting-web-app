@@ -65,7 +65,7 @@ $user = "";
 
                             <tr>
                                 <td colspan="2">
-                                    <a href="../dashboard/dashboardApplicant.php">Back</a>
+                                    <a href="../dashboard/commonDashboard.php">Back</a>
                                 </td>
                                 <!-- <td colspan="2" class="button-container">
                                     <button class="button" href="../dashboard/dashboardApplicant.php">Back</button>

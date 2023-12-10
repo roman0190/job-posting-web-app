@@ -2,7 +2,6 @@
 
 include_once("../../model/userModel.php");
 
-
 if (isset($_POST["data"])) {
     $error = "";
     $data = json_decode($_POST["data"], true);
@@ -15,9 +14,15 @@ if (isset($_POST["data"])) {
     }
     if (!$data['email']) {
         $error .= "Please enter a valid email<br>";
+    } else {
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $error .= "Enter a valid email address<br>";
+        }
     }
     if (!$data['password']) {
         $error .= "Please enter your password<br>";
+    } else if (strlen($data['password']) < 6) {
+        $error .= "Password must be at least 6 characters long<br>";
     }
     if (!$data['gender']) {
         $error .= "Please enter your gender<br>";
@@ -29,14 +34,9 @@ if (isset($_POST["data"])) {
         $error .= "Please enter date of birth<br>";
     }
 
-    // if (!$pfp){
-    //     $pfp="Please enter user type";
-
-    // }
     if (!$error) {
         echo json_encode(register(
             $data['name'],
-
             $data['username'],
             $data['email'],
             $data['gender'],
@@ -44,5 +44,8 @@ if (isset($_POST["data"])) {
             $data['password'],
             $data['userType']
         ));
-    } else echo json_encode(['error' => $error]);
+    } else {
+        echo json_encode(['error' => $error]);
+    }
 }
+?>

@@ -50,6 +50,6 @@ $applications = getAppliedJobs($applicantId);
         }
         ?>
     </div>
-    <a href="jobApply.php">Go Back</a>
+    <a href="../dashboard/dashboardApplicant.php">Dashboard</a>
 </body>
 </html>

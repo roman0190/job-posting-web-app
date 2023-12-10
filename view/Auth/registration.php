@@ -1,77 +1,91 @@
+<?php
+include_once("../../controller/Auth/registrationCheck.php");
+?>
+
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>My Jobs</title>
-    <link rel="stylesheet" href="../../assets/style.css">
-
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/CSS/Auth/registration.css">
 </head>
 
 <body>
-    <center>
-        <form name="registrationForm" action="" method="POST" onsubmit="validateForm(e)">
-
-            <h3>REGISTRATION</h3>
-            <hr style="margin: 20px 100px;">
-            <table class="form" border="0" cellspacing="0" cellpadding="0">
-                <!-- Input fields with IDs -->
-                <tr>
-                    <td><label for="name">Name</label></td>
-                    <td>: <input type="text" id="name" name="name"></td>
-                </tr>
-                <tr>
-                    <td><label for="name">Username</label></td>
-                    <td>: <input type="text" id="username" name="username"></td>
-                </tr>
-
-                <tr>
-                    <td><label for="email">Email</label></td>
-                    <td>: <input type="text" id="email" name="email"></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label></td>
-                    <td>: <input type="password" id="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td><label for="confirmPassword">Confirm Password</label></td>
-                    <td>: <input type="password" id="confirmPassword" name="confirmPassword"></td>
-                </tr>
-                <tr>
-                    <td><label>Gender</label></td>
-                    <td>:
-                        <input type="radio" id="male" name="gender" value="Male"> Male
-                        <input type="radio" id="female" name="gender" value="Female"> Female
-                        <input type="radio" id="other" name="gender" value="Other"> Other
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>User Type</label></td>
-                    <td>:
-                        <input type="radio" id="applicant" name="user_type" value="applicant"> Applicant
-                        <input type="radio" id="recruiter" name="user_type" value="recruiter"> Recruiter
-                        <!-- <input type="radio" id="admin" name="user_type" value="admin"> Admin -->
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="dob">Date of Birth</label></td>
-                    <td>: <input type="date" id="dob" name="dob"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <br>
-                        <p id="error" style="color: red;"></p>
-                    </td>
-
-                </tr>
-            </table>
-            <div>
-                <!-- Submit button -->
-                <input type="button" value="Sign Up" name="submit" onclick="validateForm()" />
-            </div>
-        </form>
-    </center>
-    <script src='../../assets/JS/Auth/registration.js'>
-
-    </script>
+    <table  border="1" align="center">
+        <tr>
+            <th colspan="2">
+                <h2 align="left">
+                    <img align="left" src="../../assets/images/logo.png" alt="Company Logo" width="80" height="80">
+                    MARZ JOB SITE
+                </h2>
+                <h5 align="right">
+                    <a href="../LandingPage/nonadminHome.php">Home</a> |
+                    <a href="../Auth/login.php">Signin</a>
+                </h5>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <center>
+                    <form name="registrationForm" action="" method="POST" onsubmit="validateForm(e)">
+                        <h3>REGISTRATION</h3>
+                        <hr class="hr-style">
+                        <table class="form" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td><label for="name">Name</label></td>
+                                <td>: <input type="text" id="name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="name">Username</label></td>
+                                <td>: <input type="text" id="username" name="username"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td>: <input type="text" id="email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Password</label></td>
+                                <td>: <input type="password" id="password" name="password"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="confirmPassword">Confirm Password</label></td>
+                                <td>: <input type="password" id="confirmPassword" name="confirmPassword"></td>
+                            </tr>
+                            <tr>
+                                <td><label>Gender</label></td>
+                                <td>:
+                                    <input type="radio" id="male" name="gender" value="Male"> Male
+                                    <input type="radio" id="female" name="gender" value="Female"> Female
+                                    <input type="radio" id="other" name="gender" value="Other"> Other
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>User Type</label></td>
+                                <td>:
+                                    <input type="radio" id="applicant" name="user_type" value="applicant"> Applicant
+                                    <input type="radio" id="recruiter" name="user_type" value="recruiter"> Recruiter
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="dob">Date of Birth</label></td>
+                                <td>: <input type="date" id="dob" name="dob"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <br>
+                                    <p id="error" class="error-text"></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
+                            <input type="button" value="Sign Up" name="submit" onclick="validateForm()" />
+                        </div>
+                    </form>
+                </center>
+            </td>
+        </tr>
+    </table>
+    <script src='../../assets/JS/Auth/registration.js'></script>
 </body>
 
 </html>
