@@ -1,4 +1,4 @@
-// validateEvent.js
+
 
 function validateEvent() {
     

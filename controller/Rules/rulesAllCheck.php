@@ -1,6 +1,8 @@
 <?php
 require_once("../../model/rulesModel.php");
 
+session_start();
+
 if(isset($_COOKIE["userId"])){
     $rules = getRules();
 }

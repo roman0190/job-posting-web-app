@@ -101,4 +101,8 @@ input[type="button"]:hover {
     background-color: #6606ff;
 }
 
-/* Add any additional styles as needed */
+input[type="radio"] {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 15px;
+}

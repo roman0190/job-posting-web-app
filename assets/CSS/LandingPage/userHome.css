@@ -59,13 +59,12 @@ img {
     margin-right: 10px;
 }
 
-/* Additional Styles for Styling */
+
 
 table:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom Button Style */
 .btn {
     display: inline-block;
     padding: 12px 24px;
