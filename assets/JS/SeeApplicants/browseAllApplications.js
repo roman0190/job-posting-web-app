@@ -18,6 +18,10 @@ async function fetchJob() {
 fetchJob();
 
 function renderApplicants(applications) {
+    if (applications.length === 0) {
+        return (document.getElementById("container").innerHTML =
+            "no applications found");
+    }
     let container = document.getElementById("container");
     console.log(applications);
     applications.forEach((application, index) => {

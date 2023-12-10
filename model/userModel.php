@@ -38,7 +38,7 @@ function login($username, $password, $remember)
         return ['success' => true];
     } else {
 
-        return ['error' => "Error Logging In!"];
+        return ['error' => "Invalid credentials!"];
     }
 }
 
