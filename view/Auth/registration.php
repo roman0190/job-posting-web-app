@@ -48,7 +48,7 @@
                     <td>:
                         <input type="radio" id="applicant" name="user_type" value="applicant"> Applicant
                         <input type="radio" id="recruiter" name="user_type" value="recruiter"> Recruiter
-                        <input type="radio" id="admin" name="user_type" value="admin"> Admin
+                        <!-- <input type="radio" id="admin" name="user_type" value="admin"> Admin -->
                     </td>
                 </tr>
                 <tr>
