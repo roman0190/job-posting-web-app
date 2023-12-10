@@ -1,5 +1,5 @@
 <?php 
-require_once("../../controller/TermsOfServices/termsAllCheck.php");
+//require_once("../../controller/TermsOfServices/termsAllCheck.php");
 require_once('../../model/termsModel.php');
 
 $user = "";

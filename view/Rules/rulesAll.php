@@ -1,5 +1,5 @@
 <?php 
-require_once("../../controller/Rules/rulesAllCheck.php");
+//require_once("../../controller/Rules/rulesAllCheck.php");
 require_once('../../model/rulesModel.php');
 
 $user = "";
