@@ -58,13 +58,30 @@ function initiateSearch() {
     experience;
     type.addEventListener("blur", searchData);
     location.addEventListener("blur", searchData);
-    document.getElementById("filter").appendChild(searchDiv);
-    document.getElementById("filter").appendChild(categoryDiv);
-    document.getElementById("filter").appendChild(subCategoryDiv);
-    document.getElementById("filter").appendChild(skillsDiv);
-    document.getElementById("filter").appendChild(experienceDiv);
-    document.getElementById("filter").appendChild(typeDiv);
-    document.getElementById("filter").appendChild(locationDiv);
+    let form = document.getElementById("filter");
+    form.appendChild(searchDiv);
+    form.appendChild(categoryDiv);
+    form.appendChild(subCategoryDiv);
+    form.appendChild(skillsDiv);
+    form.appendChild(experienceDiv);
+    form.appendChild(typeDiv);
+    form.appendChild(locationDiv);
+    let button1 = document.createElement("input");
+    button1.textContent = "Search";
+    button1.value = "Search";
+
+    button1.type = "button";
+    form.appendChild(button1);
+    button1.addEventListener("click", searchData);
+    let button = document.createElement("input");
+    button.textContent = "clear";
+    button.type = "reset";
+    form.appendChild(button);
+    button.addEventListener("click", function () {
+        setTimeout(() => {
+            searchData();
+        }, 500);
+    });
 }
 initiateSearch();
 
@@ -92,6 +109,8 @@ async function searchData() {
 export function showJobs(jobs) {
     let container = document.getElementById("container");
     container.innerHTML = "";
+    if (jobs.length === 0)
+        container.innerHTML = "nothing matches your search criteria";
     jobs.forEach((job) => {
         container.appendChild(showJob(job));
     });

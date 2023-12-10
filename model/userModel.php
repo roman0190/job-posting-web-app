@@ -57,13 +57,13 @@ function register(
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
     if ($count == 1) {
-        return "Username is already taken";
+        return ['error' => "Username is already taken"];
     }
     $sql = "select * from users where email='{$email}'";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
     if ($count == 1) {
-        return "The email is already in use";
+        return ['error' => "The email is already in use"];
     }
 
     $sql = "insert into users (
@@ -90,7 +90,7 @@ function register(
 
 
     if ($result) {
-        return login($username, $password, false);
+        return ['success' => "success"];
     } else {
 
         return ['error' => "Database error!"];
