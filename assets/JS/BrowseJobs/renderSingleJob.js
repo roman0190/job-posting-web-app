@@ -1,4 +1,5 @@
 import { ajaxRequest } from "../Common/ajaxRequest.js";
+import { saveJob } from "../SaveJobForLater/saveJob.js";
 
 async function fetchJob() {
     let id = window.location.toString().split("?")[1]?.split("=")[1];
@@ -44,8 +45,16 @@ function showJob(job) {
         console.log(res);
         alert(res.message);
     });
-
+    
     table.appendChild(button2);
+    
+    let button3 = document.createElement("button");
+    button3.textContent = "Save";
+    button3.addEventListener("click", async () => {
+        await saveJob(job.id)
+    });
+    
+    table.appendChild(button3);
 }
 function TR(value) {
     let td = TD(value[0], true);

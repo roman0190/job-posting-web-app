@@ -12,8 +12,8 @@ else if(isset($_SESSION["userId"])){
     $userId = $_SESSION["userId"];
 }
 else{
-    echo json_encode(['error' =>"Not logged in"]);
+    header('Location: ../Auth/login.php');
 }
 
-echo  json_encode(saveJob($userId,$_REQUEST['id']));
+return  json_encode(unsave($userId,$_REQUEST['id']));
 ?>
