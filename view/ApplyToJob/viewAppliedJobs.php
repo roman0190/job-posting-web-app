@@ -16,9 +16,10 @@ $applications = getAppliedJobs($applicantId);
 ?>
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <title>View Applied Jobs</title>
+    
 </head>
 
 <body>
