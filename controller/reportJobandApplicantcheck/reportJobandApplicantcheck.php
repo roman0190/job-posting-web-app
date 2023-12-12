@@ -1,31 +1,34 @@
 <?php
 include ('../../model/db.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   
-    if (isset($_POST['job_id'])) {
-        $jobId = $_POST['job_id'];
-        
-        $queryInsertJob = "INSERT INTO reported_jobs (job_id, reported_by) VALUES ('$jobId', 'admin')";
-        mysqli_query($con, $queryInsertJob);
-        
-        
-        header("Location: ../../view/reportJobandApplicant/reportJobandApplicant.php");
-        exit();
+
+function getReportedJobs() {
+    $con = getConnection();
+    $queryJobs = "SELECT * FROM reported_jobs";
+    $resultJobs = mysqli_query($con, $queryJobs);
+
+    $reportedJobs = array();
+    while ($row = mysqli_fetch_assoc($resultJobs)) {
+        $reportedJobs[] = $row;
     }
 
-    if (isset($_POST['applicant_id'])) {
-        $applicantId = $_POST['applicant_id'];
-        $queryInsertApplicant = "INSERT INTO reported_applicants (applicant_id, reported_by) VALUES ('$applicantId', 'admin')";
-        mysqli_query($con, $queryInsertApplicant);
-        
-        
-        header("Location: ../../view/reportJobandApplicant/reportJobandApplicant.php");
-        exit();
-    }
+    mysqli_close($con);
+    return $reportedJobs;
 }
 
+function getReportedApplicants() {
+    $con = getConnection();
+    $queryApplicants = "SELECT * FROM reported_applicants";
+    $resultApplicants = mysqli_query($con, $queryApplicants);
 
-header("Location: ../../view/reportJobandApplicant/reportJobandApplicant.php");
-exit();
+    $reportedApplicants = array();
+    while ($row = mysqli_fetch_assoc($resultApplicants)) {
+        $reportedApplicants[] = $row;
+    }
+
+    mysqli_close($con);
+    return $reportedApplicants;
+}
 ?>
+
+

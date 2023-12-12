@@ -21,15 +21,13 @@ if (isset($_POST["data"])) {
     }
     if (!$data['password']) {
         $error .= "Please enter your password<br>";
-    } else if (strlen($data['password']) < 6) {
-        $error .= "Password must be at least 6 characters long<br>";
+    } else if (strlen($data['password']) < 5) {
+        $error .= "Password must be at least 5 characters long<br>";
     }
     if (!$data['gender']) {
         $error .= "Please enter your gender<br>";
     }
-    if (!$data['userType']) {
-        $error .= "Please enter your type of user<br>";
-    }
+  
     if (!$data['dob']) {
         $error .= "Please enter date of birth<br>";
     }
@@ -42,7 +40,7 @@ if (isset($_POST["data"])) {
             $data['gender'],
             $data['dob'],
             $data['password'],
-            $data['userType']
+         
         ));
     } else {
         echo json_encode(['error' => $error]);

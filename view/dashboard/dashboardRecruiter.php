@@ -41,10 +41,10 @@ require_once('../../controller/Auth/session.php');
 
         <div class="main">
             <p> <a href="../ManageProfile/viewProfile.php">View Profile</a></p>
-            <p> <a href="#">View All Applicants</a></p>
+            <!-- <p> <a href="../SeeApplicants/allApplications.html">View All Applicants</a></p> -->
             <p> <a href="../ManageJobs/myJobs.php">View All Jobs</a></p>
             <p> <a href="../ManageJobs/createNewJob.php">Create new Jobs</a></p>
-            <p> <a href=".php">View Posted Event</a></p>
+            <p> <a href="../Event/userEvent.php">View Posted Event</a></p>
         </div>
 
         <div class="footer">

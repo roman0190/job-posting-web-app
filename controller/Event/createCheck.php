@@ -4,7 +4,7 @@ require_once("../../model/notificationModel.php");
 session_start();
    $name = "An Admin";
   $message = "Post an Event";
-  $user_types = "applicant,recuriter";
+  $user_types = "applicant,recruiter";
 
   $user_type_array = explode(",", $user_types);
 
