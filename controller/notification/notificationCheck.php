@@ -1,7 +1,7 @@
 <?php
   require_once("../../model/notificationModel.php");
   session_start();
-  //sendNotification($username, $message, $user_type); //to send notifcation just add it on your page 
+  sendNotification($username, $message, $user_type); 
     
   $userType = '';
   if (isset($_SESSION['userType'])) {

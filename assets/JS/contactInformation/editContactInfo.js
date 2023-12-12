@@ -46,7 +46,6 @@ function getValueAndDisplay() {
             _("display_email").innerHTML = contactInfo.email;
             _("display_number").innerHTML = contactInfo.phone_number;
             _("display_link").innerHTML = contactInfo.link;
-            _("outr_link").innerHTML = contactInfo.link;
 
         }
     };
