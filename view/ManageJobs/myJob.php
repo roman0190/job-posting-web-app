@@ -12,7 +12,7 @@
     <main>
 
         <div class="container" id="container"></div>
-
+        <div class="suggestion" id="suggestion"></div>
 
 
     </main>
@@ -25,6 +25,7 @@
 
 
     <script src="../../assets/JS/ManageJobs/myjob.js"></script>
+    <script src="../../assets/JS/ManageJobs/suggestion.js"></script>
 </body>
 
 </html>

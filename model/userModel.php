@@ -159,3 +159,21 @@ function updateUser($user)
         return false;
     }
 }
+
+
+
+
+function suggestedUser($data)
+{
+    session_start();
+    $con = getConnection();
+    $sql = "select * from users where skills LIKE '%{$data['required_skills']}%' and (experience<{$data['required_experience']}  or education LIKE '%{$data['required_education']}%')";
+    $result = mysqli_query($con, $sql);
+
+    $users = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        array_push($users, $row);
+    }
+
+    return ['data' => $users, 'success' => true];
+}

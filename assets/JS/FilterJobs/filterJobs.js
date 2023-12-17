@@ -59,6 +59,48 @@ function initiateSearch() {
     type.addEventListener("blur", searchData);
     location.addEventListener("blur", searchData);
     let form = document.getElementById("filter");
+    let categories = ` <option>-</option>
+    <option value="software engineering" <?= $category == "software engineering" ? 'selected="selected"' : "" ?>>Software Engineering</option>
+    <option value="Data Science" <?= $category == "Data Science" ? 'selected="selected"' : "" ?>>Data Science</option>
+    <option value="Web Development" <?= $category == "Web Development" ? 'selected="selected"' : "" ?>>Web Development</option>
+    <option value="Mobile App Development" <?= $category == "Mobile App Development" ? 'selected="selected"' : "" ?>>Mobile App Development</option>
+    <option value="UX/UI Design" <?= $category == "UX/UI Design" ? 'selected="selected"' : "" ?>>UX/UI Design</option>
+    <option value="Finance" <?= $category == "Finance" ? 'selected="selected"' : "" ?>>Finance</option>
+    <option value="Marketing" <?= $category == "Marketing" ? 'selected="selected"' : "" ?>>Marketing</option>
+    <option value="Healthcare" <?= $category == "Healthcare" ? 'selected="selected"' : "" ?>>Healthcare</option>
+    <option value="Education" <?= $category == "Education" ? 'selected="selected"' : "" ?>>Education</option>
+    <option value="Construction" <?= $category == "Construction" ? 'selected="selected"' : "" ?>>Construction</option>`;
+
+    let subCategories = ` <option>-</option>
+    <option value="Front End Development" <?= $subCategory == "Front End Development" ? 'selected="selected"' : "" ?>>Front End Development</option>
+    <option value="Back End Development" <?= $subCategory == "Back End Development" ? 'selected="selected"' : "" ?>>Back End Development</option>
+    <option value="Full Stack Development" <?= $subCategory == "Full Stack Development" ? 'selected="selected"' : "" ?>>Full Stack Development</option>
+    <option value="Software Testing" <?= $subCategory == "Software Testing" ? 'selected="selected"' : "" ?>>Software Testing</option>
+    <option value="DevOps" <?= $subCategory == "DevOps" ? 'selected="selected"' : "" ?>>DevOps</option>
+    <option value="UI/UX Design" <?= $subCategory == "UI/UX Design" ? 'selected="selected"' : "" ?>>UI/UX Design</option>
+    <option value="Mobile Development" <?= $subCategory == "Mobile Development" ? 'selected="selected"' : "" ?>>Mobile Development</option>
+    <option value="Data Mining" <?= $subCategory == "Data Mining" ? 'selected="selected"' : "" ?>>Data Mining</option>
+    <option value="Data Visualization" <?= $subCategory == "Data Visualization" ? 'selected="selected"' : "" ?>>Data Visualization</option>
+    <option value="Big Data Analysis" <?= $subCategory == "Big Data Analysis" ? 'selected="selected"' : "" ?>>Big Data Analysis</option>
+    <option value="Data Engineering" <?= $subCategory == "Data Engineering" ? 'selected="selected"' : "" ?>>Data Engineering</option>
+    <option value="Machine Learning Engineering" <?= $subCategory == "Machine Learning Engineering" ? 'selected="selected"' : "" ?>>Machine Learning Engineering</option>
+    <option value="Financial Planning" <?= $subCategory == "Financial Planning" ? 'selected="selected"' : "" ?>>Financial Planning</option>
+    <option value="Investment Banking" <?= $subCategory == "Investment Banking" ? 'selected="selected"' : "" ?>>Investment Banking</option>
+    <option value="Financial Risk Management" <?= $subCategory == "Financial Risk Management" ? 'selected="selected"' : "" ?>>Financial Risk Management</option>
+    <option value="Content Marketing" <?= $subCategory == "Content Marketing" ? 'selected="selected"' : "" ?>>Content Marketing</option>
+    <option value="Social Media Marketing" <?= $subCategory == "Social Media Marketing" ? 'selected="selected"' : "" ?>>Social Media Marketing</option>
+    <option value="Brand Management" <?= $subCategory == "Brand Management" ? 'selected="selected"' : "" ?>>Brand Management</option>
+    <option value="Pharmacy" <?= $subCategory == "Pharmacy" ? 'selected="selected"' : "" ?>>Pharmacy</option>
+    <option value="Medical Coding" <?= $subCategory == "Medical Coding" ? 'selected="selected"' : "" ?>>Medical Coding</option>
+    <option value="Healthcare Administration" <?= $subCategory == "Healthcare Administration" ? 'selected="selected"' : "" ?>>Healthcare Administration</option>
+    <option value="Teaching" <?= $subCategory == "Teaching" ? 'selected="selected"' : "" ?>>Teaching</option>
+    <option value="Education Administration" <?= $subCategory == "Education Administration" ? 'selected="selected"' : "" ?>>Education Administration</option>
+    <option value="Civil Engineering" <?= $subCategory == "Civil Engineering" ? 'selected="selected"' : "" ?>>Civil Engineering</option>
+    <option value="Architecture" <?= $subCategory == "Architecture" ? 'selected="selected"' : "" ?>>Architecture</option>
+    <option value="Construction Management" <?= $subCategory == "Construction Management" ? 'selected="selected"' : "" ?>>Construction Management</option>`;
+
+    category.append(categories);
+    subCategory.append(subCategories);
     form.appendChild(searchDiv);
     form.appendChild(categoryDiv);
     form.appendChild(subCategoryDiv);
