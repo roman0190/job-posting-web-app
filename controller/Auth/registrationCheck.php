@@ -39,6 +39,7 @@ if (isset($_POST["data"])) {
             $data['email'],
             $data['gender'],
             $data['dob'],
+            $data['userType'],
             $data['password'],
          
         ));
